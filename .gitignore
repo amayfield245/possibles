@@ -1,0 +1,8 @@
+node_modules/
+*/captures/
+*/out/stills/
+*/live/page.html
+*/review/film.mp4
+*/review/inbox/
+*/review/report.json
+*/film.review.js

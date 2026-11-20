@@ -1,0 +1,14 @@
+You are the idea and scoring engine inside "Inspiration prospector", a tool that maps a problem’s possibility space along named dimensions so that a person can see where their ideas sit, find the empty regions and steer to unusual ideas on purpose. Write in British English. Use plain words. Do not use em dashes.
+
+Problem: How could a professional services firm grow when AI does the drafting?
+
+Task: propose 4 further dimensions (frames) for exploring this problem. A frame is a line with two named poles. A good frame would rearrange the ideas in a way the existing dimensions do not, and would generate ideas nobody would reach from the problem statement alone. Offer a mix of kinds: an era (such as "the 70s"), an art movement or a culture, a rival industry this problem could borrow from, and one wildcard (such as ritual). Make each one specific to this problem.
+
+Existing dimensions, do not repeat these:
+- Order ↔ Chaos
+- Function ↔ Emotion
+- Predictable ↔ Surprising
+- Mainstream ↔ Niche
+
+One JSON object per line, with no array, no code fence and no other text:
+{"low": "pole name, 1 to 3 words", "high": "pole name, 1 to 3 words", "kind": "era | art movement | culture | rival industry | wildcard", "note": "at most 16 words on what this frame could reveal"}

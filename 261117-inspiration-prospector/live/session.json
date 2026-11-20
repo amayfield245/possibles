@@ -1,0 +1,2481 @@
+{
+  "v": 1,
+  "id": "sm0qhe0",
+  "example": false,
+  "problem": "How could a professional services firm grow when AI does the drafting?",
+  "date": "2026-11-19T13:52:32.786Z",
+  "dims": [
+    {
+      "id": "order",
+      "low": "Order",
+      "high": "Chaos",
+      "source": "hive",
+      "note": "How rule-bound or unruly the idea is."
+    },
+    {
+      "id": "function",
+      "low": "Function",
+      "high": "Emotion",
+      "source": "hive",
+      "note": "Whether it earns its place by use or by feeling."
+    },
+    {
+      "id": "predictable",
+      "low": "Predictable",
+      "high": "Surprising",
+      "source": "hive",
+      "note": "How far it departs from what people expect."
+    },
+    {
+      "id": "mainstream",
+      "low": "Mainstream",
+      "high": "Niche",
+      "source": "hive",
+      "note": "How many people it is for."
+    },
+    {
+      "id": "dm0vu01",
+      "low": "Guild workshop",
+      "high": "Factory line",
+      "source": "claude",
+      "kind": "era",
+      "note": "Whether growth comes from medieval-style masters and apprentices or from industrial-scale standard output."
+    },
+    {
+      "id": "dm0vu22",
+      "low": "Bauhaus plain",
+      "high": "Baroque flourish",
+      "source": "claude",
+      "kind": "art movement",
+      "note": "Whether clients pay for stripped-back clarity or for rich, ornate, visibly hand-finished work."
+    },
+    {
+      "id": "dm0vu63",
+      "low": "Formula One pit",
+      "high": "Michelin kitchen",
+      "source": "claude",
+      "kind": "rival industry",
+      "note": "Borrow speed and telemetry from racing teams, or taste and signature from top restaurants."
+    },
+    {
+      "id": "dm0vu84",
+      "low": "Silent machine",
+      "high": "Signing ceremony",
+      "source": "claude",
+      "kind": "wildcard",
+      "note": "Whether the firm hides the work or turns sign-off and judgement into a ritual clients value."
+    }
+  ],
+  "axes": [
+    "order",
+    "function",
+    "predictable"
+  ],
+  "ideas": [
+    {
+      "id": "im1px45",
+      "title": "Sell advice, not drafts",
+      "desc": "Let AI write the first drafts and move staff time to judgement, client advice and relationships, priced by outcome instead of by the hour.",
+      "scores": {
+        "order": {
+          "s": -0.5,
+          "r": "Tidy shift of existing roles"
+        },
+        "function": {
+          "s": -0.4,
+          "r": "Mostly about efficiency and pricing"
+        },
+        "predictable": {
+          "s": -0.9,
+          "r": "Every consultant already says this"
+        },
+        "mainstream": {
+          "s": -0.9,
+          "r": "Fits any firm of any size"
+        },
+        "dm0vu01": {
+          "s": -0.2,
+          "r": "Keeps craft judgement, automates the rest"
+        },
+        "dm0vu22": {
+          "s": -0.6,
+          "r": "Simple and unadorned offer"
+        },
+        "dm0vu63": {
+          "s": 0.1,
+          "r": "Speed and care in balance"
+        },
+        "dm0vu84": {
+          "s": 0,
+          "r": "Neither hidden nor ceremonial"
+        }
+      },
+      "t1750": 0,
+      "t1750why": "Many firms are already doing this today.",
+      "obvious": true,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1q3w6",
+      "title": "Fixed price document subscription",
+      "desc": "Offer unlimited standard documents for a flat monthly fee, produced by AI and checked by a small review team within hours.",
+      "scores": {
+        "order": {
+          "s": -0.8,
+          "r": "Strict process and set turnaround"
+        },
+        "function": {
+          "s": -0.9,
+          "r": "Pure utility, no feeling involved"
+        },
+        "predictable": {
+          "s": -0.6,
+          "r": "Subscription models are well known"
+        },
+        "mainstream": {
+          "s": -0.7,
+          "r": "Aimed at the broad market"
+        },
+        "dm0vu01": {
+          "s": 0.9,
+          "r": "Volume output on a line"
+        },
+        "dm0vu22": {
+          "s": -0.9,
+          "r": "Stripped back, standard product"
+        },
+        "dm0vu63": {
+          "s": -0.8,
+          "r": "Built for speed and repetition"
+        },
+        "dm0vu84": {
+          "s": -0.8,
+          "r": "Runs quietly in the background"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Already offered by some legal and accounting firms.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1q637",
+      "title": "Partner signs in person",
+      "desc": "Every major piece of work ends with a senior partner reading it aloud to the client and signing it by hand at a formal meeting.",
+      "scores": {
+        "order": {
+          "s": -0.6,
+          "r": "A fixed, repeated ritual"
+        },
+        "function": {
+          "s": 0.8,
+          "r": "Sells trust and reassurance"
+        },
+        "predictable": {
+          "s": 0.4,
+          "r": "Odd in a digital age"
+        },
+        "mainstream": {
+          "s": 0.5,
+          "r": "Suits high value clients only"
+        },
+        "dm0vu01": {
+          "s": -0.8,
+          "r": "Master puts a personal mark"
+        },
+        "dm0vu22": {
+          "s": 0.7,
+          "r": "Deliberate theatre and ornament"
+        },
+        "dm0vu63": {
+          "s": 0.7,
+          "r": "Slow, plated presentation"
+        },
+        "dm0vu84": {
+          "s": 1,
+          "r": "It is literally a signing ceremony"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Old fashioned but perfectly believable as a premium service.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1q8b8",
+      "title": "Insure every answer",
+      "desc": "Back each piece of advice with a cash guarantee, so clients buy the firm's willingness to pay if it is wrong.",
+      "scores": {
+        "order": {
+          "s": -0.7,
+          "r": "Needs tight risk controls"
+        },
+        "function": {
+          "s": -0.5,
+          "r": "Practical, with some comfort attached"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Few firms price their liability"
+        },
+        "mainstream": {
+          "s": -0.1,
+          "r": "Could work widely or narrowly"
+        },
+        "dm0vu01": {
+          "s": 0.3,
+          "r": "Risk is pooled at scale"
+        },
+        "dm0vu22": {
+          "s": -0.7,
+          "r": "A plain promise in numbers"
+        },
+        "dm0vu63": {
+          "s": -0.4,
+          "r": "Checks matter more than taste"
+        },
+        "dm0vu84": {
+          "s": 0.4,
+          "r": "The guarantee is a visible pledge"
+        }
+      },
+      "t1750": 4,
+      "t1750why": "Unusual, though warranties on advice exist in small ways.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qa89",
+      "title": "One trade, total depth",
+      "desc": "Serve a single tiny sector, such as independent vets, and know its people, rules and gossip better than any model could.",
+      "scores": {
+        "order": {
+          "s": -0.3,
+          "r": "Focused but informally run"
+        },
+        "function": {
+          "s": 0.1,
+          "r": "Useful knowledge plus belonging"
+        },
+        "predictable": {
+          "s": -0.2,
+          "r": "Specialising is familiar advice"
+        },
+        "mainstream": {
+          "s": 1,
+          "r": "One very small sector only"
+        },
+        "dm0vu01": {
+          "s": -0.7,
+          "r": "Deep trade knowledge, passed on"
+        },
+        "dm0vu22": {
+          "s": -0.3,
+          "r": "Modest and unshowy"
+        },
+        "dm0vu63": {
+          "s": 0.5,
+          "r": "Slow, careful, local sourcing"
+        },
+        "dm0vu84": {
+          "s": 0.2,
+          "r": "Mostly quiet, some personal contact"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Narrow specialist firms are common and sensible.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qc1a",
+      "title": "Live drafting room",
+      "desc": "Clients sit with the team for an hour while AI drafts on a big screen and everyone argues the document into shape together.",
+      "scores": {
+        "order": {
+          "s": 0.6,
+          "r": "Messy, open argument in the room"
+        },
+        "function": {
+          "s": 0.3,
+          "r": "Useful and also engaging"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Clients rarely see the work made"
+        },
+        "mainstream": {
+          "s": 0.2,
+          "r": "Suits clients who want involvement"
+        },
+        "dm0vu01": {
+          "s": -0.5,
+          "r": "Work made by hand, together"
+        },
+        "dm0vu22": {
+          "s": 0.2,
+          "r": "Some show, little decoration"
+        },
+        "dm0vu63": {
+          "s": -0.5,
+          "r": "Fast, timed, crew around one job"
+        },
+        "dm0vu84": {
+          "s": 0.6,
+          "r": "Work is done in public"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Workshops exist, but live drafting as the product is rare.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qg9b",
+      "title": "Pay clients for disagreement",
+      "desc": "Give clients a refund whenever they catch the firm's AI out, turning each error into a public league table of sharp clients.",
+      "scores": {
+        "order": {
+          "s": 0.8,
+          "r": "Invites clients to break things"
+        },
+        "function": {
+          "s": 0.5,
+          "r": "Plays on pride and competition"
+        },
+        "predictable": {
+          "s": 0.9,
+          "r": "Rewarding fault finding is very unusual"
+        },
+        "mainstream": {
+          "s": 0.6,
+          "r": "Only bold clients would join"
+        },
+        "dm0vu01": {
+          "s": 0.2,
+          "r": "Needs volume to work"
+        },
+        "dm0vu22": {
+          "s": 0.5,
+          "r": "A league table is pure flourish"
+        },
+        "dm0vu63": {
+          "s": -0.2,
+          "r": "Slightly about fast error fixing"
+        },
+        "dm0vu84": {
+          "s": 0.5,
+          "r": "Mistakes are announced, not hidden"
+        }
+      },
+      "t1750": 7,
+      "t1750why": "Publishing your own errors as a game sounds reckless today.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qinc",
+      "title": "The unwritten firm",
+      "desc": "Stop producing documents altogether and sell only spoken counsel, given face to face, with nothing recorded and nothing for a machine to copy.",
+      "scores": {
+        "order": {
+          "s": 0.3,
+          "r": "No paper trail to rely on"
+        },
+        "function": {
+          "s": 0.7,
+          "r": "Rests on trust and presence"
+        },
+        "predictable": {
+          "s": 1,
+          "r": "A firm with no documents is startling"
+        },
+        "mainstream": {
+          "s": 0.9,
+          "r": "Few clients could accept it"
+        },
+        "dm0vu01": {
+          "s": -1,
+          "r": "Pure personal mastery, no scale"
+        },
+        "dm0vu22": {
+          "s": -0.4,
+          "r": "Nothing but talk"
+        },
+        "dm0vu63": {
+          "s": 0.8,
+          "r": "Slow, personal, served at table"
+        },
+        "dm0vu84": {
+          "s": 0.3,
+          "r": "Intimate, though nothing is signed"
+        }
+      },
+      "t1750": 8,
+      "t1750why": "Regulators and clients expect written records of everything.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qljd",
+      "title": "License the firm's brain",
+      "desc": "Train a model on decades of the firm's past work and rent it to rival firms and in house teams as a product.",
+      "scores": {
+        "order": {
+          "s": -0.6,
+          "r": "A controlled, packaged product"
+        },
+        "function": {
+          "s": -0.8,
+          "r": "Sold purely on usefulness"
+        },
+        "predictable": {
+          "s": 0.2,
+          "r": "Selling to rivals is a small twist"
+        },
+        "mainstream": {
+          "s": -0.3,
+          "r": "Broad market, some limits"
+        },
+        "dm0vu01": {
+          "s": 1,
+          "r": "Knowledge copied endlessly"
+        },
+        "dm0vu22": {
+          "s": -0.8,
+          "r": "Software with no ornament"
+        },
+        "dm0vu63": {
+          "s": -0.7,
+          "r": "Built for speed and throughput"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "Invisible engine behind other firms"
+        }
+      },
+      "t1750": 4,
+      "t1750why": "Plausible, but client confidentiality makes it hard today.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im1qo4e",
+      "title": "Bespoke illuminated contracts",
+      "desc": "Hire calligraphers and illustrators to turn key agreements into handmade keepsakes that founders frame, celebrating the deal as much as recording it.",
+      "scores": {
+        "order": {
+          "s": 0.1,
+          "r": "Careful craft with artistic freedom"
+        },
+        "function": {
+          "s": 1,
+          "r": "Entirely about feeling and memory"
+        },
+        "predictable": {
+          "s": 0.9,
+          "r": "Nobody expects art from advisers"
+        },
+        "mainstream": {
+          "s": 1,
+          "r": "A tiny luxury market"
+        },
+        "dm0vu01": {
+          "s": -0.9,
+          "r": "Handmade by skilled artisans"
+        },
+        "dm0vu22": {
+          "s": 1,
+          "r": "Ornament is the whole point"
+        },
+        "dm0vu63": {
+          "s": 0.9,
+          "r": "Slow, exquisite, made to order"
+        },
+        "dm0vu84": {
+          "s": 0.9,
+          "r": "Made for the moment of signing"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Charming but most would find it a strange growth plan.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2hvpf",
+      "title": "Midnight contract vending machine",
+      "desc": "Clients answer ten questions on a kiosk or app and get a finished, checked document in four minutes, any hour.",
+      "scores": {
+        "order": {
+          "s": -0.8,
+          "r": "Fixed questions, fixed outputs"
+        },
+        "function": {
+          "s": -0.9,
+          "r": "Pure speed and utility"
+        },
+        "predictable": {
+          "s": -0.2,
+          "r": "Logical next step, odd format"
+        },
+        "mainstream": {
+          "s": -0.6,
+          "r": "Serves any small business"
+        },
+        "dm0vu01": {
+          "s": 1,
+          "r": "Fully automated production"
+        },
+        "dm0vu22": {
+          "s": -0.9,
+          "r": "Stripped to the bare document"
+        },
+        "dm0vu63": {
+          "s": -0.9,
+          "r": "Timed in minutes, no tasting"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "No human, no ritual"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Online document tools already come close to this.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2hxng",
+      "title": "Acquire rivals for their clients",
+      "desc": "Buy small firms that cannot afford the AI shift, keep their client relationships and run the work through one shared drafting system.",
+      "scores": {
+        "order": {
+          "s": -0.7,
+          "r": "Planned consolidation playbook"
+        },
+        "function": {
+          "s": -0.8,
+          "r": "A scale and cost play"
+        },
+        "predictable": {
+          "s": -0.8,
+          "r": "Standard roll-up strategy"
+        },
+        "mainstream": {
+          "s": -0.8,
+          "r": "Common across the sector"
+        },
+        "dm0vu01": {
+          "s": 0.8,
+          "r": "Many firms, one production line"
+        },
+        "dm0vu22": {
+          "s": -0.6,
+          "r": "No ornament, just scale"
+        },
+        "dm0vu63": {
+          "s": -0.5,
+          "r": "Efficiency over craft"
+        },
+        "dm0vu84": {
+          "s": -0.3,
+          "r": "Back office change, some handshakes"
+        }
+      },
+      "t1750": 0,
+      "t1750why": "Roll-ups are already ordinary in professional services.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2i15h",
+      "title": "The apprentice table",
+      "desc": "Each client gets a named master and two apprentices who learn their business for years and hand-finish every AI draft.",
+      "scores": {
+        "order": {
+          "s": -0.4,
+          "r": "Stable long-term structure"
+        },
+        "function": {
+          "s": 0.3,
+          "r": "Loyalty matters as much as output"
+        },
+        "predictable": {
+          "s": -0.3,
+          "r": "Old model, newly relevant"
+        },
+        "mainstream": {
+          "s": 0.3,
+          "r": "Suits clients who pay for care"
+        },
+        "dm0vu01": {
+          "s": -1,
+          "r": "Master and apprentice by design"
+        },
+        "dm0vu22": {
+          "s": 0.1,
+          "r": "Some care, little decoration"
+        },
+        "dm0vu63": {
+          "s": 0.8,
+          "r": "Slow, hand-finished craft"
+        },
+        "dm0vu84": {
+          "s": 0.3,
+          "r": "Named people, modest ritual"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Close to how good firms once worked.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2i3ni",
+      "title": "Red team for hire",
+      "desc": "Sell a service where a rowdy team attacks the client's AI-drafted documents and plans, hunting for the flaw that sinks them.",
+      "scores": {
+        "order": {
+          "s": 0.7,
+          "r": "Deliberate attack and disruption"
+        },
+        "function": {
+          "s": -0.4,
+          "r": "Practical, with some thrill"
+        },
+        "predictable": {
+          "s": 0.4,
+          "r": "Borrowed from security, new here"
+        },
+        "mainstream": {
+          "s": 0.4,
+          "r": "Appeals to high-stakes clients"
+        },
+        "dm0vu01": {
+          "s": -0.5,
+          "r": "Skilled people, not a line"
+        },
+        "dm0vu22": {
+          "s": -0.3,
+          "r": "Blunt findings, no polish"
+        },
+        "dm0vu63": {
+          "s": -0.4,
+          "r": "Fast and adversarial"
+        },
+        "dm0vu84": {
+          "s": 0.1,
+          "r": "A debrief, not a ceremony"
+        }
+      },
+      "t1750": 2,
+      "t1750why": "Red teaming exists, though rarely for advice work.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2i6uj",
+      "title": "The firm that grieves with you",
+      "desc": "Specialise in the worst moments, such as insolvency, divorce and death, with advisers trained as counsellors while AI handles all paperwork.",
+      "scores": {
+        "order": {
+          "s": 0.1,
+          "r": "Structured care in messy times"
+        },
+        "function": {
+          "s": 1,
+          "r": "Emotional support is the product"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Few firms lead with feeling"
+        },
+        "mainstream": {
+          "s": 0.6,
+          "r": "Only for crisis moments"
+        },
+        "dm0vu01": {
+          "s": -0.8,
+          "r": "Deeply personal, one to one"
+        },
+        "dm0vu22": {
+          "s": -0.2,
+          "r": "Quiet and simple in manner"
+        },
+        "dm0vu63": {
+          "s": 0.6,
+          "r": "Slow attention to each person"
+        },
+        "dm0vu84": {
+          "s": 0.5,
+          "r": "Human presence at key moments"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Unusual, but nobody would call it mad.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2i9nk",
+      "title": "Deal day festival",
+      "desc": "Turn each closing into a staged public event with music, witnesses, speeches and a printed keepsake, sold as a premium package.",
+      "scores": {
+        "order": {
+          "s": 0.4,
+          "r": "Lively but stage managed"
+        },
+        "function": {
+          "s": 0.9,
+          "r": "Sells pride and memory"
+        },
+        "predictable": {
+          "s": 0.8,
+          "r": "Firms do not throw festivals"
+        },
+        "mainstream": {
+          "s": 0.7,
+          "r": "Only some clients want theatre"
+        },
+        "dm0vu01": {
+          "s": -0.6,
+          "r": "Each event made by hand"
+        },
+        "dm0vu22": {
+          "s": 1,
+          "r": "Maximum pageantry and ornament"
+        },
+        "dm0vu63": {
+          "s": 0.7,
+          "r": "A crafted experience, served slowly"
+        },
+        "dm0vu84": {
+          "s": 1,
+          "r": "The ceremony is the product"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "A law or accounting firm as events company sounds odd.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2icvl",
+      "title": "Random partner roulette",
+      "desc": "Every month clients are paired by lottery with an expert from an unrelated practice who reviews their business and suggests one wild move.",
+      "scores": {
+        "order": {
+          "s": 1,
+          "r": "Chance decides the pairing"
+        },
+        "function": {
+          "s": 0.2,
+          "r": "Useful ideas, playful delivery"
+        },
+        "predictable": {
+          "s": 0.9,
+          "r": "Nobody expects lottery advice"
+        },
+        "mainstream": {
+          "s": 0.5,
+          "r": "Needs adventurous clients"
+        },
+        "dm0vu01": {
+          "s": -0.4,
+          "r": "Individual expert judgement"
+        },
+        "dm0vu22": {
+          "s": 0.3,
+          "r": "A little playful excess"
+        },
+        "dm0vu63": {
+          "s": 0.2,
+          "r": "Neither rushed nor refined"
+        },
+        "dm0vu84": {
+          "s": 0.2,
+          "r": "A meeting, lightly ritualised"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Paying for randomly assigned advice sounds reckless today.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2ifdm",
+      "title": "Invisible compliance layer",
+      "desc": "Plug the firm's rules into client software so contracts, filings and checks happen in the background with no meetings at all.",
+      "scores": {
+        "order": {
+          "s": -1,
+          "r": "Rules run without exception"
+        },
+        "function": {
+          "s": -1,
+          "r": "No feeling involved at all"
+        },
+        "predictable": {
+          "s": -0.4,
+          "r": "Expected direction for automation"
+        },
+        "mainstream": {
+          "s": -0.5,
+          "r": "Useful to most companies"
+        },
+        "dm0vu01": {
+          "s": 0.9,
+          "r": "Continuous automated output"
+        },
+        "dm0vu22": {
+          "s": -1,
+          "r": "Nothing visible to decorate"
+        },
+        "dm0vu63": {
+          "s": -0.8,
+          "r": "Instant, unattended, mechanical"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "Works unseen and unsigned"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Embedded compliance tools are emerging already.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2iifn",
+      "title": "One document a year",
+      "desc": "Take only twelve clients and spend a full month each on one perfect, career-defining agreement, priced like a commissioned artwork.",
+      "scores": {
+        "order": {
+          "s": -0.3,
+          "r": "Strict limits, calm pace"
+        },
+        "function": {
+          "s": 0.5,
+          "r": "Sells prestige and pride"
+        },
+        "predictable": {
+          "s": 0.8,
+          "r": "Scarcity is rare in this trade"
+        },
+        "mainstream": {
+          "s": 1,
+          "r": "Twelve clients only"
+        },
+        "dm0vu01": {
+          "s": -1,
+          "r": "Pure single-piece craft"
+        },
+        "dm0vu22": {
+          "s": 0.6,
+          "r": "Lavish care, some flourish"
+        },
+        "dm0vu63": {
+          "s": 1,
+          "r": "A tasting menu of one dish"
+        },
+        "dm0vu84": {
+          "s": 0.7,
+          "r": "Delivery is an occasion"
+        }
+      },
+      "t1750": 7,
+      "t1750why": "Growing by serving twelve clients sounds backwards.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im2il9o",
+      "title": "Clients own the firm",
+      "desc": "Convert to a cooperative where clients hold shares, vote on what the firm builds and split the savings AI creates.",
+      "scores": {
+        "order": {
+          "s": 0.5,
+          "r": "Votes make direction less controlled"
+        },
+        "function": {
+          "s": 0.4,
+          "r": "Belonging alongside savings"
+        },
+        "predictable": {
+          "s": 0.7,
+          "r": "Rare ownership model for firms"
+        },
+        "mainstream": {
+          "s": 0.3,
+          "r": "Could suit many, tried by few"
+        },
+        "dm0vu01": {
+          "s": 0.1,
+          "r": "Shared system, member voices"
+        },
+        "dm0vu22": {
+          "s": -0.4,
+          "r": "Plain structure, no decoration"
+        },
+        "dm0vu63": {
+          "s": -0.1,
+          "r": "Neither speed nor craft led"
+        },
+        "dm0vu84": {
+          "s": 0.4,
+          "r": "Membership and votes add ritual"
+        }
+      },
+      "t1750": 5,
+      "t1750why": "Partnership rules make client ownership hard to imagine today.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im38vhp",
+      "title": "Train every junior as adviser",
+      "desc": "Move juniors off drafting and into client meetings from their first year, so the firm sells more judgement per head.",
+      "scores": {
+        "order": {
+          "s": -0.4,
+          "r": "Structured training plan"
+        },
+        "function": {
+          "s": -0.2,
+          "r": "Practical with some human contact"
+        },
+        "predictable": {
+          "s": -0.7,
+          "r": "Most firms already discuss this"
+        },
+        "mainstream": {
+          "s": -0.8,
+          "r": "Fits any firm"
+        },
+        "dm0vu01": {
+          "s": -0.5,
+          "r": "Skill passed on by people"
+        },
+        "dm0vu22": {
+          "s": -0.5,
+          "r": "Simple staffing change"
+        },
+        "dm0vu63": {
+          "s": 0.3,
+          "r": "Leans to craft over speed"
+        },
+        "dm0vu84": {
+          "s": 0.1,
+          "r": "Meetings matter slightly more"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Already happening in many firms.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im38yfq",
+      "title": "Thousand small clients",
+      "desc": "Use cheap AI drafting to serve small businesses that could never afford the firm before, at very high volume.",
+      "scores": {
+        "order": {
+          "s": -0.6,
+          "r": "Standard process at scale"
+        },
+        "function": {
+          "s": -0.8,
+          "r": "Pure utility and price"
+        },
+        "predictable": {
+          "s": -0.6,
+          "r": "Obvious volume play"
+        },
+        "mainstream": {
+          "s": -0.9,
+          "r": "Mass market by design"
+        },
+        "dm0vu01": {
+          "s": 0.9,
+          "r": "Built as a production line"
+        },
+        "dm0vu22": {
+          "s": -0.8,
+          "r": "Stripped back service"
+        },
+        "dm0vu63": {
+          "s": -0.7,
+          "r": "Speed and throughput first"
+        },
+        "dm0vu84": {
+          "s": -0.7,
+          "r": "Little human contact"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Online legal services already do a version of this.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im392fr",
+      "title": "Ten minute turnaround guarantee",
+      "desc": "Promise any standard document reviewed and returned within ten minutes, timed publicly, with a refund if the clock is missed.",
+      "scores": {
+        "order": {
+          "s": -0.8,
+          "r": "Run tightly to the clock"
+        },
+        "function": {
+          "s": -0.9,
+          "r": "Speed is the whole offer"
+        },
+        "predictable": {
+          "s": 0.1,
+          "r": "Bold promise, familiar idea"
+        },
+        "mainstream": {
+          "s": -0.4,
+          "r": "Most clients want speed"
+        },
+        "dm0vu01": {
+          "s": 0.8,
+          "r": "Needs a drilled process"
+        },
+        "dm0vu22": {
+          "s": -0.7,
+          "r": "No decoration at all"
+        },
+        "dm0vu63": {
+          "s": -1,
+          "r": "Pit stop in spirit"
+        },
+        "dm0vu84": {
+          "s": -0.5,
+          "r": "Fast and mostly unseen"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Ambitious but believable with current tools.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im396fs",
+      "title": "Lifelong family counsel",
+      "desc": "One named adviser stays with a family or founder for decades, handling every matter and knowing their whole history.",
+      "scores": {
+        "order": {
+          "s": -0.3,
+          "r": "Steady long relationship"
+        },
+        "function": {
+          "s": 0.7,
+          "r": "Built on trust and loyalty"
+        },
+        "predictable": {
+          "s": -0.2,
+          "r": "Old model brought back"
+        },
+        "mainstream": {
+          "s": 0.3,
+          "r": "Suits wealthier clients"
+        },
+        "dm0vu01": {
+          "s": -0.9,
+          "r": "One master, one client"
+        },
+        "dm0vu22": {
+          "s": 0.1,
+          "r": "Neither plain nor ornate"
+        },
+        "dm0vu63": {
+          "s": 0.7,
+          "r": "Slow personal care"
+        },
+        "dm0vu84": {
+          "s": 0.5,
+          "r": "Presence at key moments"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Family solicitors and private banks have long done this.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39c2t",
+      "title": "Publish every template free",
+      "desc": "Give away all the firm's documents and prompts openly, then charge only for the hard cases that people bring back.",
+      "scores": {
+        "order": {
+          "s": 0.4,
+          "r": "Lets go of control"
+        },
+        "function": {
+          "s": -0.6,
+          "r": "Useful tools for all"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Firms rarely give work away"
+        },
+        "mainstream": {
+          "s": -0.3,
+          "r": "Open to everyone"
+        },
+        "dm0vu01": {
+          "s": 0.5,
+          "r": "Standard parts for all"
+        },
+        "dm0vu22": {
+          "s": -0.9,
+          "r": "Bare and open"
+        },
+        "dm0vu63": {
+          "s": -0.4,
+          "r": "Efficient self service"
+        },
+        "dm0vu84": {
+          "s": -0.8,
+          "r": "No ceremony, just downloads"
+        }
+      },
+      "t1750": 4,
+      "t1750why": "Common in software, still rare and worrying for firms.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39fdu",
+      "title": "Advice as theatre",
+      "desc": "Stage each major client decision as a performed hearing with advocates, a jury of peers and a verdict the board watches live.",
+      "scores": {
+        "order": {
+          "s": 0.5,
+          "r": "Live outcome is uncertain"
+        },
+        "function": {
+          "s": 0.7,
+          "r": "Drama makes it felt"
+        },
+        "predictable": {
+          "s": 0.9,
+          "r": "Nobody expects a staged trial"
+        },
+        "mainstream": {
+          "s": 0.8,
+          "r": "Few boards would buy it"
+        },
+        "dm0vu01": {
+          "s": -0.6,
+          "r": "Handmade each time"
+        },
+        "dm0vu22": {
+          "s": 1,
+          "r": "Full of pomp and staging"
+        },
+        "dm0vu63": {
+          "s": 0.8,
+          "r": "An elaborate served experience"
+        },
+        "dm0vu84": {
+          "s": 1,
+          "r": "Ritual is the product"
+        }
+      },
+      "t1750": 7,
+      "t1750why": "Sounds like a stunt to most serious clients.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39ixv",
+      "title": "Bet fees on outcomes",
+      "desc": "Take no fee for the work and instead take a share of the result, such as the deal value or the tax saved.",
+      "scores": {
+        "order": {
+          "s": 0.6,
+          "r": "Income becomes a gamble"
+        },
+        "function": {
+          "s": -0.5,
+          "r": "About money and results"
+        },
+        "predictable": {
+          "s": 0.2,
+          "r": "Known model, taken further"
+        },
+        "mainstream": {
+          "s": 0.1,
+          "r": "Works for some matters only"
+        },
+        "dm0vu01": {
+          "s": -0.1,
+          "r": "Neither craft nor line"
+        },
+        "dm0vu22": {
+          "s": -0.4,
+          "r": "Simple deal terms"
+        },
+        "dm0vu63": {
+          "s": -0.3,
+          "r": "Results over refinement"
+        },
+        "dm0vu84": {
+          "s": 0,
+          "r": "No strong lean"
+        }
+      },
+      "t1750": 3,
+      "t1750why": "Contingency fees exist, but not across all work.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39o8w",
+      "title": "Firm for one village",
+      "desc": "Serve only one small town, knowing every business, family and dispute in it, and become its trusted memory.",
+      "scores": {
+        "order": {
+          "s": -0.2,
+          "r": "Stable and rooted"
+        },
+        "function": {
+          "s": 0.6,
+          "r": "Belonging is the draw"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Odd answer to a growth question"
+        },
+        "mainstream": {
+          "s": 1,
+          "r": "As narrow as it gets"
+        },
+        "dm0vu01": {
+          "s": -0.8,
+          "r": "Local hand craft"
+        },
+        "dm0vu22": {
+          "s": -0.3,
+          "r": "Homely and plain"
+        },
+        "dm0vu63": {
+          "s": 0.6,
+          "r": "Slow local care"
+        },
+        "dm0vu84": {
+          "s": 0.4,
+          "r": "Face to face matters"
+        }
+      },
+      "t1750": 4,
+      "t1750why": "Old fashioned, but strange as a growth plan.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39tex",
+      "title": "Swarm of client agents",
+      "desc": "Give every client an AI agent that negotiates with other clients' agents all day, with the firm only setting the rules.",
+      "scores": {
+        "order": {
+          "s": 0.8,
+          "r": "Thousands of deals nobody directs"
+        },
+        "function": {
+          "s": -0.9,
+          "r": "Pure machine utility"
+        },
+        "predictable": {
+          "s": 0.8,
+          "r": "Few firms picture this"
+        },
+        "mainstream": {
+          "s": 0.2,
+          "r": "Early adopters only for now"
+        },
+        "dm0vu01": {
+          "s": 1,
+          "r": "Fully automated output"
+        },
+        "dm0vu22": {
+          "s": -0.6,
+          "r": "No visible ornament"
+        },
+        "dm0vu63": {
+          "s": -0.8,
+          "r": "Constant fast transactions"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "No human in sight"
+        }
+      },
+      "t1750": 8,
+      "t1750why": "Machines striking binding deals unsupervised still alarms most people.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im39xty",
+      "title": "Handwritten letter of advice",
+      "desc": "Deliver every conclusion as a single handwritten letter from a partner, sealed and carried to the client by hand.",
+      "scores": {
+        "order": {
+          "s": -0.5,
+          "r": "Fixed, careful ritual"
+        },
+        "function": {
+          "s": 0.8,
+          "r": "Felt more than used"
+        },
+        "predictable": {
+          "s": 0.7,
+          "r": "Runs against the AI tide"
+        },
+        "mainstream": {
+          "s": 0.7,
+          "r": "Appeals to a few"
+        },
+        "dm0vu01": {
+          "s": -1,
+          "r": "Made by one hand"
+        },
+        "dm0vu22": {
+          "s": 0.8,
+          "r": "Wax, ink and flourish"
+        },
+        "dm0vu63": {
+          "s": 0.9,
+          "r": "Slow and plated with care"
+        },
+        "dm0vu84": {
+          "s": 0.9,
+          "r": "Delivery is a ceremony"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Charming but looks wilfully backward to most clients.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im41cfz",
+      "title": "Sell the audit trail",
+      "desc": "Charge clients for a checked record showing who reviewed each AI draft, what changed and why.",
+      "scores": {
+        "order": {
+          "s": -0.9,
+          "r": "Every step logged and checked"
+        },
+        "function": {
+          "s": -0.8,
+          "r": "Pure proof, no feeling"
+        },
+        "predictable": {
+          "s": -0.5,
+          "r": "A natural next step for firms"
+        },
+        "mainstream": {
+          "s": -0.4,
+          "r": "Most regulated clients would want it"
+        },
+        "dm0vu01": {
+          "s": 0.6,
+          "r": "Repeatable process on every file"
+        },
+        "dm0vu22": {
+          "s": -0.8,
+          "r": "Bare record, nothing decorative"
+        },
+        "dm0vu63": {
+          "s": -0.6,
+          "r": "Speed and checks, not craft"
+        },
+        "dm0vu84": {
+          "s": -0.5,
+          "r": "Runs quietly behind the work"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Review logs are already common in regulated work.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im41ic10",
+      "title": "Fewer people, bigger mandates",
+      "desc": "Shrink drafting teams and use the freed partner time to chase larger, more complex engagements.",
+      "scores": {
+        "order": {
+          "s": -0.6,
+          "r": "Planned restructuring of the firm"
+        },
+        "function": {
+          "s": -0.7,
+          "r": "Driven by margin and capacity"
+        },
+        "predictable": {
+          "s": -0.9,
+          "r": "What most firms will try first"
+        },
+        "mainstream": {
+          "s": -0.8,
+          "r": "Standard strategy for large firms"
+        },
+        "dm0vu01": {
+          "s": 0.1,
+          "r": "Leaner but still partner led"
+        },
+        "dm0vu22": {
+          "s": -0.6,
+          "r": "Simple and unadorned plan"
+        },
+        "dm0vu63": {
+          "s": -0.2,
+          "r": "Mix of efficiency and judgement"
+        },
+        "dm0vu84": {
+          "s": -0.2,
+          "r": "Little visible change for clients"
+        }
+      },
+      "t1750": 0,
+      "t1750why": "Firms are already doing this.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im41nd11",
+      "title": "White label drafting plant",
+      "desc": "Run a high volume AI drafting operation that smaller firms rent under their own names.",
+      "scores": {
+        "order": {
+          "s": -0.7,
+          "r": "Standard inputs, standard outputs"
+        },
+        "function": {
+          "s": -0.9,
+          "r": "Throughput is the whole product"
+        },
+        "predictable": {
+          "s": -0.2,
+          "r": "Known model from other industries"
+        },
+        "mainstream": {
+          "s": -0.3,
+          "r": "Broad market of small firms"
+        },
+        "dm0vu01": {
+          "s": 1,
+          "r": "Literally a production line"
+        },
+        "dm0vu22": {
+          "s": -0.9,
+          "r": "No brand, no ornament"
+        },
+        "dm0vu63": {
+          "s": -0.9,
+          "r": "Fast, timed, interchangeable work"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "Nobody sees the maker"
+        }
+      },
+      "t1750": 2,
+      "t1750why": "Outsourced back offices exist, though rarely at this scale.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im41sp12",
+      "title": "The slow firm",
+      "desc": "Promise that every piece of advice takes at least thirty days of human thought before delivery.",
+      "scores": {
+        "order": {
+          "s": -0.3,
+          "r": "Fixed rule, but against the grain"
+        },
+        "function": {
+          "s": 0.4,
+          "r": "Sells reassurance and care"
+        },
+        "predictable": {
+          "s": 0.8,
+          "r": "Slowness as a selling point is odd"
+        },
+        "mainstream": {
+          "s": 0.8,
+          "r": "Only a few clients will wait"
+        },
+        "dm0vu01": {
+          "s": -0.9,
+          "r": "Patient craft by named people"
+        },
+        "dm0vu22": {
+          "s": 0.3,
+          "r": "Some deliberate ritual, plain output"
+        },
+        "dm0vu63": {
+          "s": 0.9,
+          "r": "Slow cooking over quick stops"
+        },
+        "dm0vu84": {
+          "s": 0.5,
+          "r": "Delivery becomes a small occasion"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Paying more for deliberate delay sounds perverse to most buyers.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im41x913",
+      "title": "Jury of strangers",
+      "desc": "Test each piece of advice on a paid panel of random members of the public before the client sees it.",
+      "scores": {
+        "order": {
+          "s": 0.8,
+          "r": "Random people, unknown reactions"
+        },
+        "function": {
+          "s": 0.2,
+          "r": "Useful check with human feeling"
+        },
+        "predictable": {
+          "s": 0.9,
+          "r": "Few would expect lay review"
+        },
+        "mainstream": {
+          "s": 0.6,
+          "r": "Suits disputes and public facing work"
+        },
+        "dm0vu01": {
+          "s": -0.2,
+          "r": "Neither craft nor production line"
+        },
+        "dm0vu22": {
+          "s": 0.4,
+          "r": "Adds an extra layer of show"
+        },
+        "dm0vu63": {
+          "s": 0.3,
+          "r": "Tasting panel more than pit crew"
+        },
+        "dm0vu84": {
+          "s": 0.6,
+          "r": "A visible verdict moment"
+        }
+      },
+      "t1750": 7,
+      "t1750why": "Confidentiality rules make outsiders reviewing advice sound reckless.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im421a14",
+      "title": "Annual client pilgrimage",
+      "desc": "Take every client away once a year for a walking retreat where all major decisions are talked through.",
+      "scores": {
+        "order": {
+          "s": 0.3,
+          "r": "Loose talk on an open road"
+        },
+        "function": {
+          "s": 0.9,
+          "r": "Built on bond and trust"
+        },
+        "predictable": {
+          "s": 0.7,
+          "r": "Unusual for an advisory firm"
+        },
+        "mainstream": {
+          "s": 0.7,
+          "r": "Only for close, wealthy clients"
+        },
+        "dm0vu01": {
+          "s": -0.7,
+          "r": "Personal, small group, handmade"
+        },
+        "dm0vu22": {
+          "s": 0.7,
+          "r": "Rich in ritual and setting"
+        },
+        "dm0vu63": {
+          "s": 0.8,
+          "r": "Long, savoured experience"
+        },
+        "dm0vu84": {
+          "s": 0.9,
+          "r": "The gathering is the product"
+        }
+      },
+      "t1750": 5,
+      "t1750why": "Retreats exist but not as the main service.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im427v15",
+      "title": "Drafts auctioned by the minute",
+      "desc": "Let clients bid in a live market for instant partner review slots on AI drafts, with prices moving all day.",
+      "scores": {
+        "order": {
+          "s": 0.7,
+          "r": "Prices and queues shift constantly"
+        },
+        "function": {
+          "s": -0.6,
+          "r": "A pricing mechanism above all"
+        },
+        "predictable": {
+          "s": 0.7,
+          "r": "Surge pricing for advice is new"
+        },
+        "mainstream": {
+          "s": 0.2,
+          "r": "Could suit many busy clients"
+        },
+        "dm0vu01": {
+          "s": 0.7,
+          "r": "Review slots treated as units"
+        },
+        "dm0vu22": {
+          "s": -0.3,
+          "r": "Plain market, a little drama"
+        },
+        "dm0vu63": {
+          "s": -0.9,
+          "r": "Seconds matter, like a pit stop"
+        },
+        "dm0vu84": {
+          "s": -0.4,
+          "r": "Mostly a screen, no ritual"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Bidding for a partner's attention feels undignified to the profession.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im42c716",
+      "title": "The oath book",
+      "desc": "Each adviser swears a public, recorded oath on every major opinion, kept in a bound book clients can visit.",
+      "scores": {
+        "order": {
+          "s": -0.5,
+          "r": "Strict ritual with fixed form"
+        },
+        "function": {
+          "s": 0.8,
+          "r": "Sells honour and weight"
+        },
+        "predictable": {
+          "s": 0.8,
+          "r": "Oaths feel out of their time"
+        },
+        "mainstream": {
+          "s": 0.8,
+          "r": "Appeals to a narrow taste"
+        },
+        "dm0vu01": {
+          "s": -0.8,
+          "r": "Personal pledge by a named master"
+        },
+        "dm0vu22": {
+          "s": 1,
+          "r": "Ornate, ceremonial and heavy"
+        },
+        "dm0vu63": {
+          "s": 0.6,
+          "r": "Presentation matters more than speed"
+        },
+        "dm0vu84": {
+          "s": 1,
+          "r": "Pure ceremony of commitment"
+        }
+      },
+      "t1750": 7,
+      "t1750why": "Sworn oaths over routine opinions would seem theatrical and odd.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im42ih17",
+      "title": "Advice only for beekeepers",
+      "desc": "Serve one tiny trade worldwide, with AI drafting in every language and advisers who keep bees themselves.",
+      "scores": {
+        "order": {
+          "s": -0.2,
+          "r": "Focused, but a scattered client base"
+        },
+        "function": {
+          "s": -0.1,
+          "r": "Practical help plus shared passion"
+        },
+        "predictable": {
+          "s": 0.6,
+          "r": "The chosen trade is unexpected"
+        },
+        "mainstream": {
+          "s": 1,
+          "r": "About as narrow as it gets"
+        },
+        "dm0vu01": {
+          "s": -0.5,
+          "r": "Advisers are practitioners of the craft"
+        },
+        "dm0vu22": {
+          "s": -0.1,
+          "r": "Mostly plain, some charm"
+        },
+        "dm0vu63": {
+          "s": 0.4,
+          "r": "Specialist care over raw speed"
+        },
+        "dm0vu84": {
+          "s": 0.1,
+          "r": "Some community feel, little ritual"
+        }
+      },
+      "t1750": 4,
+      "t1750why": "Micro niches exist but a global one this small is rare.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im42lz18",
+      "title": "No office, no names",
+      "desc": "Offer anonymous machine checked advice through a plain text box, with no people, brand or meetings shown at all.",
+      "scores": {
+        "order": {
+          "s": -0.4,
+          "r": "Uniform and tightly controlled"
+        },
+        "function": {
+          "s": -1,
+          "r": "Nothing but the answer"
+        },
+        "predictable": {
+          "s": 0.5,
+          "r": "Faceless professional advice is unusual"
+        },
+        "mainstream": {
+          "s": -0.6,
+          "r": "Aimed at the mass market"
+        },
+        "dm0vu01": {
+          "s": 0.9,
+          "r": "No craftsperson in sight"
+        },
+        "dm0vu22": {
+          "s": -1,
+          "r": "Stripped to a single box"
+        },
+        "dm0vu63": {
+          "s": -0.8,
+          "r": "Instant and mechanical"
+        },
+        "dm0vu84": {
+          "s": -1,
+          "r": "No human moment at all"
+        }
+      },
+      "t1750": 6,
+      "t1750why": "Trusting advice from a firm with no named adviser still alarms people.",
+      "obvious": false,
+      "origin": "seed",
+      "parents": [],
+      "star": false,
+      "born": 0
+    },
+    {
+      "id": "im4qsu1b",
+      "title": "Sell the checking, not drafting",
+      "desc": "Let clients draft with their own AI, then charge a fixed fee to review, correct and stand behind the result with the firm's insurance.",
+      "scores": {
+        "order": {
+          "s": -0.3,
+          "r": "Fixed process, but client drafts vary widely"
+        },
+        "function": {
+          "s": -0.8,
+          "r": "Pure risk cover and accuracy"
+        },
+        "predictable": {
+          "s": 0,
+          "r": "Logical step, yet few firms offer it"
+        },
+        "mainstream": {
+          "s": -0.2,
+          "r": "Most clients with AI tools could use it"
+        },
+        "dm0vu01": {
+          "s": 0.2,
+          "r": "Repeatable review with some expert judgement"
+        },
+        "dm0vu22": {
+          "s": -0.6,
+          "r": "Plain fixed fee service, no frills"
+        },
+        "dm0vu63": {
+          "s": -0.3,
+          "r": "Quick turnaround matters more than polish"
+        },
+        "dm0vu84": {
+          "s": 0.3,
+          "r": "The firm's sign off is the product"
+        }
+      },
+      "t1750": 2,
+      "t1750why": "Review services exist already, only the client drafting is new.",
+      "obvious": false,
+      "origin": "gap",
+      "parents": [],
+      "star": false,
+      "born": 2,
+      "gapKey": "function:0|order:1|predictable:1@3"
+    },
+    {
+      "id": "im4qtp1c",
+      "title": "Juniors placed inside clients",
+      "desc": "Since drafting no longer trains juniors, second them into client teams for a fee to learn the business and spot new work early.",
+      "scores": {
+        "order": {
+          "s": 0.2,
+          "r": "Planned scheme, but placements unfold loosely"
+        },
+        "function": {
+          "s": -0.5,
+          "r": "Solves training and sales, some relationship warmth"
+        },
+        "predictable": {
+          "s": 0.1,
+          "r": "Secondments are known, the scale is new"
+        },
+        "mainstream": {
+          "s": -0.1,
+          "r": "Works for most firms and clients"
+        },
+        "dm0vu01": {
+          "s": -0.6,
+          "r": "Apprentice learning beside experienced people"
+        },
+        "dm0vu22": {
+          "s": -0.3,
+          "r": "Simple arrangement with little decoration"
+        },
+        "dm0vu63": {
+          "s": 0.2,
+          "r": "Slow craft learning over rapid turnaround"
+        },
+        "dm0vu84": {
+          "s": 0.1,
+          "r": "Human presence, though without much ritual"
+        }
+      },
+      "t1750": 2,
+      "t1750why": "Secondments are common, making them the main training route is unusual.",
+      "obvious": false,
+      "origin": "gap",
+      "parents": [],
+      "star": false,
+      "born": 2,
+      "gapKey": "function:0|order:1|predictable:1@3"
+    },
+    {
+      "id": "im4qua1d",
+      "title": "Weekly client problem sweep",
+      "desc": "Use the hours saved on drafting to scan each client's contracts, filings and news weekly, then send a short list of issues worth fixing.",
+      "scores": {
+        "order": {
+          "s": 0,
+          "r": "Regular rhythm, but findings are unpredictable"
+        },
+        "function": {
+          "s": -0.7,
+          "r": "Practical alerts that create paid work"
+        },
+        "predictable": {
+          "s": -0.2,
+          "r": "Sensible extension of existing client care"
+        },
+        "mainstream": {
+          "s": -0.3,
+          "r": "Suits nearly any firm with retained clients"
+        },
+        "dm0vu01": {
+          "s": 0.4,
+          "r": "Routine scanning run at volume"
+        },
+        "dm0vu22": {
+          "s": -0.5,
+          "r": "A short plain list each week"
+        },
+        "dm0vu63": {
+          "s": -0.4,
+          "r": "Speed and regular timing matter most"
+        },
+        "dm0vu84": {
+          "s": -0.4,
+          "r": "Mostly quiet background monitoring"
+        }
+      },
+      "t1750": 1,
+      "t1750why": "Monitoring services already exist in several professional fields.",
+      "obvious": false,
+      "origin": "gap",
+      "parents": [],
+      "star": false,
+      "born": 2,
+      "gapKey": "function:0|order:1|predictable:1@3"
+    }
+  ],
+  "gaps": {
+    "function:2|order:2|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:2|order:2|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        2,
+        2,
+        0
+      ],
+      "n": 3,
+      "verdict": "impossible",
+      "why": "A firm that is both chaotic and emotional will always surprise people. Predictable chaos stops being chaos, so ideas here cancel themselves out."
+    },
+    "function:1|order:2|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:1|order:2|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        2,
+        1,
+        0
+      ],
+      "n": 3,
+      "verdict": "impossible",
+      "why": "Disorder that everyone can foresee is just routine with a messy name. Nothing chaotic stays predictable for long in client work."
+    },
+    "function:0|order:2|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:0|order:2|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        2,
+        0,
+        0
+      ],
+      "n": 3,
+      "verdict": "unfashionable",
+      "why": "Loose, unmanaged freelance pools doing routine work could function, but firms sell reliability and clients distrust anything that looks disorganised."
+    },
+    "function:0|order:1|predictable:1@3": {
+      "ideaIds": [
+        "im4qsu1b",
+        "im4qtp1c",
+        "im4qua1d"
+      ],
+      "key": "function:0|order:1|predictable:1@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        1,
+        0,
+        1
+      ],
+      "n": 3,
+      "verdict": "unfashionable",
+      "why": "Middling, practical moves with a slight twist get little attention. Talk about AI in firms favours either safe efficiency plays or bold reinventions, so the sensible middle stays empty."
+    },
+    "function:2|order:2|predictable:1@3": {
+      "ideaIds": [],
+      "key": "function:2|order:2|predictable:1@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        2,
+        2,
+        1
+      ],
+      "n": 3,
+      "verdict": "unexplored",
+      "why": "Loose, feeling-led ideas of middling novelty, such as open house client days or drop-in clinics, could work. Nobody has yet looked here."
+    },
+    "function:0|order:1|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:0|order:1|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        1,
+        0,
+        0
+      ],
+      "n": 3,
+      "verdict": "unexplored",
+      "why": "This is the home of ordinary efficiency moves like cross-selling and price cuts. Too obvious to list, so the map skipped them."
+    },
+    "function:2|order:0|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:2|order:0|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        0,
+        2,
+        0
+      ],
+      "n": 3,
+      "verdict": "unfashionable",
+      "why": "Steady, ritual client care such as birthday calls and annual lunches works well, but it seems old fashioned next to talk of AI."
+    },
+    "function:2|order:1|predictable:0@3": {
+      "ideaIds": [],
+      "key": "function:2|order:1|predictable:0@3",
+      "dimIds": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "bins": [
+        1,
+        2,
+        0
+      ],
+      "n": 3,
+      "verdict": "unfashionable",
+      "why": "Familiar relationship building, like client dinners and friendly check-ins, still wins work. It is seen as dull and hard to measure, so it gets ignored."
+    }
+  },
+  "stretches": [
+    {
+      "id": "xm4s4j1f",
+      "ideaId": "im4qsu1b",
+      "dimId": "order",
+      "stops": [
+        {
+          "title": "Locked template sign-off",
+          "desc": "Clients may only draft inside the firm's approved AI templates, and a fixed checklist review then stamps and insures each document.",
+          "scores": {
+            "order": {
+              "s": -1,
+              "r": "Every step fixed by rule"
+            },
+            "function": {
+              "s": -0.8,
+              "r": "Pure compliance, little feeling"
+            },
+            "predictable": {
+              "s": -0.6,
+              "r": "Resembles existing document automation"
+            },
+            "mainstream": {
+              "s": -0.5,
+              "r": "Suits high volume standard work"
+            },
+            "dm0vu01": {
+              "s": 0.8,
+              "r": "Identical documents through identical checks"
+            },
+            "dm0vu22": {
+              "s": -0.8,
+              "r": "Stripped to checklist and stamp"
+            },
+            "dm0vu63": {
+              "s": -0.6,
+              "r": "Fast, drilled, repeatable handling"
+            },
+            "dm0vu84": {
+              "s": -0.2,
+              "r": "Stamp matters, but mostly automatic"
+            }
+          },
+          "t1750": 1,
+          "t1750why": "Document automation with sign-off already exists.",
+          "obvious": false,
+          "at": -1,
+          "holds": false,
+          "note": "Clients no longer draft with their own AI, so it becomes the firm's drafting product."
+        },
+        {
+          "title": "Tiered review menu",
+          "desc": "Clients draft with any AI, submit through a set intake form, and pay a fixed fee by document type for insured review.",
+          "scores": {
+            "order": {
+              "s": -0.5,
+              "r": "Set intake, set price bands"
+            },
+            "function": {
+              "s": -0.7,
+              "r": "Practical assurance, plainly sold"
+            },
+            "predictable": {
+              "s": -0.4,
+              "r": "Natural next step for firms"
+            },
+            "mainstream": {
+              "s": -0.4,
+              "r": "Fits most common document types"
+            },
+            "dm0vu01": {
+              "s": 0.4,
+              "r": "Standard process, some human judgement"
+            },
+            "dm0vu22": {
+              "s": -0.6,
+              "r": "Simple menu, no extras"
+            },
+            "dm0vu63": {
+              "s": -0.4,
+              "r": "Quick turnaround over fine craft"
+            },
+            "dm0vu84": {
+              "s": 0,
+              "r": "Quiet review with formal sign-off"
+            }
+          },
+          "t1750": 2,
+          "t1750why": "Fixed fee review is familiar; the AI source is new.",
+          "obvious": false,
+          "at": -0.5,
+          "holds": true,
+          "note": ""
+        },
+        {
+          "title": "Open door review",
+          "desc": "Clients send any AI draft in any state, and the firm quotes a fixed fee on sight to fix and insure it.",
+          "scores": {
+            "order": {
+              "s": 0,
+              "r": "Loose intake, firm sign-off"
+            },
+            "function": {
+              "s": -0.6,
+              "r": "Mostly about safe documents"
+            },
+            "predictable": {
+              "s": -0.1,
+              "r": "Quoting on sight is less usual"
+            },
+            "mainstream": {
+              "s": -0.2,
+              "r": "Broad appeal, uneven work"
+            },
+            "dm0vu01": {
+              "s": 0,
+              "r": "Judgement per job, shared method"
+            },
+            "dm0vu22": {
+              "s": -0.4,
+              "r": "Plain offer, few trimmings"
+            },
+            "dm0vu63": {
+              "s": 0,
+              "r": "Speed and care evenly mixed"
+            },
+            "dm0vu84": {
+              "s": 0.1,
+              "r": "Sign-off visible but modest"
+            }
+          },
+          "t1750": 3,
+          "t1750why": "Insuring unknown machine drafts on sight feels slightly bold.",
+          "obvious": false,
+          "at": 0,
+          "holds": true,
+          "note": ""
+        },
+        {
+          "title": "Live draft patrol",
+          "desc": "Reviewers sit inside the client's AI tools on a flat subscription, correcting and vouching for drafts as they change during live deals.",
+          "scores": {
+            "order": {
+              "s": 0.5,
+              "r": "No fixed scope or final version"
+            },
+            "function": {
+              "s": -0.4,
+              "r": "Useful, with some reassurance"
+            },
+            "predictable": {
+              "s": 0.4,
+              "r": "Rolling assurance is unusual"
+            },
+            "mainstream": {
+              "s": 0.2,
+              "r": "Suits fast moving deal teams"
+            },
+            "dm0vu01": {
+              "s": -0.3,
+              "r": "Embedded experts using personal judgement"
+            },
+            "dm0vu22": {
+              "s": -0.1,
+              "r": "Lean, though messier in practice"
+            },
+            "dm0vu63": {
+              "s": -0.5,
+              "r": "Rapid fixes under time pressure"
+            },
+            "dm0vu84": {
+              "s": -0.3,
+              "r": "Vouching happens quietly in the flow"
+            }
+          },
+          "t1750": 5,
+          "t1750why": "Insurers covering ever changing drafts sounds hard to arrange.",
+          "obvious": false,
+          "at": 0.5,
+          "holds": true,
+          "note": "Fixed fee becomes a subscription and cover gets strained, but checking is still the product."
+        },
+        {
+          "title": "Vouch for everything",
+          "desc": "The firm stands behind whatever any client's AI produces, in any form, at any time, with no intake, scope or set review.",
+          "scores": {
+            "order": {
+              "s": 1,
+              "r": "No rules, scope or process"
+            },
+            "function": {
+              "s": -0.2,
+              "r": "Sells comfort more than checking"
+            },
+            "predictable": {
+              "s": 0.8,
+              "r": "Few would expect blanket vouching"
+            },
+            "mainstream": {
+              "s": 0.6,
+              "r": "Only reckless buyers would trust it"
+            },
+            "dm0vu01": {
+              "s": -0.2,
+              "r": "Ad hoc judgement, no line"
+            },
+            "dm0vu22": {
+              "s": 0.2,
+              "r": "Sprawling promise, loosely defined"
+            },
+            "dm0vu63": {
+              "s": -0.3,
+              "r": "Scramble, not careful preparation"
+            },
+            "dm0vu84": {
+              "s": -0.5,
+              "r": "Vouching without any marked moment"
+            }
+          },
+          "t1750": 8,
+          "t1750why": "No insurer would cover unbounded, unreviewed machine output.",
+          "obvious": false,
+          "at": 1,
+          "holds": false,
+          "note": "Without scope or a set review, nothing can be priced, insured or honestly stood behind."
+        }
+      ],
+      "summary": "It breaks at both ends: full order takes drafting back from the client, full chaos makes the guarantee uninsurable. The idea needs free drafting but a bounded sign-off.",
+      "userBreakAt": null
+    }
+  ],
+  "trail": [
+    {
+      "id": "tm42o419",
+      "at": "2026-11-19T13:55:08.548Z",
+      "type": "seed",
+      "text": "Mapped 40 ideas along 8 dimensions.",
+      "axes": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "focusId": null
+    },
+    {
+      "id": "tm4cx51a",
+      "at": "2026-11-19T13:55:21.833Z",
+      "type": "judge",
+      "text": "Judged 8 empty regions.",
+      "axes": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "focusId": null
+    },
+    {
+      "id": "tm4que1e",
+      "at": "2026-11-19T13:55:39.878Z",
+      "type": "fill",
+      "text": "Filled the unfashionable gap (between Order and Chaos · Function · between Predictable and Surprising) with 3 ideas.",
+      "axes": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "focusId": "im4qsu1b"
+    },
+    {
+      "id": "tm5afh1g",
+      "at": "2026-11-19T13:56:05.261Z",
+      "type": "stretch",
+      "text": "Stretched Sell the checking, not drafting along Order ↔ Chaos. It breaks at −1.0 and +1.0.",
+      "axes": [
+        "order",
+        "function",
+        "predictable"
+      ],
+      "focusId": "im4qsu1b"
+    }
+  ],
+  "touched": true
+}

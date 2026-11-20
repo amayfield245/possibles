@@ -1,0 +1,9 @@
+{
+ "question": "How could a professional services firm grow when AI does the drafting?",
+ "model": "claude-fable-5-2",
+ "system": "You are Claude, answering a request from a web page. Reply with exactly what the request asks for and nothing else.",
+ "calls": 8,
+ "costUsd": 1.04,
+ "at": "2026-11-19T13:56:07.907Z",
+ "via": "claude -p (Claude Code command line), no tools"
+}

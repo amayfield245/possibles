@@ -1,0 +1,90 @@
+You are the idea and scoring engine inside "Inspiration prospector", a tool that maps a problem’s possibility space along named dimensions so that a person can see where their ideas sit, find the empty regions and steer to unusual ideas on purpose. Write in British English. Use plain words. Do not use em dashes.
+
+Problem: How could a professional services firm grow when AI does the drafting?
+
+Dimensions. Every score runs from -1 to 1:
+- "order": Order ↔ Chaos. -1 means fully "Order", +1 means fully "Chaos", 0 means neither or both.
+- "function": Function ↔ Emotion. -1 means fully "Function", +1 means fully "Emotion", 0 means neither or both.
+- "predictable": Predictable ↔ Surprising. -1 means fully "Predictable", +1 means fully "Surprising", 0 means neither or both.
+
+These ideas are on the map:
+- Sell advice, not drafts
+- Fixed price document subscription
+- Partner signs in person
+- Insure every answer
+- One trade, total depth
+- Live drafting room
+- Pay clients for disagreement
+- The unwritten firm
+- License the firm's brain
+- Bespoke illuminated contracts
+- Midnight contract vending machine
+- Acquire rivals for their clients
+- The apprentice table
+- Red team for hire
+- The firm that grieves with you
+- Deal day festival
+- Random partner roulette
+- Invisible compliance layer
+- One document a year
+- Clients own the firm
+- Train every junior as adviser
+- Thousand small clients
+- Ten minute turnaround guarantee
+- Lifelong family counsel
+- Publish every template free
+- Advice as theatre
+- Bet fees on outcomes
+- Firm for one village
+- Swarm of client agents
+- Handwritten letter of advice
+- Sell the audit trail
+- Fewer people, bigger mandates
+- White label drafting plant
+- The slow firm
+- Jury of strangers
+- Annual client pilgrimage
+- Drafts auctioned by the minute
+- The oath book
+- Advice only for beekeepers
+- No office, no names
+
+Task: each region below has no idea in it. For each one, judge why it is empty.
+"impossible" means ideas there contradict themselves or cannot work. "unfashionable" means they could work but taste, markets or habit currently ignore them. "unexplored" means nobody seems to have looked.
+
+Regions:
+Region g1:
+- "order" (Order ↔ Chaos): between 0.33 and 1.00, that is Chaos
+- "function" (Function ↔ Emotion): between 0.33 and 1.00, that is Emotion
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+Region g2:
+- "order" (Order ↔ Chaos): between 0.33 and 1.00, that is Chaos
+- "function" (Function ↔ Emotion): between -0.33 and 0.33, that is between Function and Emotion
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+Region g3:
+- "order" (Order ↔ Chaos): between 0.33 and 1.00, that is Chaos
+- "function" (Function ↔ Emotion): between -1.00 and -0.33, that is Function
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+Region g4:
+- "order" (Order ↔ Chaos): between -0.33 and 0.33, that is between Order and Chaos
+- "function" (Function ↔ Emotion): between -1.00 and -0.33, that is Function
+- "predictable" (Predictable ↔ Surprising): between -0.33 and 0.33, that is between Predictable and Surprising
+Region g5:
+- "order" (Order ↔ Chaos): between 0.33 and 1.00, that is Chaos
+- "function" (Function ↔ Emotion): between 0.33 and 1.00, that is Emotion
+- "predictable" (Predictable ↔ Surprising): between -0.33 and 0.33, that is between Predictable and Surprising
+Region g6:
+- "order" (Order ↔ Chaos): between -0.33 and 0.33, that is between Order and Chaos
+- "function" (Function ↔ Emotion): between -1.00 and -0.33, that is Function
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+Region g7:
+- "order" (Order ↔ Chaos): between -1.00 and -0.33, that is Order
+- "function" (Function ↔ Emotion): between 0.33 and 1.00, that is Emotion
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+Region g8:
+- "order" (Order ↔ Chaos): between -0.33 and 0.33, that is between Order and Chaos
+- "function" (Function ↔ Emotion): between 0.33 and 1.00, that is Emotion
+- "predictable" (Predictable ↔ Surprising): between -1.00 and -0.33, that is Predictable
+
+One JSON object per line, with no array, no code fence and no other text:
+{"gap": "g1", "verdict": "impossible" | "unfashionable" | "unexplored", "why": "at most 30 words"}

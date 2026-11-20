@@ -1,0 +1,8 @@
+{"gap": "g1", "verdict": "impossible", "why": "A firm that is both chaotic and emotional will always surprise people. Predictable chaos stops being chaos, so ideas here cancel themselves out."}
+{"gap": "g2", "verdict": "impossible", "why": "Disorder that everyone can foresee is just routine with a messy name. Nothing chaotic stays predictable for long in client work."}
+{"gap": "g3", "verdict": "unfashionable", "why": "Loose, unmanaged freelance pools doing routine work could function, but firms sell reliability and clients distrust anything that looks disorganised."}
+{"gap": "g4", "verdict": "unexplored", "why": "Moderately new, practical ideas with some flexibility, such as mixed human and AI review tiers, are plausible. The map simply jumped to the extremes."}
+{"gap": "g5", "verdict": "unexplored", "why": "Loose, feeling-led ideas of middling novelty, such as open house client days or drop-in clinics, could work. Nobody has yet looked here."}
+{"gap": "g6", "verdict": "unexplored", "why": "This is the home of ordinary efficiency moves like cross-selling and price cuts. Too obvious to list, so the map skipped them."}
+{"gap": "g7", "verdict": "unfashionable", "why": "Steady, ritual client care such as birthday calls and annual lunches works well, but it seems old fashioned next to talk of AI."}
+{"gap": "g8", "verdict": "unfashionable", "why": "Familiar relationship building, like client dinners and friendly check-ins, still wins work. It is seen as dull and hard to measure, so it gets ignored."}

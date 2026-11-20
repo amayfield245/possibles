@@ -1,0 +1,4 @@
+{"low": "Guild workshop", "high": "Factory line", "kind": "era", "note": "Whether growth comes from medieval-style masters and apprentices or from industrial-scale standard output."}
+{"low": "Bauhaus plain", "high": "Baroque flourish", "kind": "art movement", "note": "Whether clients pay for stripped-back clarity or for rich, ornate, visibly hand-finished work."}
+{"low": "Formula One pit", "high": "Michelin kitchen", "kind": "rival industry", "note": "Borrow speed and telemetry from racing teams, or taste and signature from top restaurants."}
+{"low": "Silent machine", "high": "Signing ceremony", "kind": "wildcard", "note": "Whether the firm hides the work or turns sign-off and judgement into a ritual clients value."}
