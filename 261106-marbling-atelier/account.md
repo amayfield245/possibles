@@ -8,7 +8,7 @@ From one prompt, Fable researched and built an app that explores nine centuries 
 
 ## So what
 
-In a real bath nothing can be undone: a bath gives one good print. Here every stroke can be. Its opening Bouquet takes 9 passes and 1,481 strokes, and the history runs them back to a clean bath. What surprised me most: an app made from one prompt can be rich enough to need exploring in its own right. Far from "single-use software".
+In a real bath nothing can be undone: a bath gives one good print. Here every stroke can be. Its opening Bouquet takes 9 passes and 1,481 strokes, and the history runs them back to a clean bath. What it taught me: an app made from one prompt can be rich enough to need exploring in its own right. Far from "single-use software".
 
 ## What next
 
