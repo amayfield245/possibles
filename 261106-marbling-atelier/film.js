@@ -16,22 +16,22 @@ window.FILM = {
       type: 'shot', part: 'Hook', dur: 6, dpr: 2,
       frames: { ...STUDIO, start: PASS.comb, count: PASS.end - PASS.comb + 3, fps: 14 },
       cam: [{ at: 0, c: [660, 470], w: 760 }, { at: 6, c: [660, 470], w: 640 }],
-      captions: [{ at: 0.4, dur: 5.4, text: 'From one prompt, Fable – an AI model – researched and built an app.' }],
+      captions: [{ at: 0.4, dur: 5.4, text: 'From one prompt, Fable researched and built an app.' }],
     },
     {
       type: 'shot', part: 'Hook', in: 'fade', dur: 5.6, dpr: 2, src: 'captures/page.png',
       cam: [{ at: 0, c: [400, 120], w: 820 }, { at: 1.4, c: [400, 120], w: 820 }, { at: 4.6, c: [1190, 130], w: 820 }],
       captions: [{ at: 0.3, dur: 5.1, text: 'It explores nine centuries of the craft of paper marbling.' }],
     },
-    { type: 'card', part: 'Hook', variant: 'ident', in: 'fade', dur: 3.6, kicker: 'Possible #261106', title: 'The Marbling Atelier', sub: 'Software to think with.' },
+    { type: 'card', part: 'Hook', variant: 'ident', in: 'fade', dur: 3.6, kicker: 'Possible #261106', title: 'The Marbling Atelier', sub: 'Fable is an AI model made by Anthropic.' },
 
     // What: the pattern book, a pattern worked pass by pass, a sheet laid down and bound.
     {
-      type: 'shot', part: 'What', in: 'fade', dur: 8, dpr: 2, src: 'captures/page.png',
-      cam: [{ at: 0, c: [1250, 640], w: 760 }, { at: 1.6, c: [1250, 640], w: 760 }, { at: 7.6, c: [1250, 1340], w: 760 }],
+      type: 'shot', part: 'What', in: 'fade', dur: 9, dpr: 2, src: 'captures/page.png',
+      cam: [{ at: 0, c: [1250, 640], w: 760 }, { at: 1.6, c: [1250, 640], w: 760 }, { at: 8.6, c: [1250, 1340], w: 760 }],
       captions: [
         { at: 0.3, dur: 3.6, text: 'Its pattern book holds 26 patterns.' },
-        { at: 4.2, dur: 3.6, text: 'Japan, Persia, Istanbul and Europe, each with its place and date.' },
+        { at: 4.2, dur: 4.6, text: 'Japan, Persia, Istanbul and Europe, each with its place and date.' },
       ],
     },
     {
@@ -39,8 +39,8 @@ window.FILM = {
       frames: { ...STUDIO, start: PASS.throw, count: PASS.comb - PASS.throw, fps: 30 },
       cam: [{ at: 0, c: [800, 500], w: 1560 }, { at: 3, c: [800, 500], w: 1560 }, { at: 9.6, c: [640, 460], w: 1100 }],
       captions: [
-        { at: 0.3, dur: 4.4, text: 'Choose one, and the app works it on the bath, pass by pass.' },
-        { at: 5, dur: 5.2, text: 'The Bouquet: six colours from the whisk, then the stylus.' },
+        { at: 0.3, dur: 4.9, text: 'Choose one, and the app works it on the bath, pass by pass.' },
+        { at: 5.4, dur: 4.8, text: 'The Bouquet: six colours from the whisk, then the stylus.' },
       ],
     },
     {
