@@ -114,7 +114,8 @@
       }
     }
     if (caption !== null && capText.textContent !== caption) capText.textContent = caption;
-    capText.style.opacity = caption === null ? 0 : capP;
+    // The whole caption band fades, so a styled band never shows without its words.
+    capText.parentNode.style.opacity = caption === null ? 0 : capP;
     capText.style.transform = 'translateY(' + ((1 - capP) * 8).toFixed(2) + 'px)';
   };
 
@@ -137,6 +138,8 @@
     await new Promise((res, rej) => { const sc = document.createElement('script'); sc.src = new URL(filmUrl, location.href).href; sc.onload = res; sc.onerror = () => rej(new Error('cannot load ' + filmUrl)); document.head.appendChild(sc); });
     const film = window.FILM;
     scenes = film.scenes;
+    // Caption style: the film's own, unless the URL asks for another (?capstyle=ink) to compare.
+    frame.classList.add('cap-' + (qs.get('capstyle') || film.captionStyle || 'paper'));
     let at = 0;
     const waits = [];
     scenes.forEach((s, i) => {
@@ -158,9 +161,9 @@
   window.seek = seek;
   window.FILM_READY = start();
 
-  if (qs.has('render')) document.body.classList.add('render');
   // nocaps: frames without the caption band, for the review page, which lays editable captions over them.
   if (qs.has('nocaps')) document.body.classList.add('nocaps');
+  if (qs.has('render')) document.body.classList.add('render');
   else window.FILM_READY.then(info => {
     if (!info) return;
     const fit = () => { frame.style.transform = 'scale(' + Math.min(innerWidth / 1280, innerHeight / 720) + ')'; };

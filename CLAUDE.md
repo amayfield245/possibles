@@ -6,7 +6,7 @@ This repository holds Possibles: the process and film kit that turn Antonym & Co
 
 - `.claude/skills/possible-story/SKILL.md`: the process. Follow it to make a Possible.
 - `kit/`: the film kit (engine, renderer, script review). Shared by every Possible.
-- `<number>-<short-name>/`: one folder per Possible, for example `261117-inspiration-prospector/`. The number is the experiment's date as YYMMDD.
+- `<number>-<short-name>/`: one folder per Possible, for example `261117-idea-prospector/`. The number is the experiment's date as YYMMDD.
 - `README.md`: what Possibles is, and the register of every Possible with its status.
 
 ## Working rules

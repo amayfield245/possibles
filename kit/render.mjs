@@ -1,6 +1,7 @@
 // Renders a film spec to MP4, one frame at a time, so no frame is ever dropped.
 // Run: node kit/render.mjs <id>/film.js [--out file.mp4] [--stills 1,4.5,9] [--scale 1.5]
 // --stills writes PNGs at those seconds instead of a video, for checking frames against the style rules.
+// --capstyle paper|card|ink overrides the film's caption style, to compare them.
 import { createRequire } from 'node:module';
 import { spawn } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
@@ -10,7 +11,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const { chromium } = createRequire(import.meta.url)('playwright');
 const args = process.argv.slice(2);
 const flag = name => { const i = args.indexOf('--' + name); return i < 0 ? null : args.splice(i, 2)[1]; };
-const outArg = flag('out'), stillsArg = flag('stills'), scale = +(flag('scale') || 1.5);
+const outArg = flag('out'), stillsArg = flag('stills'), scale = +(flag('scale') || 1.5), capstyle = flag('capstyle');
 const spec = resolve(args[0] || '');
 if (!args[0]) { console.error('Usage: node render.mjs path/to/film.js [--out file.mp4] [--stills 1,4.5] [--scale 1.5]'); process.exit(1); }
 const outDir = join(dirname(spec), 'out');
@@ -20,7 +21,7 @@ const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1280, height: 720 }, deviceScaleFactor: scale });
 page.on('pageerror', e => console.error('page error:', e.message));
 const player = pathToFileURL(join(dirname(fileURLToPath(import.meta.url)), 'player.html')).href;
-await page.goto(player + '?render=1&film=' + encodeURIComponent(pathToFileURL(spec).href));
+await page.goto(player + '?render=1' + (capstyle ? '&capstyle=' + capstyle : '') + '&film=' + encodeURIComponent(pathToFileURL(spec).href));
 const info = await page.evaluate(() => window.FILM_READY);
 if (!info) throw new Error('the film did not load');
 info.problems.forEach(p => console.warn('CHECK', p));

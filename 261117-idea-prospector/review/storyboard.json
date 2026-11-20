@@ -1,0 +1,462 @@
+{
+ "number": "261117",
+ "name": "Idea prospector",
+ "round": 2,
+ "builtAt": "2026-11-20T17:39:56.372Z",
+ "captionStyle": "paper",
+ "duration": 93.2,
+ "video": "film.mp4",
+ "poster": "poster.jpg",
+ "history": [
+  {
+   "round": 1,
+   "builtAt": "2026-11-19T17:34:28.276Z"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "n": 1,
+   "type": "card",
+   "part": "Hook",
+   "variant": "statement",
+   "in": "cut",
+   "start": 0,
+   "dur": 4.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s01-title",
+     "role": "title",
+     "text": "How could a professional services firm grow when AI does the drafting?"
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s02",
+   "n": 2,
+   "type": "card",
+   "part": "Hook",
+   "variant": "statement",
+   "in": "cut",
+   "start": 4.6,
+   "dur": 4.4,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s02-title",
+     "role": "title",
+     "text": "Surprise is a superpower.\n\nWhen you’re surprised you’ve found something new."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s03",
+   "n": 3,
+   "type": "card",
+   "part": "Hook",
+   "variant": "ident",
+   "in": "fade",
+   "start": 9,
+   "dur": 3.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s03-kicker",
+     "role": "kicker",
+     "text": "Possible #261117"
+    },
+    {
+     "id": "s03-title",
+     "role": "title",
+     "text": "Idea prospector"
+    },
+    {
+     "id": "s03-sub",
+     "role": "sub",
+     "text": "Search for good ideas."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s04",
+   "n": 4,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "fade",
+   "start": 12.6,
+   "dur": 9.6,
+   "footage": "captures/frames.png",
+   "texts": [
+    {
+     "id": "s04-c1",
+     "role": "caption",
+     "text": "Pick dimensions: opposite forces to create a possibility space.",
+     "at": 0.3,
+     "dur": 3.9,
+     "start": 12.9
+    },
+    {
+     "id": "s04-c2",
+     "role": "caption",
+     "text": "The tensions create ideas.",
+     "at": 4.6,
+     "dur": 4.7,
+     "start": 17.2
+    }
+   ],
+   "beats": [
+    {
+     "line": "s04-c1",
+     "t": 15.44,
+     "frame": "frames/s04-1.jpg"
+    },
+    {
+     "line": "s04-c2",
+     "t": 20.26,
+     "frame": "frames/s04-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "n": 5,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "cut",
+   "start": 22.2,
+   "dur": 7,
+   "footage": "captures/cards.png",
+   "texts": [
+    {
+     "id": "s05-c1",
+     "role": "caption",
+     "text": "A rush of ideas.",
+     "at": 0.3,
+     "dur": 3.5,
+     "start": 22.5
+    },
+    {
+     "id": "s05-c2",
+     "role": "caption",
+     "text": "“A midnight contract vending machine.”",
+     "at": 4.2,
+     "dur": 2.6,
+     "start": 26.4
+    }
+   ],
+   "beats": [
+    {
+     "line": "s05-c1",
+     "t": 24.78,
+     "frame": "frames/s05-1.jpg"
+    },
+    {
+     "line": "s05-c2",
+     "t": 28.09,
+     "frame": "frames/s05-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "n": 6,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "fade",
+   "start": 29.2,
+   "dur": 9.8,
+   "footage": "captures/orbit",
+   "texts": [
+    {
+     "id": "s06-c1",
+     "role": "caption",
+     "text": "The ideas are scored against the dimensions and plotted in the map.",
+     "at": 0.4,
+     "dur": 4.7,
+     "start": 29.6
+    },
+    {
+     "id": "s06-c2",
+     "role": "caption",
+     "text": "You can argue with the scores. (It creates more ideas.)",
+     "at": 5.4,
+     "dur": 4.2,
+     "start": 34.6
+    }
+   ],
+   "beats": [
+    {
+     "line": "s06-c1",
+     "t": 32.66,
+     "frame": "frames/s06-1.jpg"
+    },
+    {
+     "line": "s06-c2",
+     "t": 37.33,
+     "frame": "frames/s06-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "n": 7,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "cut",
+   "start": 39,
+   "dur": 11.8,
+   "footage": "captures/gaps.png",
+   "texts": [
+    {
+     "id": "s07-c1",
+     "role": "caption",
+     "text": "Be curious about spaces with no ideas. This may be where the least obvious opportunities are found.",
+     "at": 0.3,
+     "dur": 6.2,
+     "start": 39.3
+    },
+    {
+     "id": "s07-c2",
+     "role": "caption",
+     "text": "Safe means boring. Creativity is found in the impossible, unfashionable or unexplored.",
+     "at": 6.8,
+     "dur": 4.8,
+     "start": 45.8
+    }
+   ],
+   "beats": [
+    {
+     "line": "s07-c1",
+     "t": 43.33,
+     "frame": "frames/s07-1.jpg"
+    },
+    {
+     "line": "s07-c2",
+     "t": 48.92,
+     "frame": "frames/s07-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "n": 8,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "cut",
+   "start": 50.8,
+   "dur": 12,
+   "footage": "captures/gaps.png",
+   "texts": [
+    {
+     "id": "s08-c1",
+     "role": "caption",
+     "text": "Unfashionable: practical moves with a slight twist.",
+     "at": 0.3,
+     "dur": 4,
+     "start": 51.1
+    },
+    {
+     "id": "s08-c2",
+     "role": "caption",
+     "text": "“The sensible middle stays empty.”",
+     "at": 4.6,
+     "dur": 2.8,
+     "start": 55.4
+    },
+    {
+     "id": "s08-c3",
+     "role": "caption",
+     "text": "Asked to fill it, Claude put three new ideas there.",
+     "at": 7.7,
+     "dur": 4.1,
+     "start": 58.5
+    }
+   ],
+   "beats": [
+    {
+     "line": "s08-c1",
+     "t": 53.7,
+     "frame": "frames/s08-1.jpg"
+    },
+    {
+     "line": "s08-c2",
+     "t": 57.22,
+     "frame": "frames/s08-2.jpg"
+    },
+    {
+     "line": "s08-c3",
+     "t": 61.17,
+     "frame": "frames/s08-3.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "n": 9,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "fade",
+   "start": 62.8,
+   "dur": 10.8,
+   "footage": "captures/stretch-2.png",
+   "texts": [
+    {
+     "id": "s09-c1",
+     "role": "caption",
+     "text": "One of them: sell the checking, not the drafting.",
+     "at": 0.4,
+     "dur": 3.8,
+     "start": 63.2
+    },
+    {
+     "id": "s09-c2",
+     "role": "caption",
+     "text": "Clients draft with their own AI. The firm checks it, improves it and vouches for it.",
+     "at": 4.5,
+     "dur": 6,
+     "start": 67.3
+    }
+   ],
+   "beats": [
+    {
+     "line": "s09-c1",
+     "t": 65.67,
+     "frame": "frames/s09-1.jpg"
+    },
+    {
+     "line": "s09-c2",
+     "t": 71.2,
+     "frame": "frames/s09-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "n": 10,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "cut",
+   "start": 73.6,
+   "dur": 3.6,
+   "footage": "captures/stretch-0.png",
+   "texts": [
+    {
+     "id": "s10-c1",
+     "role": "caption",
+     "text": "Stretched towards order, the idea breaks.",
+     "at": 0.3,
+     "dur": 3,
+     "start": 73.9
+    }
+   ],
+   "beats": [
+    {
+     "line": "s10-c1",
+     "t": 75.85,
+     "frame": "frames/s10-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "n": 11,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "fade",
+   "start": 77.2,
+   "dur": 7.2,
+   "footage": "captures/stretch-4.png",
+   "texts": [
+    {
+     "id": "s11-c1",
+     "role": "caption",
+     "text": "Towards chaos, it breaks again.",
+     "at": 0.4,
+     "dur": 2.6,
+     "start": 77.6
+    },
+    {
+     "id": "s11-c2",
+     "role": "caption",
+     "text": "It needs free drafting but a bounded sign-off.",
+     "at": 3.5,
+     "dur": 3.5,
+     "start": 80.7
+    }
+   ],
+   "beats": [
+    {
+     "line": "s11-c1",
+     "t": 79.29,
+     "frame": "frames/s11-1.jpg"
+    },
+    {
+     "line": "s11-c2",
+     "t": 82.98,
+     "frame": "frames/s11-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "n": 12,
+   "type": "card",
+   "part": "What next",
+   "variant": "section",
+   "in": "cut",
+   "start": 84.4,
+   "dur": 4.2,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s12-kicker",
+     "role": "kicker",
+     "text": "What next"
+    },
+    {
+     "id": "s12-title",
+     "role": "title",
+     "text": "This is version 0. Next come real questions."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s13",
+   "n": 13,
+   "type": "card",
+   "part": "What next",
+   "variant": "end",
+   "in": "fade",
+   "start": 88.6,
+   "dur": 4.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s13-title",
+     "role": "title",
+     "text": "What is your question?"
+    }
+   ],
+   "beats": [],
+   "bar": false,
+   "logo": "logo.png"
+  }
+ ]
+}
