@@ -1,0 +1,419 @@
+{
+ "number": "261106",
+ "name": "The Marbling Atelier",
+ "round": 1,
+ "builtAt": "2026-11-20T19:56:55.192Z",
+ "duration": 86.6,
+ "video": "film.mp4",
+ "poster": "poster.jpg",
+ "history": [],
+ "scenes": [
+  {
+   "id": "s01",
+   "n": 1,
+   "type": "shot",
+   "part": "Hook",
+   "variant": "",
+   "in": "cut",
+   "start": 0,
+   "dur": 6,
+   "footage": "captures/studio",
+   "texts": [
+    {
+     "id": "s01-c1",
+     "role": "caption",
+     "text": "From one prompt, Fable researched and built an app.",
+     "at": 0.4,
+     "dur": 5.4,
+     "start": 0.4
+    }
+   ],
+   "beats": [
+    {
+     "line": "s01-c1",
+     "t": 3.91,
+     "frame": "frames/s01-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "n": 2,
+   "type": "shot",
+   "part": "Hook",
+   "variant": "",
+   "in": "fade",
+   "start": 6,
+   "dur": 5.6,
+   "footage": "captures/page.png",
+   "texts": [
+    {
+     "id": "s02-c1",
+     "role": "caption",
+     "text": "It explores nine centuries of the craft of paper marbling.",
+     "at": 0.3,
+     "dur": 5.1,
+     "start": 6.3
+    }
+   ],
+   "beats": [
+    {
+     "line": "s02-c1",
+     "t": 9.62,
+     "frame": "frames/s02-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "n": 3,
+   "type": "card",
+   "part": "Hook",
+   "variant": "ident",
+   "in": "fade",
+   "start": 11.6,
+   "dur": 3.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s03-kicker",
+     "role": "kicker",
+     "text": "Possible #261106"
+    },
+    {
+     "id": "s03-title",
+     "role": "title",
+     "text": "The Marbling Atelier"
+    },
+    {
+     "id": "s03-sub",
+     "role": "sub",
+     "text": "Fable is an AI model made by Anthropic."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s04",
+   "n": 4,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "fade",
+   "start": 15.2,
+   "dur": 9,
+   "footage": "captures/page.png",
+   "texts": [
+    {
+     "id": "s04-c1",
+     "role": "caption",
+     "text": "Its pattern book holds 26 patterns.",
+     "at": 0.3,
+     "dur": 3.6,
+     "start": 15.5
+    },
+    {
+     "id": "s04-c2",
+     "role": "caption",
+     "text": "Japan, Persia, Istanbul and Europe, each with its place and date.",
+     "at": 4.2,
+     "dur": 4.6,
+     "start": 19.4
+    }
+   ],
+   "beats": [
+    {
+     "line": "s04-c1",
+     "t": 17.84,
+     "frame": "frames/s04-1.jpg"
+    },
+    {
+     "line": "s04-c2",
+     "t": 22.39,
+     "frame": "frames/s04-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "n": 5,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "cut",
+   "start": 24.2,
+   "dur": 10.4,
+   "footage": "captures/studio",
+   "texts": [
+    {
+     "id": "s05-c1",
+     "role": "caption",
+     "text": "Choose one, and the app works it on the bath, pass by pass.",
+     "at": 0.3,
+     "dur": 4.9,
+     "start": 24.5
+    },
+    {
+     "id": "s05-c2",
+     "role": "caption",
+     "text": "The Bouquet: six colours from the whisk, then the stylus.",
+     "at": 5.4,
+     "dur": 4.8,
+     "start": 29.6
+    }
+   ],
+   "beats": [
+    {
+     "line": "s05-c1",
+     "t": 27.69,
+     "frame": "frames/s05-1.jpg"
+    },
+    {
+     "line": "s05-c2",
+     "t": 32.72,
+     "frame": "frames/s05-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "n": 6,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "fade",
+   "start": 34.6,
+   "dur": 6,
+   "footage": "captures/proof.jpg",
+   "texts": [
+    {
+     "id": "s06-c1",
+     "role": "caption",
+     "text": "Lay down a sheet, and it takes up the whole pattern in one print.",
+     "at": 0.3,
+     "dur": 5.5,
+     "start": 34.9
+    }
+   ],
+   "beats": [
+    {
+     "line": "s06-c1",
+     "t": 38.48,
+     "frame": "frames/s06-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "n": 7,
+   "type": "shot",
+   "part": "What",
+   "variant": "",
+   "in": "cut",
+   "start": 40.6,
+   "dur": 5.6,
+   "footage": "captures/specimen.png",
+   "texts": [
+    {
+     "id": "s07-c1",
+     "role": "caption",
+     "text": "Then it shows the sheet bound as a book, in half morocco.",
+     "at": 0.3,
+     "dur": 5.1,
+     "start": 40.9
+    }
+   ],
+   "beats": [
+    {
+     "line": "s07-c1",
+     "t": 44.22,
+     "frame": "frames/s07-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "n": 8,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "fade",
+   "start": 46.2,
+   "dur": 4.4,
+   "footage": "captures/proof.jpg",
+   "texts": [
+    {
+     "id": "s08-c1",
+     "role": "caption",
+     "text": "“A bath gives one good print,” the app says.",
+     "at": 0.3,
+     "dur": 3.9,
+     "start": 46.5
+    }
+   ],
+   "beats": [
+    {
+     "line": "s08-c1",
+     "t": 49.04,
+     "frame": "frames/s08-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "n": 9,
+   "type": "shot",
+   "part": "So what",
+   "variant": "",
+   "in": "cut",
+   "start": 50.6,
+   "dur": 10,
+   "footage": "captures/history",
+   "texts": [
+    {
+     "id": "s09-c1",
+     "role": "caption",
+     "text": "In a real bath, nothing can be undone.",
+     "at": 0.3,
+     "dur": 4.2,
+     "start": 50.9
+    },
+    {
+     "id": "s09-c2",
+     "role": "caption",
+     "text": "Here, all 1,481 strokes can, pass by pass, back to a clean bath.",
+     "at": 4.8,
+     "dur": 5,
+     "start": 55.4
+    }
+   ],
+   "beats": [
+    {
+     "line": "s09-c1",
+     "t": 53.63,
+     "frame": "frames/s09-1.jpg"
+    },
+    {
+     "line": "s09-c2",
+     "t": 58.65,
+     "frame": "frames/s09-2.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "n": 10,
+   "type": "card",
+   "part": "So what",
+   "variant": "statement",
+   "in": "fade",
+   "start": 60.6,
+   "dur": 5.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s10-title",
+     "role": "title",
+     "text": "Frontier models now make apps rich enough to explore in their own right."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s11",
+   "n": 11,
+   "type": "card",
+   "part": "So what",
+   "variant": "statement",
+   "in": "cut",
+   "start": 66.2,
+   "dur": 5.2,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s11-title",
+     "role": "title",
+     "text": "Far from the idea of “single-use software”."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s12",
+   "n": 12,
+   "type": "card",
+   "part": "What next",
+   "variant": "section",
+   "in": "fade",
+   "start": 71.4,
+   "dur": 5,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s12-kicker",
+     "role": "kicker",
+     "text": "What next"
+    },
+    {
+     "id": "s12-title",
+     "role": "title",
+     "text": "I keep going back, to learn the craft and its history."
+    }
+   ],
+   "beats": [],
+   "bar": true
+  },
+  {
+   "id": "s13",
+   "n": 13,
+   "type": "shot",
+   "part": "What next",
+   "variant": "",
+   "in": "fade",
+   "start": 76.4,
+   "dur": 5.6,
+   "footage": "captures/page.png",
+   "texts": [
+    {
+     "id": "s13-c1",
+     "role": "caption",
+     "text": "No marbler has checked a word of it yet.",
+     "at": 0.3,
+     "dur": 5.1,
+     "start": 76.7
+    }
+   ],
+   "beats": [
+    {
+     "line": "s13-c1",
+     "t": 80.02,
+     "frame": "frames/s13-1.jpg"
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "n": 14,
+   "type": "card",
+   "part": "What next",
+   "variant": "end",
+   "in": "fade",
+   "start": 82,
+   "dur": 4.6,
+   "footage": "",
+   "texts": [
+    {
+     "id": "s14-title",
+     "role": "title",
+     "text": "Is it right? We would like a marbler to tell us."
+    }
+   ],
+   "beats": [],
+   "bar": false,
+   "logo": "logo.png"
+  }
+ ]
+}

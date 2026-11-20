@@ -1,0 +1,764 @@
+<title>The Marbling Atelier script review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a storyboard read top to bottom. Each scene is a row: the frame as it plays on the left, its script on the right. */
+:root {
+  --paper: #EEF7F9; --paper-2: #DCEEF2; --card: #FFFFFF; --rule: #BBDCE2; --rule-strong: #9CC9D1;
+  --ink: #0F2A30; --ink-soft: #3E5A60; --faint: #6E8A90; --gold: #B97D37; --gold-soft: #F3E6D4; --teal: #087F79; --teal-soft: #D5EEEC;
+  --cta: #C22C13; --bad: #B3261E; --bad-soft: #FBE3E0; --warn: #8A5A12; --warn-soft: #F6EBD6; --ok: #0B6E4F; --ok-soft: #DDF2EA;
+  --head: 'Bricolage Grotesque', 'Hanken Grotesk', system-ui, sans-serif; --body: 'Hanken Grotesk', system-ui, sans-serif; --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  /* The film's own palette. Frames always show the film as it plays, whatever the page theme. */
+  --f-paper: #EEF7F9; --f-ink: #0F2A30; --f-soft: #3E5A60; --f-gold: #B97D37;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #14110C; --paper-2: #1B1812; --card: #221E17; --rule: #332F27; --rule-strong: #4A4438;
+  --ink: #E8ECE9; --ink-soft: #B7B0A2; --faint: #8C8576; --gold: #E8B130; --gold-soft: #3A2F18; --teal: #5CC8BF; --teal-soft: #17302D;
+  --cta: #E8ECE9; --bad: #F2A39A; --bad-soft: #3A1E1A; --warn: #E8C27A; --warn-soft: #3A2E17; --ok: #7FD4B4; --ok-soft: #173126; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --paper: #14110C; --paper-2: #1B1812; --card: #221E17; --rule: #332F27; --rule-strong: #4A4438;
+  --ink: #E8ECE9; --ink-soft: #B7B0A2; --faint: #8C8576; --gold: #E8B130; --gold-soft: #3A2F18; --teal: #5CC8BF; --teal-soft: #17302D;
+  --cta: #E8ECE9; --bad: #F2A39A; --bad-soft: #3A1E1A; --warn: #E8C27A; --warn-soft: #3A2E17; --ok: #7FD4B4; --ok-soft: #173126; color-scheme: dark }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 15px/1.5 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button, textarea, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.mono { font-family: var(--mono); }
+.kicker { font: 500 12px/1.3 var(--mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+.btn { border: 1px solid var(--rule-strong); background: var(--card); border-radius: 3px; padding: 7px 14px; font-weight: 500; font-size: 14px; }
+.btn:hover:not(:disabled) { border-color: var(--ink-soft); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.primary { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.btn.go { background: var(--teal); border-color: var(--teal); color: #fff; }
+:root[data-theme="dark"] .btn.go { color: #0B1A18; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .btn.go { color: #0B1A18; } }
+.btn.small { padding: 3px 9px; font-size: 13px; }
+.link { background: none; border: 0; padding: 0; color: var(--teal); text-decoration: underline; text-underline-offset: 2px; font-size: 13px; }
+.link.quiet { color: var(--ink-soft); }
+
+/* Header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--paper); border-bottom: 1px solid var(--rule); }
+header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; padding-block: 12px; }
+.title { flex: 1 1 320px; min-width: 0; }
+.title h1 { font: 650 26px/1.1 var(--head); letter-spacing: -0.01em; margin: 2px 0 0; text-wrap: balance; }
+.tally { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; font-size: 13px; color: var(--ink-soft); }
+.tally b { font: 600 15px var(--head); color: var(--ink); font-variant-numeric: tabular-nums; }
+.tally .n-bad b { color: var(--bad); }
+.tally .n-warn b { color: var(--warn); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font: 500 12px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 9px; border-radius: 3px; background: var(--paper-2); color: var(--ink-soft); border: 1px solid var(--rule); }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.open { color: var(--teal); background: var(--teal-soft); border-color: transparent; }
+.pill.submitted, .pill.approved { color: var(--warn); background: var(--warn-soft); border-color: transparent; }
+.pill.checked { color: var(--gold); background: var(--gold-soft); border-color: transparent; }
+
+/* Intro: the current cut beside the three steps */
+.intro { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 32px; padding-block: 28px 8px; align-items: start; }
+.player { background: #000; border-radius: 4px; overflow: hidden; aspect-ratio: 16 / 9; max-width: 100%; }
+.player video { width: 100%; height: 100%; display: block; }
+.player .none { color: #BBDCE2; display: grid; place-items: center; height: 100%; font: 14px var(--mono); }
+.steps { margin: 0; padding: 0; list-style: none; display: grid; gap: 14px; counter-reset: step; }
+.steps li { display: grid; grid-template-columns: 30px 1fr; gap: 10px; counter-increment: step; }
+.steps li::before { content: counter(step); font: 600 15px/26px var(--head); width: 26px; height: 26px; text-align: center; border: 1px solid var(--rule-strong); border-radius: 50%; color: var(--ink-soft); }
+.steps li.now::before { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.steps b { display: block; font: 600 16px/1.3 var(--head); }
+.steps span { color: var(--ink-soft); font-size: 14px; }
+.meta-line { color: var(--faint); font-size: 13px; margin-top: 14px; }
+
+/* Status banner */
+.banner { margin-block: 20px 4px; border: 1px solid var(--rule); border-left: 3px solid var(--gold); background: var(--card); border-radius: 4px; padding: 16px 18px; display: grid; gap: 10px; }
+.banner h2 { margin: 0; font: 600 19px/1.25 var(--head); }
+.banner p { margin: 0; color: var(--ink-soft); max-width: 70ch; }
+.banner .acts { display: flex; flex-wrap: wrap; gap: 8px; }
+.report { display: grid; gap: 6px; margin: 4px 0 0; padding: 0; list-style: none; }
+.report li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; font-size: 14px; }
+.chip { font: 500 11px/1 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; padding: 4px 6px; border-radius: 3px; white-space: nowrap; background: var(--paper-2); color: var(--ink-soft); }
+.chip.bad { background: var(--bad-soft); color: var(--bad); }
+.chip.warn { background: var(--warn-soft); color: var(--warn); }
+.chip.ok { background: var(--ok-soft); color: var(--ok); }
+.chip.info { background: var(--teal-soft); color: var(--teal); }
+.chip.reshoot { background: var(--gold-soft); color: var(--gold); }
+.chip.cut { background: var(--bad-soft); color: var(--bad); }
+
+/* Parts and scenes */
+.part { padding-block: 28px 4px; display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--rule-strong); }
+.part h2 { margin: 0; font: 650 22px/1.2 var(--head); }
+.part .kicker { color: var(--faint); }
+.scene { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 28px; padding-block: 22px; border-bottom: 1px solid var(--rule); scroll-margin-top: 110px; }
+.scene-head { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; margin-bottom: -8px; }
+.scene-head .n { font: 600 15px var(--head); }
+.scene-head .kicker { color: var(--faint); font-size: 11px; }
+.scene-head .sp { flex: 1; }
+
+/* The frame: the film's 1280 by 720 canvas, scaled to fit */
+.frame { position: relative; width: 100%; aspect-ratio: 16 / 9; max-width: 100%; border-radius: 4px; overflow: hidden; background: var(--f-paper); box-shadow: 0 0 0 1px var(--rule); cursor: crosshair; }
+.frame.locked { cursor: default; }
+.vf { position: absolute; left: 0; top: 0; width: 1280px; height: 720px; transform-origin: 0 0; transform: scale(var(--k, 0.5)); background: var(--f-paper); color: var(--f-ink); pointer-events: none; }
+.vf img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.vf .cap { position: absolute; left: 48px; right: 48px; top: 556px; height: 140px; display: flex; align-items: center; }
+.vf .cap span { font: 600 42px/1.18 'Bricolage Grotesque', sans-serif; letter-spacing: -0.008em; max-width: 1100px; text-wrap: balance; white-space: pre-line; }
+.vf .cap.over span { color: var(--f-ink); background: linear-gradient(transparent 0, transparent 100%); outline: 3px dashed #C22C13; outline-offset: 8px; }
+.vf.card { display: flex; flex-direction: column; justify-content: center; padding: 48px 48px 72px; }
+.vf.card .bar { width: 72px; height: 3px; background: var(--f-gold); margin-bottom: 30px; }
+.vf.card .kick { font: 500 26px/1.2 'IBM Plex Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--f-soft); margin-bottom: 20px; white-space: pre-wrap; }
+.vf.card .ttl { font: 600 84px/1.04 'Bricolage Grotesque', sans-serif; letter-spacing: -0.015em; max-width: 1080px; text-wrap: balance; white-space: pre-line; }
+.vf.card.statement .ttl { font-size: 68px; line-height: 1.1; max-width: 1000px; }
+.vf.card.section .ttl { font-size: 72px; }
+.vf.card .sb { font: 400 32px/1.3 'Hanken Grotesk', sans-serif; color: var(--f-soft); margin-top: 26px; max-width: 620px; white-space: pre-wrap; }
+.vf.card .logo { position: absolute; left: 48px; bottom: 56px; width: 260px; }
+.pin { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--f-gold); color: #fff; font: 600 13px/26px var(--body); text-align: center; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(15, 42, 48, 0.35); padding: 0; z-index: 2; }
+.pin.resolved { background: #8FA9AE; }
+.pin.draft { background: var(--f-ink); }
+.pin.hot { outline: 3px solid var(--f-gold); outline-offset: 2px; }
+.beats { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 2px; }
+.beat { flex: 0 0 auto; width: 112px; border: 1px solid var(--rule); border-radius: 3px; background: var(--card); padding: 0; text-align: left; overflow: hidden; }
+.beat img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.beat span { display: block; font: 11px/1.2 var(--mono); color: var(--ink-soft); padding: 4px 6px; }
+.beat[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.hint { font-size: 12px; color: var(--faint); margin-top: 8px; }
+
+/* Script column */
+.script { display: grid; gap: 16px; align-content: start; min-width: 0; }
+.line { display: grid; gap: 6px; }
+.line-meta { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font: 12px var(--mono); color: var(--faint); }
+.line-meta .role { color: var(--ink-soft); letter-spacing: 0.06em; text-transform: uppercase; }
+.line-meta .edited { color: var(--teal); }
+.line textarea { width: 100%; resize: vertical; min-height: 64px; border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--card); padding: 9px 11px; font: 600 18px/1.35 var(--head); letter-spacing: -0.004em; }
+.line.kicker-line textarea { font: 500 14px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; min-height: 40px; }
+.line.sub-line textarea { font: 400 16px/1.4 var(--body); min-height: 44px; }
+.line textarea:read-only { background: var(--paper-2); }
+.line.changed textarea { border-color: var(--teal); box-shadow: inset 3px 0 0 var(--teal); }
+.line.has-bad textarea { border-color: var(--bad); box-shadow: inset 3px 0 0 var(--bad); }
+.checks { display: flex; flex-direction: column; gap: 4px; }
+.check { display: grid; grid-template-columns: auto 1fr; gap: 8px; align-items: baseline; font-size: 13px; color: var(--ink-soft); }
+.was { font-size: 13px; color: var(--faint); }
+.was s { color: var(--ink-soft); }
+.line-acts { display: flex; gap: 14px; }
+
+/* Comments */
+.comments { display: grid; gap: 10px; border-top: 1px dashed var(--rule-strong); padding-top: 14px; }
+.comments h3 { margin: 0; font: 600 13px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.cmt { border: 1px solid var(--rule); background: var(--card); border-radius: 4px; padding: 10px 12px; display: grid; gap: 6px; }
+.cmt.resolved { opacity: 0.7; }
+.cmt.hot { border-color: var(--gold); }
+.cmt-top { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; font-size: 12px; color: var(--faint); }
+.cmt-top .who { color: var(--ink); font-weight: 600; font-size: 13px; }
+.cmt-top .target { font-family: var(--mono); }
+.cmt-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.reply { border-left: 2px solid var(--rule-strong); padding-left: 10px; font-size: 14px; }
+.reply.claude { border-left-color: var(--teal); }
+.reply .who { font-weight: 600; font-size: 12px; color: var(--ink-soft); }
+.cmt-acts { display: flex; gap: 14px; flex-wrap: wrap; }
+.composer { border: 1px solid var(--ink-soft); background: var(--card); border-radius: 4px; padding: 12px; display: grid; gap: 10px; }
+.composer .about { font-size: 13px; color: var(--ink-soft); }
+.kinds { display: flex; flex-wrap: wrap; gap: 6px; }
+.kinds label { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--rule-strong); border-radius: 3px; padding: 4px 9px; font-size: 13px; cursor: pointer; }
+.kinds input { accent-color: var(--teal); margin: 0; }
+.composer textarea, .reply-box textarea, .note-box textarea { width: 100%; min-height: 70px; resize: vertical; border: 1px solid var(--rule-strong); border-radius: 3px; background: var(--paper); padding: 8px 10px; }
+.composer .acts, .reply-box .acts { display: flex; gap: 8px; }
+.reply-box { display: grid; gap: 8px; }
+
+/* Finish review dialog */
+.sheet-back { position: fixed; inset: 0; background: rgba(15, 42, 48, 0.45); z-index: 40; display: grid; place-items: center; padding: max(16px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(16px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet { background: var(--paper); border-radius: 6px; width: min(760px, 100%); max-height: 100%; overflow: auto; padding: 22px 24px; display: grid; gap: 16px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
+.sheet h2 { margin: 0; font: 650 24px/1.2 var(--head); }
+.sheet h3 { margin: 0 0 6px; font: 600 13px var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); }
+.sum { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.sum div { background: var(--card); border: 1px solid var(--rule); border-radius: 4px; padding: 10px 12px; }
+.sum b { display: block; font: 650 26px/1 var(--head); font-variant-numeric: tabular-nums; }
+.sum span { font-size: 12px; color: var(--ink-soft); }
+.sum .bad b { color: var(--bad); }
+.sum .warn b { color: var(--warn); }
+.list { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.list li { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: baseline; font-size: 14px; }
+.list .diff s { color: var(--faint); }
+.list .diff ins { text-decoration: none; color: var(--ink); font-weight: 600; }
+.sheet .acts { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; }
+.blocked { color: var(--bad); font-size: 13px; }
+
+.toast { position: fixed; left: 50%; bottom: max(20px, env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--ink); color: var(--paper); padding: 9px 14px; border-radius: 4px; font-size: 14px; z-index: 50; }
+.empty { padding: 40px 0; color: var(--ink-soft); }
+footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
+
+@media (max-width: 860px) {
+  .intro, .scene { grid-template-columns: minmax(0, 1fr); }
+  .scene-head { margin-bottom: 0; }
+  .sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  header.top .wrap { gap: 8px 16px; }
+  .title h1 { font-size: 21px; }
+  header.top { position: static; }
+  .scene { scroll-margin-top: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .cmt, .line textarea { transition: border-color 0.2s ease-out, box-shadow 0.2s ease-out; }
+}
+</style>
+
+<header class="top"><div class="wrap">
+  <div class="title"><div class="kicker" id="kick">Possibles · Script review</div><h1 id="name">Loading the storyboard</h1></div>
+  <div class="tally" id="tally"></div>
+  <span class="pill" id="pill">Loading</span>
+  <button class="btn primary" id="finish" type="button" disabled>Finish review</button>
+</div></header>
+
+<main class="wrap">
+  <section class="intro">
+    <div class="player" id="player"><div class="none">Loading the film</div></div>
+    <div>
+      <ol class="steps" id="steps">
+        <li data-step="open"><div><b>Edit and comment</b><span>Change any line. It shows on the frame as it will read in the film. Click a picture to pin a note to anything in it, or ask for a reshoot.</span></div></li>
+        <li data-step="submitted"><div><b>Finish review</b><span>The script is checked for errors: the house style, reading time, and every fact against the footage. Claude posts a report and a plan here.</span></div></li>
+        <li data-step="checked"><div><b>Approve the plan</b><span>Claude edits the film and reshoots the scenes you marked. A new round opens here with the new cut.</span></div></li>
+      </ol>
+      <p class="meta-line" id="metaLine"></p>
+    </div>
+  </section>
+  <div id="banner"></div>
+  <div id="board"><p class="empty">Loading the storyboard.</p></div>
+</main>
+<footer class="wrap" id="foot">Every frame is from the current cut. Captions are drawn live in the film's own type, so what you see here is how the line will read.</footer>
+<div id="sheet"></div>
+<div id="toast" class="toast" hidden></div>
+
+<script>
+(() => {
+  'use strict';
+  /* ---------- small helpers ---------- */
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+  const h = (tag, attrs = {}, ...kids) => {
+    const el = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k === 'class') el.className = v;
+      else if (k === 'text') el.textContent = v;
+      else if (k.startsWith('on')) el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    }
+    for (const kid of kids.flat()) if (kid !== null && kid !== undefined && kid !== false) el.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+    return el;
+  };
+  const tc = s => { const m = Math.floor(s / 60), r = s - m * 60; return m + ':' + (r < 10 ? '0' : '') + r.toFixed(1); };
+  const words = t => (t.trim().match(/\S+/g) || []).length;
+  const ago = ms => { const d = (Date.now() - ms) / 1000; if (d < 60) return 'just now'; if (d < 3600) return Math.round(d / 60) + ' min ago'; if (d < 86400) return Math.round(d / 3600) + ' h ago'; return new Date(ms).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }); };
+  let toastTimer;
+  const toast = msg => { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 2600); };
+
+  /* ---------- state ---------- */
+  const S = {
+    board: null, lines: {}, scenes: {},      // storyboard and indexes
+    edits: {}, comments: [], review: null,    // shared state from the store
+    db: null, user: null, me: null, canWrite: false, dbState: 'loading',
+    beat: {}, draft: null, hot: null, names: {}, pending: {}, timers: {}, inflight: {},
+  };
+  const value = id => (S.edits[id] ? S.edits[id].text : S.lines[id].text);
+  const status = () => (S.review && S.review.round === S.board.round ? S.review.status : 'open');
+  const editable = () => S.canWrite && status() === 'open';
+
+  /* ---------- checks: the house style, reading time and fit ---------- */
+  const AVOID = [
+    ['very', 'an intensifier'], ['really', 'an intensifier'], ['quite', 'an intensifier'], ['extremely', 'an intensifier'], ['incredibly', 'an intensifier'],
+    ['leverage', 'consultant varnish'], ['leverages', 'consultant varnish'], ['foster', 'consultant varnish'], ['synergy', 'consultant varnish'], ['paradigm', 'consultant varnish'],
+    ['game-changing', 'consultant varnish'], ['revolutionary', 'consultant varnish'], ['crucial', 'consultant varnish'], ['forward-thinking', 'consultant varnish'],
+    ['strategic imperative', 'consultant varnish'], ['fundamental shift', 'consultant varnish'], ['honestly', 'on the avoid list'], ['quietly', 'on the avoid list'],
+    ["here's the thing", 'announces the move'], ['what most people miss', 'announces the move'], ['key takeaway', 'announces the move'], ['only time will tell', 'a platitude'],
+    ["in today's", 'a platitude opening'], ['not just', 'the "not just X, but Y" shape'], ["it's not about", 'the "not X, it\'s Y" shape'],
+  ];
+  const US = [['organization', 'organisation'], ['organizations', 'organisations'], ['realize', 'realise'], ['realized', 'realised'], ['color', 'colour'], ['center', 'centre'],
+    ['favorite', 'favourite'], ['analyze', 'analyse'], ['behavior', 'behaviour'], ['optimize', 'optimise'], ['prioritize', 'prioritise'], ['program', 'programme'], ['labor', 'labour']];
+  const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const lineCount = (el, px, lh) => (el && el.offsetHeight ? Math.round(el.offsetHeight / (px * lh)) : 0);
+
+  function checks(id) {
+    const L = S.lines[id], text = value(id), out = [];
+    const t = text.trim();
+    if (!t) { out.push(['bad', 'Empty. Write a line, or comment "Cut this" on the scene.']); return out; }
+    if (/!/.test(t)) out.push(['bad', 'Exclamation mark. The house style has none.']);
+    if (/—/.test(t)) out.push(['bad', 'Em dash. Use a spaced en dash ( – ) or a full stop.']);
+    if (/\s-\s/.test(t)) out.push(['warn', 'Use a spaced en dash ( – ) for an aside, not a hyphen.']);
+    if (/"/.test(t)) out.push(['warn', 'Straight quotation marks. Use curly ones: “ ”.']);
+    const lower = ' ' + t.toLowerCase().replace(/[’]/g, "'") + ' ';
+    for (const [w, why] of AVOID) if (new RegExp('[^a-z]' + esc(w) + '[^a-z]').test(lower)) out.push(['warn', '"' + w + '" is ' + why + '. The style guide asks to cut it.']);
+    for (const [us, uk] of US) if (new RegExp('[^a-z]' + us + '[^a-z]').test(lower)) out.push(['warn', 'British spelling: ' + uk + '.']);
+    const scene = S.scenes[L.scene];
+    if (L.role === 'caption') {
+      const f = document.getElementById('f-' + L.scene);
+      const live = f && S.beat[L.scene] === id ? $('.vf .cap span', f) : null;
+      const n = lineCount(live && live.textContent === text ? live : measure(t, 'cap'), 42, 1.18);
+      if (n > 2) out.push(['bad', 'Runs to ' + n + ' lines on screen. Captions take two. Cut words.']);
+      const need = 1 + words(t) * 0.3;
+      if (L.dur + 0.05 < need) out.push(['warn', 'Needs ' + need.toFixed(1) + ' s to read, has ' + L.dur.toFixed(1) + ' s. Claude will retime the scene.']);
+    } else if (L.role === 'title') {
+      const cls = scene.variant === 'statement' ? 'ttl-statement' : scene.variant === 'section' ? 'ttl-section' : 'ttl';
+      const px = scene.variant === 'statement' ? 68 : scene.variant === 'section' ? 72 : 84, lh = scene.variant === 'statement' ? 1.1 : 1.04;
+      const n = lineCount(measure(t, cls), px, lh);
+      if (n > 4) out.push(['bad', 'Runs to ' + n + ' lines on the card. Four at most.']);
+      else if (n === 4) out.push(['warn', 'Four lines on the card. Three read better.']);
+      const all = scene.texts.map(x => value(x.id)).join(' ');
+      const need = 1 + words(all) * 0.3;
+      if (scene.dur + 0.05 < need) out.push(['warn', 'The card needs ' + need.toFixed(1) + ' s to read, has ' + scene.dur.toFixed(1) + ' s. Claude will retime it.']);
+    }
+    if (S.edits[id]) {
+      const base = new Set((L.text.match(/\d[\d.,%]*/g) || []));
+      const fresh = (t.match(/\d[\d.,%]*/g) || []).filter(n => !base.has(n));
+      if (fresh.length) out.push(['info', 'New figure (' + fresh.join(', ') + '). Claude checks it against the footage.']);
+      if (!out.some(c => c[0] === 'bad' || c[0] === 'warn')) out.push(['ok', 'Reads well against the style guide.']);
+    }
+    return out;
+  }
+  // An offscreen 1280px stage that sets text exactly as the film does, to count lines for lines not on show.
+  let stage;
+  function measure(text, kind) {
+    if (!stage) {
+      stage = h('div', { 'aria-hidden': 'true', style: 'position:absolute;left:-99999px;top:0;width:1280px;visibility:hidden' });
+      document.body.append(stage);
+    }
+    stage.innerHTML = '';
+    if (kind === 'cap') {
+      const box = h('div', { class: 'vf', style: 'position:relative;transform:none;height:auto' }, h('div', { class: 'cap', style: 'position:relative;top:0;height:auto' }, h('span', { text })));
+      stage.append(box); return $('span', box);
+    }
+    const variant = kind === 'ttl-statement' ? 'statement' : kind === 'ttl-section' ? 'section' : 'ident';
+    const box = h('div', { class: 'vf card ' + variant, style: 'position:relative;transform:none;height:auto' }, h('div', { class: 'ttl', text }));
+    stage.append(box); return $('.ttl', box);
+  }
+
+  /* ---------- rendering ---------- */
+  function renderHeader() {
+    const b = S.board;
+    $('#kick').textContent = 'Possible #' + b.number + ' · Script review · Round ' + b.round;
+    $('#name').textContent = b.name;
+    document.title = b.name + ' script review';
+    const st = status();
+    const pill = $('#pill');
+    pill.className = 'pill ' + st;
+    pill.textContent = { open: 'Open for edits', submitted: 'Being checked', checked: 'Report ready', approved: 'Approved', done: 'Done' }[st] || st;
+    const t = tally();
+    const tl = $('#tally'); tl.innerHTML = '';
+    tl.append(h('span', {}, h('b', { text: t.changed }), ' changed'), h('span', {}, h('b', { text: t.comments }), ' comments'),
+      h('span', { class: t.bad ? 'n-bad' : '' }, h('b', { text: t.bad }), ' to fix'), h('span', { class: t.warn ? 'n-warn' : '' }, h('b', { text: t.warn }), ' to look at'));
+    const fin = $('#finish');
+    fin.disabled = !editable();
+    fin.title = !S.canWrite ? 'You can view this review. Ask the owner for Contributor access to edit.' : st !== 'open' ? 'This round has been sent for checking.' : '';
+    $$('#steps li').forEach(li => li.classList.toggle('now', li.dataset.step === (st === 'approved' ? 'checked' : st === 'done' ? 'checked' : st)));
+    const hist = b.history && b.history.length ? ' Earlier rounds: ' + b.history.map(x => x.round).join(', ') + '.' : '';
+    $('#metaLine').textContent = b.scenes.length + ' scenes · ' + tc(b.duration) + ' · this cut built ' + new Date(b.builtAt).toLocaleString('en-GB', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' }) + '.' + hist;
+  }
+  function tally() {
+    let bad = 0, warn = 0;
+    for (const id in S.lines) for (const c of checks(id)) { if (c[0] === 'bad') bad++; else if (c[0] === 'warn' && (S.edits[id] || true)) warn++; }
+    const changed = Object.keys(S.edits).length;
+    const comments = S.comments.filter(c => !c.resolved).length;
+    return { bad, warn, changed, comments };
+  }
+
+  function renderBanner() {
+    const el = $('#banner'); el.innerHTML = '';
+    const st = status(), r = S.review || {};
+    let box;
+    if (S.dbState === 'off') {
+      box = h('div', { class: 'banner' }, h('h2', { text: 'Read-only here' }), h('p', { text: 'Edits and comments need you signed in to claude.ai with access to this page. You can still watch the cut and read the script.' }));
+    } else if (S.dbState === 'slow') {
+      box = h('div', { class: 'banner' }, h('h2', { text: 'Edits can’t be reached yet' }), h('p', { text: 'The script shows as written. Changes from others will appear when the connection answers.' }));
+    } else if (st === 'submitted') {
+      box = h('div', { class: 'banner' }, h('h2', { text: 'Sent for checking' }),
+        h('p', { text: 'Claude is checking every line against the house style, the reading time and the footage, and will post a report and a plan here. Editing is paused so the script holds still. Tell Claude in your chat that the review is in.' }),
+        r.note ? h('p', {}, h('b', { text: 'Your note: ' }), r.note) : null,
+        S.canWrite ? h('div', { class: 'acts' }, h('button', { class: 'btn', type: 'button', onclick: () => setStatus('open'), text: 'Reopen for edits' })) : null);
+    } else if (st === 'checked') {
+      const report = (r.report || []);
+      const plan = (r.plan || []);
+      box = h('div', { class: 'banner' }, h('h2', { text: r.headline || 'Checked. Here is the plan.' }),
+        r.summary ? h('p', { text: r.summary }) : null,
+        report.length ? h('div', {}, h('div', { class: 'kicker', text: 'What the check found' }),
+          h('ul', { class: 'report' }, report.map(x => h('li', {}, h('span', { class: 'chip ' + (x.level === 'error' ? 'bad' : x.level === 'warning' ? 'warn' : 'ok'), text: x.level === 'error' ? 'Fix' : x.level === 'warning' ? 'Look' : 'Fine' }),
+            h('span', {}, x.scene ? h('button', { class: 'link', type: 'button', onclick: () => goTo(x.scene), text: 'Scene ' + S.scenes[x.scene].n }) : null, x.scene ? ' ' : '', x.text))))) : null,
+        plan.length ? h('div', {}, h('div', { class: 'kicker', text: 'What Claude will do once you approve' }),
+          h('ul', { class: 'report' }, plan.map(x => h('li', {}, h('span', { class: 'chip ' + (x.action === 'reshoot' ? 'reshoot' : x.action === 'cut' ? 'cut' : 'info'), text: x.action }),
+            h('span', {}, x.scene ? h('button', { class: 'link', type: 'button', onclick: () => goTo(x.scene), text: 'Scene ' + S.scenes[x.scene].n }) : null, x.scene ? ' ' : '', x.text))))) : null,
+        S.canWrite ? h('div', { class: 'acts' },
+          h('button', { class: 'btn go', type: 'button', onclick: approve, text: 'Approve and make the changes' }),
+          h('button', { class: 'btn', type: 'button', onclick: () => setStatus('open'), text: 'Reopen for edits' })) : null);
+    } else if (st === 'approved') {
+      box = h('div', { class: 'banner' }, h('h2', { text: 'Approved. The film is being remade.' }),
+        h('p', { text: 'Claude is applying the changes, retiming and reshooting the scenes in the plan. Round ' + (S.board.round + 1) + ' opens on this page with the new cut when it is ready.' }));
+    } else if (S.board.history && S.board.history.length && !Object.keys(S.edits).length && !S.comments.some(c => c.round === S.board.round)) {
+      box = h('div', { class: 'banner' }, h('h2', { text: 'Round ' + S.board.round + ' is open' }), h('p', { text: 'This is the new cut, with round ' + S.board.history[S.board.history.length - 1].round + '’s changes made. Claude’s answers to earlier comments are under each scene.' }));
+    }
+    if (box) el.append(box);
+  }
+
+  function renderBoard() {
+    const board = $('#board'); board.innerHTML = '';
+    let part = null;
+    for (const s of S.board.scenes) {
+      if (s.part !== part) {
+        part = s.part;
+        const n = S.board.scenes.filter(x => x.part === part).length;
+        board.append(h('div', { class: 'part' }, h('h2', { text: part || 'Scenes' }), h('span', { class: 'kicker', text: n + (n === 1 ? ' scene' : ' scenes') })));
+      }
+      board.append(sceneEl(s));
+    }
+    fit();
+  }
+
+  function sceneEl(s) {
+    const end = s.start + s.dur;
+    const head = h('div', { class: 'scene-head' },
+      h('span', { class: 'n', text: 'Scene ' + s.n }),
+      h('span', { class: 'kicker', text: tc(s.start) + ' – ' + tc(end) + ' · ' + s.dur.toFixed(1) + ' s · ' + (s.type === 'card' ? 'Card' : 'Footage') + ' · ' + (s.in === 'fade' ? 'cross-fade in' : 'cut in') }),
+      h('span', { class: 'sp' }),
+      S.board.video ? h('button', { class: 'link', type: 'button', onclick: () => play(s.start), text: 'Play from here' }) : null);
+    const frameCol = h('div', {}, frameEl(s),
+      s.beats.length > 1 ? h('div', { class: 'beats', role: 'group', 'aria-label': 'Moments in this scene' }, s.beats.map((b, i) => h('button', {
+        class: 'beat', type: 'button', 'aria-pressed': String((S.beat[s.id] || s.beats[0].line) === b.line), 'data-line': b.line || '',
+        onclick: () => { S.beat[s.id] = b.line; updateFrame(s.id); }, title: 'Show this moment',
+      }, h('img', { src: b.frame, alt: '', loading: 'lazy' }), h('span', { text: tc(b.t) + (pinCount(s.id, i) ? ' · ' + pinCount(s.id, i) + ' pin' + (pinCount(s.id, i) > 1 ? 's' : '') : '') })))) : null,
+      h('p', { class: 'hint', id: 'hint-' + s.id }));
+    const script = h('div', { class: 'script' }, s.texts.map(t => lineEl(t)), commentsEl(s));
+    return h('article', { class: 'scene', id: s.id }, head, frameCol, script);
+  }
+
+  function frameEl(s) {
+    const f = h('div', { class: 'frame' + (editable() ? '' : ' locked'), id: 'f-' + s.id, role: 'img', 'aria-label': 'Scene ' + s.n + ' frame' });
+    f.addEventListener('click', e => {
+      if (!editable() || e.target.closest('.pin')) return;
+      const r = f.getBoundingClientRect();
+      const x = Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100)), y = Math.max(0, Math.min(100, ((e.clientY - r.top) / r.height) * 100));
+      S.draft = { scene: s.id, target: 'image', x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, beat: beatIndex(s) };
+      updateFrame(s.id); renderComments(s.id);
+      const ta = $('#' + s.id + ' .composer textarea'); if (ta) ta.focus();
+    });
+    fillFrame(f, s);
+    return f;
+  }
+  const beatIndex = s => Math.max(0, s.beats.findIndex(b => b.line === (S.beat[s.id] || s.beats[0].line)));
+  const pinCount = (sid, i) => S.comments.filter(c => c.scene === sid && c.target === 'image' && (c.beat || 0) === i && !c.resolved).length;
+
+  function fillFrame(f, s) {
+    f.innerHTML = '';
+    let vf;
+    if (s.type === 'card') {
+      const val = role => { const t = s.texts.find(x => x.role === role); return t ? value(t.id) : ''; };
+      vf = h('div', { class: 'vf card ' + (s.variant || 'ident') },
+        s.bar ? h('div', { class: 'bar' }) : null,
+        val('kicker') ? h('div', { class: 'kick', text: val('kicker') }) : null,
+        val('title') ? h('div', { class: 'ttl', text: val('title') }) : null,
+        val('sub') ? h('div', { class: 'sb', text: val('sub') }) : null,
+        s.logo ? h('img', { class: 'logo', src: s.logo, alt: 'Antonym & Co' }) : null);
+    } else {
+      const bi = beatIndex(s), beat = s.beats[bi];
+      const lineId = beat.line;
+      const span = h('span', { text: lineId ? value(lineId) : '' });
+      vf = h('div', { class: 'vf' }, h('img', { src: beat.frame, alt: '' }), lineId ? h('div', { class: 'cap' }, span) : null);
+    }
+    f.append(vf);
+    // Pins for this moment, then the draft pin.
+    const bi = s.type === 'card' ? 0 : beatIndex(s);
+    const pins = S.comments.filter(c => c.scene === s.id && c.target === 'image' && (c.beat || 0) === bi);
+    pins.forEach(c => f.append(h('button', {
+      class: 'pin' + (c.resolved ? ' resolved' : '') + (S.hot === c.id ? ' hot' : ''), type: 'button', style: 'left:' + c.x + '%;top:' + c.y + '%',
+      text: pinNo(c), title: c.text, onclick: e => { e.stopPropagation(); S.hot = c.id; renderComments(s.id); fillFrame(f, s); const el = $('#c-' + c.id); if (el) el.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); },
+    })));
+    if (S.draft && S.draft.scene === s.id && S.draft.target === 'image') f.append(h('span', { class: 'pin draft', style: 'left:' + S.draft.x + '%;top:' + S.draft.y + '%', text: '+' }));
+    fitOne(f);
+    // Mark a caption that runs past two lines.
+    const cap = $('.cap', f);
+    if (cap) requestAnimationFrame(() => cap.classList.toggle('over', lineCount($('span', cap), 42, 1.18) > 2));
+  }
+  const pinNo = c => { const list = S.comments.filter(x => x.scene === c.scene && x.target === 'image').sort((a, b) => a.at - b.at); return String(list.indexOf(c) + 1); };
+
+  function updateFrame(sid) {
+    const s = S.scenes[sid], f = $('#f-' + sid);
+    if (!f) return;
+    fillFrame(f, s);
+    $$('#' + sid + ' .beat').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.line === (S.beat[sid] || s.beats[0].line))));
+    f.classList.toggle('locked', !editable());
+    const hint = $('#hint-' + sid);
+    if (hint) hint.textContent = editable() ? 'Click anywhere on the picture to pin a comment to it.' : S.comments.some(c => c.scene === sid && c.target === 'image') ? 'Numbered pins mark comments on the picture.' : '';
+  }
+
+  function lineEl(t) {
+    const L = S.lines[t.id];
+    const ta = h('textarea', { id: 't-' + t.id, rows: L.role === 'caption' || L.role === 'title' ? 2 : 1, 'aria-label': roleName(L) + ', scene ' + S.scenes[L.scene].n });
+    ta.value = value(t.id);
+    ta.readOnly = !editable();
+    ta.addEventListener('focus', () => { if (L.role === 'caption' && S.beat[L.scene] !== t.id) { S.beat[L.scene] = t.id; updateFrame(L.scene); } });
+    ta.addEventListener('input', () => onType(t.id, ta.value));
+    const el = h('div', { class: 'line ' + L.role + '-line', id: 'l-' + t.id },
+      h('div', { class: 'line-meta' }), ta, h('div', { class: 'was' }), h('div', { class: 'checks' }), h('div', { class: 'line-acts' }));
+    paintLine(t.id, el);
+    return el;
+  }
+  const roleName = L => ({ caption: 'Caption', title: 'Card title', kicker: 'Card kicker', sub: 'Card line' }[L.role]);
+
+  function paintLine(id, el = $('#l-' + id)) {
+    if (!el) return;
+    const L = S.lines[id], e = S.edits[id];
+    const meta = $('.line-meta', el); meta.innerHTML = '';
+    const capNo = L.role === 'caption' ? ' ' + (S.scenes[L.scene].texts.filter(x => x.role === 'caption').findIndex(x => x.id === id) + 1) : '';
+    meta.append(h('span', { class: 'role', text: roleName(L) + capNo }));
+    if (L.role === 'caption') meta.append(h('span', { text: tc(L.start) + ' · ' + L.dur.toFixed(1) + ' s on screen' }));
+    if (e) meta.append(h('span', { class: 'edited', text: 'changed by ' + who(e.by) + ' · ' + ago(e.at) }));
+    const was = $('.was', el); was.innerHTML = '';
+    if (e) was.append('Was: ', h('s', { text: L.text }));
+    const cs = checks(id);
+    const box = $('.checks', el); box.innerHTML = '';
+    cs.forEach(c => box.append(h('div', { class: 'check' }, h('span', { class: 'chip ' + c[0], text: { bad: 'Fix', warn: 'Look', ok: 'Fine', info: 'Note' }[c[0]] }), h('span', { text: c[1] }))));
+    el.classList.toggle('changed', !!e);
+    el.classList.toggle('has-bad', cs.some(c => c[0] === 'bad'));
+    const acts = $('.line-acts', el); acts.innerHTML = '';
+    if (editable()) {
+      acts.append(h('button', { class: 'link', type: 'button', onclick: () => { S.draft = { scene: L.scene, target: 'line', line: id }; renderComments(L.scene); const ta = $('#' + L.scene + ' .composer textarea'); if (ta) ta.focus(); }, text: 'Comment on this line' }));
+      if (e) acts.append(h('button', { class: 'link quiet', type: 'button', onclick: () => { const ta = $('#t-' + id); ta.value = L.text; onType(id, L.text, true); }, text: 'Put the original back' }));
+    }
+    const ta = $('textarea', el);
+    if (ta) ta.readOnly = !editable();
+  }
+
+  function commentsEl(s) {
+    const box = h('div', { class: 'comments', id: 'cm-' + s.id });
+    renderComments(s.id, box);
+    return box;
+  }
+  function renderComments(sid, box = $('#cm-' + sid)) {
+    if (!box) return;
+    box.innerHTML = '';
+    const list = S.comments.filter(c => c.scene === sid).sort((a, b) => a.at - b.at);
+    const open = list.filter(c => !c.resolved).length;
+    box.append(h('h3', { text: list.length ? 'Comments · ' + open + ' open' + (list.length > open ? ', ' + (list.length - open) + ' resolved' : '') : 'Comments' }));
+    list.forEach(c => box.append(commentEl(c)));
+    if (S.draft && S.draft.scene === sid) box.append(composerEl(sid));
+    else if (editable()) box.append(h('div', {}, h('button', { class: 'btn small', type: 'button', onclick: () => { S.draft = { scene: sid, target: 'scene' }; renderComments(sid); $('#' + sid + ' .composer textarea').focus(); }, text: 'Comment on the scene' })));
+    else if (!list.length) box.append(h('p', { class: 'hint', text: 'No comments.' }));
+  }
+  const KIND = { note: 'Note', reshoot: 'Reshoot', cut: 'Cut' };
+  function targetName(c) {
+    if (c.target === 'image') return 'Pin ' + pinNo(c) + (S.scenes[c.scene].beats.length > 1 ? ' · at ' + tc(S.scenes[c.scene].beats[c.beat || 0].t) : '');
+    if (c.target === 'line' && S.lines[c.line]) { const L = S.lines[c.line]; return roleName(L) + (L.role === 'caption' ? ' ' + (S.scenes[L.scene].texts.filter(x => x.role === 'caption').findIndex(x => x.id === c.line) + 1) : ''); }
+    return 'Whole scene';
+  }
+  function commentEl(c) {
+    const el = h('div', { class: 'cmt' + (c.resolved ? ' resolved' : '') + (S.hot === c.id ? ' hot' : ''), id: 'c-' + c.id },
+      h('div', { class: 'cmt-top' }, h('span', { class: 'who', text: who(c.by) }), h('span', { class: 'target', text: targetName(c) }),
+        c.kind && c.kind !== 'note' ? h('span', { class: 'chip ' + c.kind, text: KIND[c.kind] }) : null,
+        c.resolved ? h('span', { class: 'chip ok', text: 'Resolved' }) : null, h('span', { text: ago(c.at) })),
+      h('div', { class: 'cmt-text', text: c.text }),
+      (c.replies || []).map(r => h('div', { class: 'reply' + (r.by === 'claude' ? ' claude' : '') }, h('div', { class: 'who', text: who(r.by) }), h('div', { class: 'cmt-text', text: r.text }))));
+    if (S.canWrite) {
+      const acts = h('div', { class: 'cmt-acts' },
+        h('button', { class: 'link', type: 'button', onclick: () => replyBox(c, el), text: 'Reply' }),
+        h('button', { class: 'link', type: 'button', onclick: () => resolve(c), text: c.resolved ? 'Reopen' : 'Resolve' }),
+        S.me && c.by === S.me ? h('button', { class: 'link quiet', type: 'button', onclick: () => remove(c), text: 'Delete' }) : null);
+      el.append(acts);
+    }
+    el.addEventListener('mouseenter', () => { if (c.target === 'image' && S.hot !== c.id) { S.hot = c.id; const s = S.scenes[c.scene]; if (s.type !== 'card' && beatIndex(s) !== (c.beat || 0)) S.beat[s.id] = s.beats[c.beat || 0].line; updateFrame(c.scene); } });
+    return el;
+  }
+  function composerEl(sid) {
+    const d = S.draft;
+    const about = d.target === 'image' ? 'A pin on the picture.' : d.target === 'line' ? 'About ' + roleName(S.lines[d.line]).toLowerCase() + '.' : 'About the whole scene: timing, order, transition.';
+    const ta = h('textarea', { id: 'compose-' + sid, placeholder: d.target === 'image' ? 'What should change here?' : 'Your comment' });
+    if (d.text) ta.value = d.text;
+    ta.addEventListener('input', () => { d.text = ta.value; });
+    const kinds = h('div', { class: 'kinds', role: 'radiogroup', 'aria-label': 'Kind of comment' }, Object.entries({ note: 'Note', reshoot: 'Reshoot this', cut: 'Cut this' }).map(([k, label]) =>
+      h('label', {}, h('input', { type: 'radio', name: 'kind-' + sid, value: k, checked: (d.kind || 'note') === k, onchange: () => { d.kind = k; } }), label)));
+    return h('div', { class: 'composer' }, h('div', { class: 'about', text: about }), kinds, ta,
+      h('div', { class: 'acts' }, h('button', { class: 'btn go small', type: 'button', onclick: () => addComment(sid, ta.value), text: 'Add comment' }),
+        h('button', { class: 'btn small', type: 'button', onclick: () => { S.draft = null; renderComments(sid); updateFrame(sid); }, text: 'Cancel' })));
+  }
+  function replyBox(c, el) {
+    if ($('.reply-box', el)) return;
+    const ta = h('textarea', { placeholder: 'Your reply' });
+    const box = h('div', { class: 'reply-box' }, ta, h('div', { class: 'acts' },
+      h('button', { class: 'btn go small', type: 'button', onclick: async () => { const t = ta.value.trim(); if (!t) return; await write(() => S.db.doc('comments/' + c.id).update({ replies: [...(c.replies || []), { by: S.me, text: t, at: Date.now() }] }), 'Reply added'); }, text: 'Reply' }),
+      h('button', { class: 'btn small', type: 'button', onclick: () => box.remove(), text: 'Cancel' })));
+    el.append(box); ta.focus();
+  }
+
+  const who = id => (id === 'claude' ? 'Claude' : id && S.me === id ? (S.names[id] || 'You') : (S.names[id] || 'Someone'));
+
+  function fit() { $$('.frame').forEach(fitOne); }
+  function fitOne(f) { const vf = $('.vf', f); if (vf && f.clientWidth) vf.style.setProperty('--k', f.clientWidth / 1280); }
+  new ResizeObserver(entries => entries.forEach(e => fitOne(e.target))).observe(document.body);
+  const ro = new ResizeObserver(entries => entries.forEach(e => fitOne(e.target)));
+  new MutationObserver(() => $$('.frame').forEach(f => { if (!f.dataset.ro) { f.dataset.ro = '1'; ro.observe(f); } })).observe(document.body, { childList: true, subtree: true });
+
+  function goTo(sid) { const el = $('#' + sid); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  function play(t) { const v = $('#player video'); if (!v) return; v.currentTime = t + 0.01; v.play().catch(() => {}); $('#player').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+
+  /* ---------- writes ---------- */
+  async function write(fn, ok) {
+    if (!S.db) { toast('Sign in to claude.ai to save changes.'); return false; }
+    try { await fn(); if (ok) toast(ok); return true; }
+    catch (e) {
+      if (e && e.code === 'invalid_argument' && !S.canWriteKnown) { S.canWrite = false; renderAll(); toast('This page is read-only for you. Ask the owner for Contributor access.'); }
+      else if (e && e.code === 'unavailable') { await new Promise(r => setTimeout(r, 600 + Math.random() * 600)); try { await fn(); if (ok) toast(ok); return true; } catch (_) { toast('Not saved. The connection did not answer. Try again in a moment.'); } }
+      else toast('Not saved: ' + ((e && e.message) || 'unknown error'));
+      return false;
+    }
+  }
+  function onType(id, text, now) {
+    const L = S.lines[id];
+    // Draw at once, save after a pause.
+    S.pending[id] = text;
+    if (L.role === 'caption' && S.beat[L.scene] === id) { const span = $('#f-' + L.scene + ' .cap span'); if (span) { span.textContent = text; const cap = span.parentNode; cap.classList.toggle('over', lineCount(span, 42, 1.18) > 2); } }
+    else if (L.role !== 'caption') { S.edits[id] = text === L.text ? undefined : { ...(S.edits[id] || {}), text, by: S.me, at: Date.now() }; if (!S.edits[id]) delete S.edits[id]; updateFrame(L.scene); }
+    clearTimeout(S.timers[id]);
+    S.timers[id] = setTimeout(() => save(id), now ? 0 : 700);
+  }
+  async function save(id) {
+    if (S.inflight[id]) { S.inflight[id].then(() => save(id)); return; }
+    const text = S.pending[id]; if (text === undefined) return;
+    delete S.pending[id];
+    const L = S.lines[id];
+    const run = (async () => {
+      if (text === L.text) { delete S.edits[id]; await write(() => S.db.doc('edits/' + id).delete()); }
+      else { const doc = { round: S.board.round, scene: L.scene, role: L.role, text, base: L.text, by: S.me, at: Date.now() }; S.edits[id] = doc; await write(() => S.db.doc('edits/' + id).set(doc)); }
+    })();
+    S.inflight[id] = run;
+    await run; delete S.inflight[id];
+    paintLine(id); renderHeader();
+  }
+  async function addComment(sid, text) {
+    text = text.trim();
+    if (!text) { toast('Write the comment first.'); return; }
+    const d = S.draft;
+    const doc = { round: S.board.round, scene: sid, target: d.target, kind: d.kind || 'note', text, by: S.me, at: Date.now(), resolved: false, replies: [] };
+    if (d.target === 'image') Object.assign(doc, { x: d.x, y: d.y, beat: d.beat });
+    if (d.target === 'line') doc.line = d.line;
+    if (await write(() => S.db.collection('comments').add(doc), 'Comment added')) { S.draft = null; }
+  }
+  const resolve = c => write(() => S.db.doc('comments/' + c.id).update({ resolved: !c.resolved, resolvedBy: S.me, resolvedAt: Date.now() }), c.resolved ? 'Reopened' : 'Resolved');
+  const remove = c => write(() => S.db.doc('comments/' + c.id).delete(), 'Comment deleted');
+  const setStatus = st => write(() => S.db.doc('review/state').set({ ...(S.review && S.review.round === S.board.round ? S.review : {}), round: S.board.round, status: st, by: S.me, at: Date.now() }), st === 'open' ? 'Reopened for edits' : null);
+  const approve = () => write(() => S.db.doc('review/state').update({ status: 'approved', approvedBy: S.me, approvedAt: Date.now() }), 'Approved. Tell Claude in your chat.');
+
+  /* ---------- Finish review ---------- */
+  function openFinish() {
+    // Save anything still being typed first.
+    Object.keys(S.pending).forEach(id => { clearTimeout(S.timers[id]); save(id); });
+    const t = tally();
+    const bad = [], warn = [];
+    for (const id in S.lines) for (const c of checks(id)) { if (c[0] === 'bad') bad.push([id, c[1]]); if (c[0] === 'warn') warn.push([id, c[1]]); }
+    const changed = Object.keys(S.edits).map(id => [id, S.lines[id].text, S.edits[id].text]);
+    const cm = S.comments.filter(c => !c.resolved && c.round === S.board.round);
+    const kinds = k => cm.filter(c => (c.kind || 'note') === k).length;
+    const where = id => 'Scene ' + S.scenes[S.lines[id].scene].n;
+    const note = h('textarea', { id: 'finish-note', placeholder: 'Anything else for Claude? For example, the overall pace, or what this round is for.' });
+    const close = () => { $('#sheet').innerHTML = ''; };
+    const send = h('button', { class: 'btn go', type: 'button', disabled: bad.length > 0, onclick: async () => {
+      if (await write(() => S.db.doc('review/state').set({ round: S.board.round, status: 'submitted', by: S.me, at: Date.now(), note: note.value.trim(),
+        counts: { changed: changed.length, comments: cm.length, reshoot: kinds('reshoot'), cut: kinds('cut'), warnings: warn.length } }), 'Sent for checking. Tell Claude in your chat.')) close();
+    }, text: 'Send for checking' });
+    const sheet = h('div', { class: 'sheet-back', onclick: e => { if (e.target === e.currentTarget) close(); } },
+      h('div', { class: 'sheet', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Finish review' },
+        h('div', {}, h('div', { class: 'kicker', text: 'Round ' + S.board.round }), h('h2', { text: 'Finish review' })),
+        h('div', { class: 'sum' },
+          h('div', {}, h('b', { text: changed.length }), h('span', { text: changed.length === 1 ? 'line changed' : 'lines changed' })),
+          h('div', {}, h('b', { text: cm.length }), h('span', { text: 'open comments, ' + kinds('reshoot') + ' reshoot, ' + kinds('cut') + ' cut' })),
+          h('div', { class: bad.length ? 'bad' : '' }, h('b', { text: bad.length }), h('span', { text: 'to fix before sending' })),
+          h('div', { class: warn.length ? 'warn' : '' }, h('b', { text: warn.length }), h('span', { text: 'to look at' }))),
+        bad.length ? h('div', {}, h('h3', { text: 'Fix these first' }), h('ul', { class: 'list' }, bad.map(([id, msg]) => h('li', {}, h('button', { class: 'link', type: 'button', onclick: () => { close(); goTo(S.lines[id].scene); setTimeout(() => $('#t-' + id).focus(), 400); }, text: where(id) }), h('span', { text: msg }))))) : null,
+        changed.length ? h('div', {}, h('h3', { text: 'Your changes' }), h('ul', { class: 'list' }, changed.map(([id, a, b]) => h('li', {}, h('span', { class: 'chip', text: where(id) }), h('span', { class: 'diff' }, h('s', { text: a }), ' ', h('ins', { text: b })))))) : null,
+        warn.length ? h('div', {}, h('h3', { text: 'To look at. Claude will handle timing.' }), h('ul', { class: 'list' }, warn.map(([id, msg]) => h('li', {}, h('span', { class: 'chip warn', text: where(id) }), h('span', { text: msg }))))) : null,
+        h('div', { class: 'note-box' }, h('h3', { text: 'A note for Claude' }), note),
+        h('p', { class: 'hint', text: 'Sending pauses editing. Claude checks the script for errors, posts a report and a plan here, and makes no change to the film until you approve.' }),
+        bad.length ? h('p', { class: 'blocked', text: bad.length + (bad.length === 1 ? ' line breaks' : ' lines break') + ' a house rule. Fix ' + (bad.length === 1 ? 'it' : 'them') + ' to send.' }) : null,
+        h('div', { class: 'acts' }, h('button', { class: 'btn', type: 'button', onclick: close, text: 'Keep editing' }), send)));
+    $('#sheet').innerHTML = ''; $('#sheet').append(sheet);
+    (bad.length ? $('.sheet .link') : note).focus();
+  }
+  $('#finish').addEventListener('click', openFinish);
+  addEventListener('keydown', e => { if (e.key === 'Escape' && $('#sheet').firstChild) $('#sheet').innerHTML = ''; });
+
+  /* ---------- names ---------- */
+  async function resolveNames() {
+    if (!S.user) return;
+    const ids = new Set();
+    Object.values(S.edits).forEach(e => e.by && ids.add(e.by));
+    S.comments.forEach(c => { c.by && ids.add(c.by); (c.replies || []).forEach(r => r.by && ids.add(r.by)); });
+    if (S.review && S.review.by) ids.add(S.review.by);
+    ids.delete('claude');
+    const want = [...ids].filter(Boolean);
+    if (!want.length) return;
+    try {
+      const ps = await S.user.profiles(want);
+      let changed = false;
+      for (const id of want) { const n = (ps[id] && ps[id].name) || ''; if (n && S.names[id] !== n) { S.names[id] = n; changed = true; } }
+      if (changed) { Object.keys(S.scenes).forEach(sid => renderComments(sid)); Object.keys(S.lines).forEach(id => paintLine(id)); }
+    } catch (_) { /* names are a convenience */ }
+  }
+
+  /* ---------- wiring ---------- */
+  function renderAll() {
+    renderHeader(); renderBanner();
+    for (const sid in S.scenes) { updateFrame(sid); renderComments(sid); }
+    for (const id in S.lines) paintLine(id);
+  }
+  let paintQueued = false;
+  function repaint() {
+    if (paintQueued) return; paintQueued = true;
+    requestAnimationFrame(() => {
+      paintQueued = false;
+      renderHeader(); renderBanner();
+      for (const sid in S.scenes) { updateFrame(sid); renderComments(sid); }
+      for (const id in S.lines) {
+        const ta = $('#t-' + id);
+        if (ta && document.activeElement !== ta && S.pending[id] === undefined && ta.value !== value(id)) ta.value = value(id);
+        paintLine(id);
+      }
+      resolveNames();
+    });
+  }
+
+  async function start() {
+    let board;
+    try { const r = await fetch('storyboard.json', { cache: 'no-store' }); board = await r.json(); }
+    catch (e) { $('#board').innerHTML = ''; $('#board').append(h('p', { class: 'empty', text: 'The storyboard did not load. Reload the page; if it still fails, ask Claude to republish the review.' })); return; }
+    S.board = board;
+    for (const s of board.scenes) { S.scenes[s.id] = s; for (const t of s.texts) S.lines[t.id] = { ...t, scene: s.id }; if (s.beats.length) S.beat[s.id] = s.beats[0].line; }
+    $('#player').innerHTML = '';
+    if (board.video) { const v = h('video', { src: board.video, poster: board.poster || null, controls: true, playsinline: true, preload: 'metadata', 'aria-label': 'The current cut' }); $('#player').append(v); }
+    else $('#player').append(h('div', { class: 'none', text: 'No cut attached to this round' }));
+    renderHeader(); renderBoard(); renderBanner();
+    document.fonts && document.fonts.ready.then(() => { for (const sid in S.scenes) updateFrame(sid); for (const id in S.lines) paintLine(id); renderHeader(); });
+    connect();
+  }
+
+  async function connect() {
+    if (!window.claude || !window.claude.use) { S.dbState = 'off'; renderAll(); return; }
+    const [db, user] = await Promise.all([window.claude.use('db'), window.claude.use('user')]);
+    S.db = db; S.user = user;
+    if (!db) { S.dbState = 'off'; S.canWrite = false; renderAll(); return; }
+    if (user) {
+      const me = await user.me(); S.me = me.id || 'anon';
+      if (me.name) S.names[S.me] = me.name;
+      const w = await user.can('data.write');
+      S.canWrite = w !== false; S.canWriteKnown = w !== null;
+    } else S.canWrite = true;
+    renderAll();
+    let heard = { e: false, c: false, r: false };
+    const slow = setTimeout(() => { if (!heard.e || !heard.c || !heard.r) { S.dbState = 'slow'; renderBanner(); } }, 10000);
+    const settle = k => { heard[k] = true; if (heard.e && heard.c && heard.r) { clearTimeout(slow); if (S.dbState === 'slow') S.dbState = 'ok'; } };
+    const fail = e => { clearTimeout(slow); if (e && e.code === 'revoked') { S.dbState = 'off'; S.canWrite = false; } renderAll(); };
+    db.collection('edits').onSnapshot(snap => {
+      const next = {};
+      snap.docs.forEach(d => { const v = d.data(); if (v && v.round === S.board.round && S.lines[d.id]) next[d.id] = v; });
+      // Keep a line I am typing in as I have it.
+      for (const id in S.pending) if (S.edits[id]) next[id] = S.edits[id];
+      S.edits = next; if (!snap.metadata.fromCache) settle('e'); repaint();
+    }, fail);
+    db.collection('comments').onSnapshot(snap => {
+      S.comments = snap.docs.map(d => ({ id: d.id, ...d.data() })).filter(c => S.scenes[c.scene] && (c.round === S.board.round || !c.resolved || (c.replies || []).length));
+      if (!snap.metadata.fromCache) settle('c'); repaint();
+    }, fail);
+    db.doc('review/state').onSnapshot(snap => { S.review = snap.exists ? snap.data() : null; if (!snap.metadata.fromCache) settle('r'); repaint(); }, fail);
+  }
+
+  start();
+})();
+</script>

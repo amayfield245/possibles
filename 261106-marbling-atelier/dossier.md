@@ -1,6 +1,6 @@
 # Possible #261106: The Marbling Atelier
 
-Working file for the story. Started 20 Nov 2026. Status: story A and treatment 1 chosen; capture and first cut in progress.
+Working file for the story. Started 20 Nov 2026. Status: first cut made, 20 Nov 2026. Script review round 1 is open: https://claude.ai/artifact/UT9Fgvnu6b9uH3iPGtL8pa
 
 ## Facts
 
@@ -137,3 +137,19 @@ Each has a hook, one claim, the proof on screen and a reason to care.
 
 - `kit/engine.js`: `frames.start`, so a shot can play part of a frame sequence.
 - `kit/engine.js`: real-time preview playback no longer runs while rendering. With heavy footage it seeked between the renderer's frames, so the wrong moment was filmed. Films rendered before this fix (#261117) may have the odd wrong frame; worth a look.
+
+## First cut, 20 Nov 2026
+
+- `out/possible-261106-marbling-atelier.mp4`: 86.6 s, 1920 by 1080, 14 scenes. The renderer reported no caption checks.
+- Account: `account.md`, 198 words.
+- Script review round 1: https://claude.ai/artifact/UT9Fgvnu6b9uH3iPGtL8pa (14 scenes, 20 lines). Private to Antony until he shares it.
+
+## Eval, first cut
+
+- Hook: opens on the comb drawn through the bath, with Antony's line. Concrete. Pass.
+- One story: one prompt made a craft you can explore, and even learn backwards. Every scene serves it. Pass.
+- So what: Antony's lesson, rich enough to explore in its own right, far from single-use software. Pass, though the leap from marbling to an organisation's own know-how is left to the viewer (the account names it).
+- What next: ends on a doubt, no marbler has checked it. Pass.
+- Truth: every number is on screen in the app (see above). "Researched" is Antony's word. Fable is named and explained on the ident. Pass.
+- Style: paper, ink, one gold accent, real fonts, wordmark once on the end card. Captions within two lines. Pass.
+- Possibles: invites exploring, promises no product. Pass.
