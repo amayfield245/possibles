@@ -1,6 +1,5 @@
 // Captures footage of The Marbling Atelier for the film, from the published version in experiment/index.html.
-// Run from this repo's root: node 261106-marbling-atelier/capture.mjs [page] [history] [sheet] [studio]
-// With no arguments it captures all four. Output goes to 261106-marbling-atelier/captures/ (not committed).
+// Run from this repo's root: node 261106-marbling-atelier/capture.mjs [page] [history] [sheet] [studio]// With no arguments it captures all four. Output goes to 261106-marbling-atelier/captures/ (not committed).
 //
 // Everything filmed is the app doing what it does for any visitor. It opens on its Bouquet (the app's own seed,
 // 271828). The history stills use its Undo history, one pass at a time. The animation is the app working the
@@ -32,6 +31,8 @@ const workRegion = async () => {
 };
 
 if (doing('page')) {
+  // The app draws the pattern book's swatches one at a time on timers after it opens. Wait for all of them.
+  await page.waitForFunction(() => [...document.querySelectorAll('.recipe .sw')].every(s => s.style.backgroundImage), null, { timeout: 1800000, polling: 2000 });
   await page.screenshot({ path: join(out, 'page.png'), fullPage: true });
   rects.page = await rectOf(page, ['.masthead', '.lineage', '.lineage li', 'h1', '.sub', '.bench', '.panel.pots', '.workspace', '.trough', '.bath', '.rack', '.historybar', '.panel.book', '.recipes', '.recipe', '.trad-label', '.colophon', '.colophon > div']);
   log('page still');
