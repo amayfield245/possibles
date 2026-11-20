@@ -3,7 +3,7 @@
 
    A film spec sets window.FILM = { fps, scenes: [...] }. Scene kinds:
    card: { type: 'card', variant: 'ident' | 'statement' | 'section' | 'end', dur, kicker, title, sub, bar, logo }
-   shot: { type: 'shot', dur, src | frames: { dir, count, fps, ext, pad }, dpr,
+   shot: { type: 'shot', dur, src | frames: { dir, count, fps, ext, pad, start }, dpr,   start: first file number to play
            cam: [{ at, c: [x, y], w }],             camera keyframes in capture CSS px: centre and width of the view
            marks: [{ at, dur, rect: [x, y, w, h], tag }],
            captions: [{ at, dur, text }] }
@@ -29,7 +29,7 @@
     img.onerror = () => { problems.push('missing image: ' + src); res(img); };
     img.src = src;
   });
-  const frameSrc = (f, i) => base + f.dir + '/' + String(i).padStart(f.pad || 4, '0') + '.' + (f.ext || 'jpg');
+  const frameSrc = (f, i) => base + f.dir + '/' + String(i + (f.start || 0)).padStart(f.pad || 4, '0') + '.' + (f.ext || 'jpg');
 
   const buildCard = (s, root) => {
     root.classList.add('card-scene', s.variant || 'ident');
