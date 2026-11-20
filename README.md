@@ -30,7 +30,7 @@ The process is a skill: `.claude/skills/possible-story/SKILL.md`. In Claude Code
 
 | Number | Name | Kind | Status |
 |---|---|---|---|
-| #261117 | Inspiration prospector | Concept | First cut made. Script review round 1 is open: https://claude.ai/artifact/VaoCDusTU8z3TnQG2bzfn8 |
+| #261117 | Idea prospector (made as Inspiration prospector) | Concept | Round 2 cut made from the script review. Round 2 is open: https://claude.ai/artifact/VaoCDusTU8z3TnQG2bzfn8 |
 
 ## Render a film
 
@@ -45,13 +45,13 @@ node build.mjs
 Capture the footage, from this repository's root:
 
 ```bash
-SELECT="Sell the checking, not drafting" ORBIT_FRAMES=300 node 261117-inspiration-prospector/capture.mjs 261117-inspiration-prospector/live/session.json
+SELECT="Sell the checking, not drafting" NAME="Idea prospector" ORBIT_FRAMES=300 node 261117-idea-prospector/capture.mjs 261117-idea-prospector/live/session.json
 ```
 
 Render the film:
 
 ```bash
-node kit/render.mjs 261117-inspiration-prospector/film.js --out 261117-inspiration-prospector/out/possible-261117-inspiration-prospector.mp4
+node kit/render.mjs 261117-idea-prospector/film.js --out 261117-idea-prospector/out/possible-261117-idea-prospector.mp4
 ```
 
 The capture needs the five CDN scripts in the `latent` checkout's `test/libs/`, as its smoke test does. The renderer needs Playwright and ffmpeg.

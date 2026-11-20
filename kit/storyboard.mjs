@@ -28,7 +28,7 @@ const film = await page.evaluate(() => {
   const pick = s => ({ type: s.type, part: s.part || '', variant: s.variant || '', in: s.in || 'cut', start: s.start, dur: s.dur, bar: s.bar !== false,
     kicker: s.kicker || '', title: s.title || '', sub: s.sub || '', logo: s.logo || '', src: s.src || (s.frames ? s.frames.dir : ''),
     captions: (s.captions || []).map(c => ({ at: c.at, dur: c.dur, text: c.text })) });
-  return { meta: window.FILM.meta || {}, scenes: window.FILM.scenes.map(pick) };
+  return { meta: window.FILM.meta || {}, captionStyle: window.FILM.captionStyle || 'paper', scenes: window.FILM.scenes.map(pick) };
 });
 
 const r1 = n => Math.round(n * 100) / 100;
@@ -72,7 +72,7 @@ const pageHtml = readFileSync(join(kit, 'review.html'), 'utf8')
   .replace('<title>Possibles script review</title>', '<title>' + (meta.name ? meta.name + ' script review' : 'Possibles script review') + '</title>');
 writeFileSync(join(out, 'index.html'), pageHtml);
 const board = {
-  number: meta.number || '', name: meta.name || '', round, builtAt: new Date().toISOString(),
+  number: meta.number || '', name: meta.name || '', round, builtAt: new Date().toISOString(), captionStyle: film.captionStyle,
   duration: r1(info.duration), video: existsSync(join(out, 'film.mp4')) ? 'film.mp4' : null, poster: 'poster.jpg',
   history: prev && prev.round !== round ? [...(prev.history || []), { round: prev.round, builtAt: prev.builtAt }] : (prev ? prev.history || [] : []),
   scenes,

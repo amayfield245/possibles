@@ -68,6 +68,22 @@ header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12p
 .steps span { color: var(--ink-soft); font-size: 14px; }
 .meta-line { color: var(--faint); font-size: 13px; margin-top: 14px; }
 
+/* Caption style picker */
+.capstyle { margin-block: 22px 0; border-top: 1px solid var(--rule); padding-top: 18px; display: grid; gap: 12px; }
+.capstyle-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; }
+.capstyle-head h2 { margin: 0; font: 600 19px/1.25 var(--head); }
+.capstyle-head p { margin: 0; color: var(--ink-soft); font-size: 14px; }
+.styles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.style-opt { text-align: left; border: 1px solid var(--rule); background: var(--card); border-radius: 4px; padding: 10px; display: grid; gap: 8px; align-content: start; }
+.style-opt:hover:not(:disabled) { border-color: var(--ink-soft); }
+.style-opt[aria-checked="true"] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
+.style-opt:disabled { cursor: default; }
+.style-opt .frame { cursor: inherit; pointer-events: none; }
+.style-opt b { font: 600 15px/1.2 var(--head); display: flex; justify-content: space-between; gap: 8px; }
+.style-opt span { font-size: 13px; color: var(--ink-soft); }
+.style-opt .now { font: 500 11px/1 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--teal); }
+.capstyle .note { font-size: 13px; color: var(--ink-soft); }
+
 /* Status banner */
 .banner { margin-block: 20px 4px; border: 1px solid var(--rule); border-left: 3px solid var(--gold); background: var(--card); border-radius: 4px; padding: 16px 18px; display: grid; gap: 10px; }
 .banner h2 { margin: 0; font: 600 19px/1.25 var(--head); }
@@ -101,6 +117,9 @@ header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12p
 .vf .cap { position: absolute; left: 48px; right: 48px; top: 556px; height: 140px; display: flex; align-items: center; }
 .vf .cap span { font: 600 42px/1.18 'Bricolage Grotesque', sans-serif; letter-spacing: -0.008em; max-width: 1100px; text-wrap: balance; white-space: pre-line; }
 .vf .cap.over span { color: var(--f-ink); background: linear-gradient(transparent 0, transparent 100%); outline: 3px dashed #C22C13; outline-offset: 8px; }
+.vf.cap-card .cap { background: #FFFFFF; border: 1px solid #BBDCE2; border-left: 4px solid var(--f-gold); border-radius: 4px; padding: 0 32px; }
+.vf.cap-ink .cap { background: var(--f-ink); border-radius: 4px; padding: 0 32px; }
+.vf.cap-ink .cap span { color: var(--f-paper); }
 .vf.card { display: flex; flex-direction: column; justify-content: center; padding: 48px 48px 72px; }
 .vf.card .bar { width: 72px; height: 3px; background: var(--f-gold); margin-bottom: 30px; }
 .vf.card .kick { font: 500 26px/1.2 'IBM Plex Mono', monospace; letter-spacing: 0.14em; text-transform: uppercase; color: var(--f-soft); margin-bottom: 20px; white-space: pre-wrap; }
@@ -108,7 +127,7 @@ header.top .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 12p
 .vf.card.statement .ttl { font-size: 68px; line-height: 1.1; max-width: 1000px; }
 .vf.card.section .ttl { font-size: 72px; }
 .vf.card .sb { font: 400 32px/1.3 'Hanken Grotesk', sans-serif; color: var(--f-soft); margin-top: 26px; max-width: 620px; white-space: pre-wrap; }
-.vf.card .logo { position: absolute; left: 48px; bottom: 56px; width: 260px; }
+.vf.card .logo { position: absolute; inset: auto auto 56px 48px; width: 260px; height: auto; }
 .pin { position: absolute; width: 26px; height: 26px; margin: -13px 0 0 -13px; border-radius: 50%; background: var(--f-gold); color: #fff; font: 600 13px/26px var(--body); text-align: center; border: 2px solid #fff; box-shadow: 0 1px 3px rgba(15, 42, 48, 0.35); padding: 0; z-index: 2; }
 .pin.resolved { background: #8FA9AE; }
 .pin.draft { background: var(--f-ink); }
@@ -187,6 +206,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
   .intro, .scene { grid-template-columns: minmax(0, 1fr); }
   .scene-head { margin-bottom: 0; }
   .sum { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .styles { grid-template-columns: minmax(0, 1fr); }
   header.top .wrap { gap: 8px 16px; }
   .title h1 { font-size: 21px; }
   header.top { position: static; }
@@ -216,6 +236,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
       <p class="meta-line" id="metaLine"></p>
     </div>
   </section>
+  <section class="capstyle" id="capstyle" aria-labelledby="capstyle-h"></section>
   <div id="banner"></div>
   <div id="board"><p class="empty">Loading the storyboard.</p></div>
 </main>
@@ -251,12 +272,21 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
   const S = {
     board: null, lines: {}, scenes: {},      // storyboard and indexes
     edits: {}, comments: [], review: null,    // shared state from the store
+    style: null,                              // style/captions: the caption style chosen this round
     db: null, user: null, me: null, canWrite: false, dbState: 'loading',
     beat: {}, draft: null, hot: null, names: {}, pending: {}, timers: {}, inflight: {},
   };
   const value = id => (S.edits[id] ? S.edits[id].text : S.lines[id].text);
   const status = () => (S.review && S.review.round === S.board.round ? S.review.status : 'open');
   const editable = () => S.canWrite && status() === 'open';
+  const STYLES = {
+    paper: { name: 'Paper', about: 'Ink on paper, the house default. Reads like the slides.' },
+    card: { name: 'Card band', about: 'A white band with a gold edge. Inside the house style, and clearly a caption.' },
+    ink: { name: 'Ink plate', about: 'Light text on an ink plate. The clearest break from the slides.', off: true },
+  };
+  const baseStyle = () => S.board.captionStyle || 'paper';
+  const capStyle = () => (S.style && S.style.round === S.board.round && STYLES[S.style.style] ? S.style.style : baseStyle());
+  const styleChanged = () => capStyle() !== baseStyle();
 
   /* ---------- checks: the house style, reading time and fit ---------- */
   const AVOID = [
@@ -350,9 +380,46 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
   function tally() {
     let bad = 0, warn = 0;
     for (const id in S.lines) for (const c of checks(id)) { if (c[0] === 'bad') bad++; else if (c[0] === 'warn' && (S.edits[id] || true)) warn++; }
-    const changed = Object.keys(S.edits).length;
+    const changed = Object.keys(S.edits).length + (styleChanged() ? 1 : 0);
+    if (STYLES[capStyle()].off) warn++;
     const comments = S.comments.filter(c => !c.resolved).length;
     return { bad, warn, changed, comments };
+  }
+
+  function renderStyles() {
+    const el = $('#capstyle'); if (!el || !S.board) return;
+    const sample = S.board.scenes.find(s => s.beats.length && s.beats[0].line) || null;
+    const cur = capStyle(), can = editable();
+    el.innerHTML = '';
+    el.append(h('div', { class: 'capstyle-head' }, h('h2', { id: 'capstyle-h', text: 'Caption style' }),
+      h('p', { text: 'Changes every caption in the film. It is sent and approved like any other change.' })));
+    const row = h('div', { class: 'styles', role: 'radiogroup', 'aria-labelledby': 'capstyle-h' });
+    for (const [key, st] of Object.entries(STYLES)) {
+      let mini = null;
+      if (sample) {
+        const b = sample.beats[0];
+        mini = h('div', { class: 'frame' }, h('div', { class: 'vf cap-' + key }, h('img', { src: b.frame, alt: '' }), h('div', { class: 'cap' }, h('span', { text: value(b.line) }))));
+      }
+      row.append(h('button', {
+        class: 'style-opt', type: 'button', role: 'radio', 'aria-checked': String(cur === key), disabled: !can && cur !== key ? true : null,
+        onclick: () => { if (can && cur !== key) chooseStyle(key); },
+      }, mini, h('b', {}, st.name, key === baseStyle() ? h('span', { class: 'now', text: 'In the cut' }) : null), h('span', { text: st.about })));
+    }
+    el.append(row);
+    const notes = [];
+    if (S.style && S.style.round === S.board.round && styleChanged()) notes.push('Changed to ' + STYLES[cur].name + ' by ' + who(S.style.by) + ', ' + ago(S.style.at) + '. The cut still shows ' + STYLES[baseStyle()].name + ' until the change is approved and made.');
+    if (STYLES[cur].off) notes.push('Ink plate departs from the house style, which puts captions on a paper or card band.');
+    if (notes.length) el.append(h('p', { class: 'note', text: notes.join(' ') }));
+    $$('.frame', el).forEach(fitOne);
+  }
+  async function chooseStyle(key) {
+    const prev = S.style;
+    const doc = { round: S.board.round, style: key, base: baseStyle(), by: S.me, at: Date.now() };
+    S.style = key === baseStyle() ? null : doc;
+    renderStyles(); for (const sid in S.scenes) updateFrame(sid); for (const id in S.lines) paintLine(id); renderHeader();
+    const ref = S.db ? S.db.doc('style/captions') : null;
+    const ok = await write(() => (key === baseStyle() ? ref.delete() : ref.set(doc)), 'Caption style: ' + STYLES[key].name);
+    if (!ok) { S.style = prev; renderAll(); }
   }
 
   function renderBanner() {
@@ -453,7 +520,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
       const bi = beatIndex(s), beat = s.beats[bi];
       const lineId = beat.line;
       const span = h('span', { text: lineId ? value(lineId) : '' });
-      vf = h('div', { class: 'vf' }, h('img', { src: beat.frame, alt: '' }), lineId ? h('div', { class: 'cap' }, span) : null);
+      vf = h('div', { class: 'vf cap-' + capStyle() }, h('img', { src: beat.frame, alt: '' }), lineId ? h('div', { class: 'cap' }, span) : null);
     }
     f.append(vf);
     // Pins for this moment, then the draft pin.
@@ -645,25 +712,29 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
     const bad = [], warn = [];
     for (const id in S.lines) for (const c of checks(id)) { if (c[0] === 'bad') bad.push([id, c[1]]); if (c[0] === 'warn') warn.push([id, c[1]]); }
     const changed = Object.keys(S.edits).map(id => [id, S.lines[id].text, S.edits[id].text]);
+    const styleLine = styleChanged() ? ['Caption style', STYLES[baseStyle()].name, STYLES[capStyle()].name] : null;
+    if (STYLES[capStyle()].off) warn.push([null, 'Ink plate departs from the house style, which puts captions on a paper or card band.']);
     const cm = S.comments.filter(c => !c.resolved && c.round === S.board.round);
     const kinds = k => cm.filter(c => (c.kind || 'note') === k).length;
-    const where = id => 'Scene ' + S.scenes[S.lines[id].scene].n;
+    const where = id => (id ? 'Scene ' + S.scenes[S.lines[id].scene].n : 'Captions');
     const note = h('textarea', { id: 'finish-note', placeholder: 'Anything else for Claude? For example, the overall pace, or what this round is for.' });
     const close = () => { $('#sheet').innerHTML = ''; };
     const send = h('button', { class: 'btn go', type: 'button', disabled: bad.length > 0, onclick: async () => {
       if (await write(() => S.db.doc('review/state').set({ round: S.board.round, status: 'submitted', by: S.me, at: Date.now(), note: note.value.trim(),
-        counts: { changed: changed.length, comments: cm.length, reshoot: kinds('reshoot'), cut: kinds('cut'), warnings: warn.length } }), 'Sent for checking. Tell Claude in your chat.')) close();
+        counts: { changed: changed.length, captionStyle: styleLine ? capStyle() : null, comments: cm.length, reshoot: kinds('reshoot'), cut: kinds('cut'), warnings: warn.length } }), 'Sent for checking. Tell Claude in your chat.')) close();
     }, text: 'Send for checking' });
     const sheet = h('div', { class: 'sheet-back', onclick: e => { if (e.target === e.currentTarget) close(); } },
       h('div', { class: 'sheet', role: 'dialog', 'aria-modal': 'true', 'aria-label': 'Finish review' },
         h('div', {}, h('div', { class: 'kicker', text: 'Round ' + S.board.round }), h('h2', { text: 'Finish review' })),
         h('div', { class: 'sum' },
-          h('div', {}, h('b', { text: changed.length }), h('span', { text: changed.length === 1 ? 'line changed' : 'lines changed' })),
+          h('div', {}, h('b', { text: changed.length + (styleLine ? 1 : 0) }), h('span', { text: styleLine ? 'changes, with the caption style' : changed.length === 1 ? 'line changed' : 'lines changed' })),
           h('div', {}, h('b', { text: cm.length }), h('span', { text: 'open comments, ' + kinds('reshoot') + ' reshoot, ' + kinds('cut') + ' cut' })),
           h('div', { class: bad.length ? 'bad' : '' }, h('b', { text: bad.length }), h('span', { text: 'to fix before sending' })),
           h('div', { class: warn.length ? 'warn' : '' }, h('b', { text: warn.length }), h('span', { text: 'to look at' }))),
         bad.length ? h('div', {}, h('h3', { text: 'Fix these first' }), h('ul', { class: 'list' }, bad.map(([id, msg]) => h('li', {}, h('button', { class: 'link', type: 'button', onclick: () => { close(); goTo(S.lines[id].scene); setTimeout(() => $('#t-' + id).focus(), 400); }, text: where(id) }), h('span', { text: msg }))))) : null,
-        changed.length ? h('div', {}, h('h3', { text: 'Your changes' }), h('ul', { class: 'list' }, changed.map(([id, a, b]) => h('li', {}, h('span', { class: 'chip', text: where(id) }), h('span', { class: 'diff' }, h('s', { text: a }), ' ', h('ins', { text: b })))))) : null,
+        changed.length || styleLine ? h('div', {}, h('h3', { text: 'Your changes' }), h('ul', { class: 'list' },
+          styleLine ? h('li', {}, h('span', { class: 'chip', text: styleLine[0] }), h('span', { class: 'diff' }, h('s', { text: styleLine[1] }), ' ', h('ins', { text: styleLine[2] }))) : null,
+          changed.map(([id, a, b]) => h('li', {}, h('span', { class: 'chip', text: where(id) }), h('span', { class: 'diff' }, h('s', { text: a }), ' ', h('ins', { text: b })))))) : null,
         warn.length ? h('div', {}, h('h3', { text: 'To look at. Claude will handle timing.' }), h('ul', { class: 'list' }, warn.map(([id, msg]) => h('li', {}, h('span', { class: 'chip warn', text: where(id) }), h('span', { text: msg }))))) : null,
         h('div', { class: 'note-box' }, h('h3', { text: 'A note for Claude' }), note),
         h('p', { class: 'hint', text: 'Sending pauses editing. Claude checks the script for errors, posts a report and a plan here, and makes no change to the film until you approve.' }),
@@ -682,6 +753,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
     Object.values(S.edits).forEach(e => e.by && ids.add(e.by));
     S.comments.forEach(c => { c.by && ids.add(c.by); (c.replies || []).forEach(r => r.by && ids.add(r.by)); });
     if (S.review && S.review.by) ids.add(S.review.by);
+    if (S.style && S.style.by) ids.add(S.style.by);
     ids.delete('claude');
     const want = [...ids].filter(Boolean);
     if (!want.length) return;
@@ -689,13 +761,13 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
       const ps = await S.user.profiles(want);
       let changed = false;
       for (const id of want) { const n = (ps[id] && ps[id].name) || ''; if (n && S.names[id] !== n) { S.names[id] = n; changed = true; } }
-      if (changed) { Object.keys(S.scenes).forEach(sid => renderComments(sid)); Object.keys(S.lines).forEach(id => paintLine(id)); }
+      if (changed) { Object.keys(S.scenes).forEach(sid => renderComments(sid)); Object.keys(S.lines).forEach(id => paintLine(id)); renderStyles(); }
     } catch (_) { /* names are a convenience */ }
   }
 
   /* ---------- wiring ---------- */
   function renderAll() {
-    renderHeader(); renderBanner();
+    renderHeader(); renderBanner(); renderStyles();
     for (const sid in S.scenes) { updateFrame(sid); renderComments(sid); }
     for (const id in S.lines) paintLine(id);
   }
@@ -704,7 +776,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
     if (paintQueued) return; paintQueued = true;
     requestAnimationFrame(() => {
       paintQueued = false;
-      renderHeader(); renderBanner();
+      renderHeader(); renderBanner(); renderStyles();
       for (const sid in S.scenes) { updateFrame(sid); renderComments(sid); }
       for (const id in S.lines) {
         const ta = $('#t-' + id);
@@ -724,7 +796,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
     $('#player').innerHTML = '';
     if (board.video) { const v = h('video', { src: board.video, poster: board.poster || null, controls: true, playsinline: true, preload: 'metadata', 'aria-label': 'The current cut' }); $('#player').append(v); }
     else $('#player').append(h('div', { class: 'none', text: 'No cut attached to this round' }));
-    renderHeader(); renderBoard(); renderBanner();
+    renderHeader(); renderBoard(); renderBanner(); renderStyles();
     document.fonts && document.fonts.ready.then(() => { for (const sid in S.scenes) updateFrame(sid); for (const id in S.lines) paintLine(id); renderHeader(); });
     connect();
   }
@@ -742,6 +814,7 @@ footer { padding-block: 32px 48px; color: var(--faint); font-size: 13px; }
     } else S.canWrite = true;
     renderAll();
     let heard = { e: false, c: false, r: false };
+    db.doc('style/captions').onSnapshot(snap => { S.style = snap.exists ? snap.data() : null; repaint(); }, () => {});
     const slow = setTimeout(() => { if (!heard.e || !heard.c || !heard.r) { S.dbState = 'slow'; renderBanner(); } }, 10000);
     const settle = k => { heard[k] = true; if (heard.e && heard.c && heard.r) { clearTimeout(slow); if (S.dbState === 'slow') S.dbState = 'ok'; } };
     const fail = e => { clearTimeout(slow); if (e && e.code === 'revoked') { S.dbState = 'off'; S.canWrite = false; } renderAll(); };
