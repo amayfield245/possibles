@@ -161,7 +161,8 @@
   if (qs.has('render')) document.body.classList.add('render');
   // nocaps: frames without the caption band, for the review page, which lays editable captions over them.
   if (qs.has('nocaps')) document.body.classList.add('nocaps');
-  else window.FILM_READY.then(info => {
+  // Real-time playback is for previewing only. When rendering it would seek between the renderer's frames.
+  if (!qs.has('nocaps') && !qs.has('render')) window.FILM_READY.then(info => {
     if (!info) return;
     const fit = () => { frame.style.transform = 'scale(' + Math.min(innerWidth / 1280, innerHeight / 720) + ')'; };
     fit(); addEventListener('resize', fit);

@@ -1,6 +1,6 @@
 // Captures footage of The Marbling Atelier for the film, from the published version in experiment/index.html.
 // Run from this repo's root: node 261106-marbling-atelier/capture.mjs [page] [book] [history] [sheet] [studio]
-// The film uses: VIEW_H=1400 node 261106-marbling-atelier/capture.mjs book history, then node 261106-marbling-atelier/capture.mjs page sheet studio
+// The film uses: VIEW_H=1400 node 261106-marbling-atelier/capture.mjs book history sheet, then node 261106-marbling-atelier/capture.mjs page studio
 // With no arguments it captures everything. Output goes to 261106-marbling-atelier/captures/ (not committed).
 //
 // Everything filmed is the app doing what it does for any visitor. It opens on its Bouquet (the app's own seed,
@@ -78,8 +78,8 @@ if (doing('history')) {
 if (doing('sheet')) {
   // Lay down a sheet. The sheet's fall is a CSS transition on timers, so this keeps releasing refreshes for
   // three seconds of real time, then films the proof the sheet took up.
-  await page.evaluate(() => document.querySelector('.plate-head').scrollIntoView());
-  await page.click('#layBtn');
+  // Pressed from script, so the page does not scroll and the plate title stays in the frame (needs VIEW_H=1400).
+  await page.evaluate(() => { scrollTo(0, 0); document.getElementById('layBtn').click(); });
   const t0 = Date.now();
   while (Date.now() - t0 < 3000) await tick(page);
   await settle(page);
