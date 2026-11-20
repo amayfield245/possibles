@@ -21,6 +21,7 @@ const HOLD_RAF = () => {
 
 export async function openApp(browser, { width = 1600, height = 1000, dpr = 2 } = {}) {
   const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: dpr });
+  page.setDefaultTimeout(600000);
   page.on('pageerror', e => console.error('page error:', e.message));
   await page.addInitScript(HOLD_RAF);
   await page.goto(appUrl, { waitUntil: 'domcontentloaded', timeout: 600000 });
