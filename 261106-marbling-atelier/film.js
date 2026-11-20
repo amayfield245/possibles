@@ -45,12 +45,12 @@ window.FILM = {
     },
     {
       type: 'shot', part: 'What', in: 'fade', dur: 6, dpr: 2, src: 'captures/proof.jpg',
-      cam: [{ at: 0, c: [491, 366], w: 900 }, { at: 6, c: [491, 366], w: 820 }],
+      cam: [{ at: 0, c: [455, 366], w: 900 }, { at: 6, c: [470, 366], w: 820 }],
       captions: [{ at: 0.3, dur: 5.5, text: 'Lay down a sheet, and it takes up the whole pattern in one print.' }],
     },
     {
       type: 'shot', part: 'What', dur: 5.6, dpr: 2, src: 'captures/specimen.png',
-      cam: [{ at: 0, c: [800, 420], w: 1150 }, { at: 5.6, c: [1000, 420], w: 900 }],
+      cam: [{ at: 0, c: [800, 600], w: 1150 }, { at: 1.2, c: [800, 600], w: 1150 }, { at: 5.6, c: [930, 625], w: 1080 }],
       captions: [{ at: 0.3, dur: 5.1, text: 'Then it shows the sheet bound as a book, in half morocco.' }],
     },
 
@@ -63,10 +63,10 @@ window.FILM = {
     {
       type: 'shot', part: 'So what', dur: 10, dpr: 2,
       frames: { dir: 'captures/history', count: 10, fps: 1.6 },
-      cam: [{ at: 0, c: [491, 366], w: 900 }, { at: 6.6, c: [491, 366], w: 900 }, { at: 8, c: [455, 807], w: 900 }],
+      cam: [{ at: 0, c: [455, 366], w: 900 }, { at: 6.6, c: [455, 366], w: 900 }, { at: 8, c: [455, 807], w: 900 }],
       captions: [
         { at: 0.3, dur: 4.2, text: 'In a real bath, nothing can be undone.' },
-        { at: 4.8, dur: 5, text: 'Here, all 1,481 strokes can. Pass 9, back to a clean bath.' },
+        { at: 4.8, dur: 5, text: 'Here, all 1,481 strokes can, pass by pass, back to a clean bath.' },
       ],
     },
     { type: 'card', part: 'So what', variant: 'statement', in: 'fade', dur: 5.6, title: 'Frontier models now make apps rich enough to explore in their own right.' },
