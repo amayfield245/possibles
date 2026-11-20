@@ -43,6 +43,7 @@ The question driving it (Antony): how far can AI go from one prompt into a speci
 - One prompt reached nine centuries and three traditions of a craft, with the right tools, materials and names, and put a 2012 research paper to work under it. The surprise is the depth, not the polish.
 - A finding from the review, which Antony called a story: in a real bath nothing can be undone, and each sheet happens once. Here every stroke can be reversed exactly. Drag the history slider back and the Bouquet unmakes itself, pass by pass. Software adds something the craft never had: you can learn a pattern by watching it come apart.
 - Antony kept using it. It is beautiful and relaxing, and he keeps learning about the craft and its history. A test of the AI turned into a place he goes back to.
+- Antony's lesson (20 Nov 2026): apps made by frontier models can be so rich that they need exploring and understanding in their own right. The atelier is a learning experience, far from the idea of "single-use software" (software made in minutes for one job, then thrown away). This is the film's so what.
 - The doubt: none of it has been checked by a marbler. A leader should read it the same way: deep, convincing, and unverified until someone with the craft looks.
 - Themes: specialist knowledge is now cheap to make tangible; checking it is the scarce part. Tacit craft made into something you can try, rewind and learn from. Tools people return to without being asked.
 
@@ -60,6 +61,8 @@ The question driving it (Antony): how far can AI go from one prompt into a speci
 5. The undo finding: story, side effect or flaw? "A story."
 6. What next? In Antony's words: "The biggest surprise is that I've kept using it because it is beautiful, relaxing and I keep learning more about the craft and its history."
 7. Has a marbler checked it? "No, not yet."
+8. Added by Antony, 20 Nov 2026, in his words: "The concept is an end in itself. But it also taught me that these frontier models create apps that are so rich they need to be explored and understood in their own right. Atelier is a rich, beautiful learning experience. Far from the idea of "single-use software"."
+
 
 ## Stories
 
@@ -103,6 +106,14 @@ Each has a hook, one claim, the proof on screen and a reason to care.
 ## Decision
 
 20 Nov 2026: Antony chose story A, and gave the opening line above. Treatment 1 (forwards, then back) taken as the default, since he answered with the line rather than a treatment.
+
+## Script outline (treatment 1, revised for Antony's lesson)
+
+- Hook: comb through the bath. Antony's line over it, in two captions.
+- Ident.
+- What: lineage, pattern book, the Bouquet worked pass by pass, a sheet laid down and bound.
+- So what: "A bath gives one good print" (the app's words), then the history runs back through 1,481 strokes. Then Antony's lesson: rich enough to explore in its own right, far from single-use software.
+- What next: he keeps going back to learn. No marbler has checked it yet. Ends on that doubt.
 
 ## Footage notes
 
