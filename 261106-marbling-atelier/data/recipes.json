@@ -1,0 +1,456 @@
+[
+ {
+  "id": "suminagashi",
+  "name": "Suminagashi",
+  "trad": "japan",
+  "date": "1112 and earlier",
+  "origin": "Japan",
+  "passes": 3,
+  "ops": 223,
+  "steps": [
+   "Touching sumi and clear water to the bath in turn",
+   "Fanning the surface so the rings drift",
+   "Breathing gently through a straw"
+  ]
+ },
+ {
+  "id": "abri",
+  "name": "Abrī",
+  "trad": "ottoman",
+  "date": "late 15th century",
+  "origin": "Herat and Bukhara",
+  "passes": 5,
+  "ops": 200,
+  "steps": [
+   "Throwing gold ochre from the whisk",
+   "Throwing lapis from the whisk",
+   "Throwing rose from the whisk",
+   "Throwing pistachio from the whisk",
+   "Letting a draught move the colours"
+  ]
+ },
+ {
+  "id": "battal",
+  "name": "Battal",
+  "trad": "ottoman",
+  "date": "16th century",
+  "origin": "Istanbul",
+  "passes": 5,
+  "ops": 783,
+  "steps": [
+   "Throwing lamp black from the whisk",
+   "Throwing lahore indigo from the whisk",
+   "Throwing turkish red from the whisk",
+   "Throwing orpiment from the whisk",
+   "Throwing verdigris from the whisk"
+  ]
+ },
+ {
+  "id": "gelgit",
+  "name": "Gelgit",
+  "trad": "ottoman",
+  "date": "16th century",
+  "origin": "Istanbul",
+  "passes": 6,
+  "ops": 849,
+  "steps": [
+   "Throwing lamp black from the whisk",
+   "Throwing lahore indigo from the whisk",
+   "Throwing turkish red from the whisk",
+   "Throwing orpiment from the whisk",
+   "Throwing ivory from the whisk",
+   "Drawing the stylus back and forth across the bath"
+  ]
+ },
+ {
+  "id": "tarakli",
+  "name": "Taraklı",
+  "trad": "ottoman",
+  "date": "17th century",
+  "origin": "Istanbul",
+  "passes": 8,
+  "ops": 1158,
+  "steps": [
+   "Throwing lamp black from the whisk",
+   "Throwing lahore indigo from the whisk",
+   "Throwing turkish red from the whisk",
+   "Throwing orpiment from the whisk",
+   "Throwing verdigris from the whisk",
+   "Throwing ivory from the whisk",
+   "Drawing the stylus up and down the bath",
+   "Pulling a comb of 4 mm tines across the bath"
+  ]
+ },
+ {
+  "id": "sal",
+  "name": "Şal",
+  "trad": "ottoman",
+  "date": "18th century",
+  "origin": "Istanbul",
+  "passes": 8,
+  "ops": 1038,
+  "steps": [
+   "Throwing turkish red from the whisk",
+   "Throwing lahore indigo from the whisk",
+   "Throwing orpiment from the whisk",
+   "Throwing verdigris from the whisk",
+   "Throwing ivory from the whisk",
+   "Drawing the stylus up and down the bath",
+   "Drawing the stylus back and forth across the bath",
+   "Drawing the comb down in S-curves"
+  ]
+ },
+ {
+  "id": "bulbul",
+  "name": "Bülbül yuvası",
+  "trad": "ottoman",
+  "date": "18th century",
+  "origin": "Istanbul",
+  "passes": 9,
+  "ops": 1238,
+  "steps": [
+   "Throwing lamp black from the whisk",
+   "Throwing lahore indigo from the whisk",
+   "Throwing turkish red from the whisk",
+   "Throwing orpiment from the whisk",
+   "Throwing verdigris from the whisk",
+   "Throwing ivory from the whisk",
+   "Drawing the stylus up and down the bath",
+   "Pulling a comb of 4 mm tines across the bath",
+   "Winding nests with the awl, from the rim inwards"
+  ]
+ },
+ {
+  "id": "hatip",
+  "name": "Hatip",
+  "trad": "ottoman",
+  "date": "d. 1773",
+  "origin": "Istanbul, after Hatip Mehmed Efendi",
+  "passes": 6,
+  "ops": 1383,
+  "steps": [
+   "Laying a pale ground of pale lahore indigo",
+   "Laying a pale ground of pale orpiment",
+   "Laying a pale ground of pale verdigris",
+   "Laying a pale ground of pale ivory",
+   "Dropping rings of colour within colour",
+   "Drawing the wire down through each ring to make a heart"
+  ]
+ },
+ {
+  "id": "cicek",
+  "name": "Papatya",
+  "trad": "ottoman",
+  "date": "20th century",
+  "origin": "Istanbul, after Mustafa Düzgünman",
+  "passes": 6,
+  "ops": 2322,
+  "steps": [
+   "Laying a soft ground of pale lahore indigo",
+   "Laying a soft ground of pale verdigris",
+   "Laying a soft ground of pale orpiment",
+   "Dropping white for each flower",
+   "Drawing petals inward with the awl",
+   "Setting a yellow heart in each"
+  ]
+ },
+ {
+  "id": "turkish",
+  "name": "Turkish",
+  "trad": "europe",
+  "date": "from the mid-17th century",
+  "origin": "Europe, from Ottoman models",
+  "passes": 5,
+  "ops": 783,
+  "steps": [
+   "Throwing prussian blue from the whisk",
+   "Throwing carmine from the whisk",
+   "Throwing weld yellow from the whisk",
+   "Throwing sap green from the whisk",
+   "Throwing chalk white from the whisk"
+  ]
+ },
+ {
+  "id": "olddutch",
+  "name": "Old Dutch",
+  "trad": "europe",
+  "date": "17th–18th century",
+  "origin": "Holland and Germany",
+  "passes": 8,
+  "ops": 1605,
+  "steps": [
+   "Throwing prussian blue from the whisk",
+   "Throwing carmine from the whisk",
+   "Throwing weld yellow from the whisk",
+   "Throwing sap green from the whisk",
+   "Throwing chalk white from the whisk",
+   "Pulling a comb of 5 mm tines across the bath",
+   "Pulling a comb of 5 mm tines across the bath",
+   "Drawing the wide comb down to raise the arches"
+  ]
+ },
+ {
+  "id": "nonpareil",
+  "name": "Nonpareil",
+  "trad": "europe",
+  "date": "late 17th century onward",
+  "origin": "France and England",
+  "passes": 7,
+  "ops": 1511,
+  "steps": [
+   "Throwing ivory black from the whisk",
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing buff from the whisk",
+   "Throwing sage from the whisk",
+   "Drawing the stylus back and forth across the bath",
+   "Pulling a comb of 3 mm tines down the bath"
+  ]
+ },
+ {
+  "id": "bouquet",
+  "name": "Bouquet",
+  "trad": "europe",
+  "date": "late 18th century",
+  "origin": "Germany and France",
+  "passes": 9,
+  "ops": 1481,
+  "steps": [
+   "Throwing lapis from the whisk",
+   "Throwing coral from the whisk",
+   "Throwing saffron from the whisk",
+   "Throwing lichen from the whisk",
+   "Throwing rose madder from the whisk",
+   "Throwing cream from the whisk",
+   "Drawing the stylus back and forth across the bath",
+   "Pulling a comb of 3 mm tines down the bath",
+   "Carrying the wide comb up the bath in waves"
+  ]
+ },
+ {
+  "id": "peacock",
+  "name": "Peacock",
+  "trad": "europe",
+  "date": "19th century",
+  "origin": "Germany",
+  "passes": 9,
+  "ops": 1461,
+  "steps": [
+   "Throwing teal from the whisk",
+   "Throwing ultramarine from the whisk",
+   "Throwing tyrian plum from the whisk",
+   "Throwing verdigris from the whisk",
+   "Throwing gamboge from the whisk",
+   "Throwing pearl from the whisk",
+   "Pulling a comb of 6 mm tines across the bath",
+   "Pulling a comb of 6 mm tines down the bath",
+   "Taking the comb up in waves to open the eyes"
+  ]
+ },
+ {
+  "id": "frenchcurl",
+  "name": "French Curl",
+  "trad": "europe",
+  "date": "18th century",
+  "origin": "France",
+  "passes": 8,
+  "ops": 1514,
+  "steps": [
+   "Throwing ivory black from the whisk",
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing buff from the whisk",
+   "Throwing sage from the whisk",
+   "Drawing the stylus back and forth across the bath",
+   "Pulling a comb of 3 mm tines down the bath",
+   "Turning each curl with the stylus"
+  ]
+ },
+ {
+  "id": "spanish",
+  "name": "Spanish",
+  "trad": "europe",
+  "date": "early 17th century",
+  "origin": "Spain and Germany",
+  "passes": 5,
+  "ops": 616,
+  "steps": [
+   "Throwing ivory black from the whisk",
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing burnt umber from the whisk",
+   "Throwing buff from the whisk"
+  ]
+ },
+ {
+  "id": "shell",
+  "name": "French Shell",
+  "trad": "europe",
+  "date": "c. 1800",
+  "origin": "France",
+  "passes": 4,
+  "ops": 702,
+  "steps": [
+   "Throwing sap green from the whisk",
+   "Throwing carmine from the whisk",
+   "Throwing weld yellow from the whisk",
+   "Throwing prussian blue from the whisk"
+  ]
+ },
+ {
+  "id": "stormont",
+  "name": "Stormont",
+  "trad": "europe",
+  "date": "1750s–early 19th century",
+  "origin": "Dublin and France",
+  "passes": 5,
+  "ops": 2977,
+  "steps": [
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing sage from the whisk",
+   "Throwing burnt umber from the whisk",
+   "Spattering the last colour with turpentine to open the lace"
+  ]
+ },
+ {
+  "id": "gloster",
+  "name": "Gloster",
+  "trad": "europe",
+  "date": "19th century",
+  "origin": "England",
+  "passes": 7,
+  "ops": 2500,
+  "steps": [
+   "Throwing indigo from the whisk",
+   "Throwing madder from the whisk",
+   "Throwing woad from the whisk",
+   "Throwing weld from the whisk",
+   "Pulling a comb of 5 mm tines across the bath",
+   "Pulling a comb of 5 mm tines down the bath",
+   "Sprinkling colour mixed with turpentine"
+  ]
+ },
+ {
+  "id": "italian",
+  "name": "Italian",
+  "trad": "europe",
+  "date": "late 18th century",
+  "origin": "Italy",
+  "passes": 5,
+  "ops": 1780,
+  "steps": [
+   "Throwing ivory black from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing sage from the whisk",
+   "Throwing buff from the whisk",
+   "Spraying a fine dispersant to draw the colours into veins"
+  ]
+ },
+ {
+  "id": "goldvein",
+  "name": "Gold Vein",
+  "trad": "europe",
+  "date": "17th century",
+  "origin": "Paris",
+  "passes": 4,
+  "ops": 776,
+  "steps": [
+   "Throwing bronze from the whisk",
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing sage from the whisk"
+  ]
+ },
+ {
+  "id": "zebra",
+  "name": "Zebra",
+  "trad": "europe",
+  "date": "late 19th century",
+  "origin": "Germany and England",
+  "passes": 8,
+  "ops": 1620,
+  "steps": [
+   "Throwing tyrian plum from the whisk",
+   "Throwing ultramarine from the whisk",
+   "Throwing teal from the whisk",
+   "Throwing verdigris from the whisk",
+   "Throwing pearl from the whisk",
+   "Pulling a comb of 4 mm tines across the bath",
+   "Pulling a comb of 4 mm tines down the bath",
+   "Splashing on large drops"
+  ]
+ },
+ {
+  "id": "fountain",
+  "name": "Fountain",
+  "trad": "europe",
+  "date": "19th century",
+  "origin": "England",
+  "passes": 7,
+  "ops": 1293,
+  "steps": [
+   "Throwing prussian blue from the whisk",
+   "Throwing carmine from the whisk",
+   "Throwing weld yellow from the whisk",
+   "Throwing sap green from the whisk",
+   "Throwing chalk white from the whisk",
+   "Drawing the stylus up and down the bath",
+   "Pulling the wide rake up through the bath"
+  ]
+ },
+ {
+  "id": "serpentine",
+  "name": "Serpentine",
+  "trad": "europe",
+  "date": "mid-19th century",
+  "origin": "England",
+  "passes": 8,
+  "ops": 1493,
+  "steps": [
+   "Throwing indigo from the whisk",
+   "Throwing madder from the whisk",
+   "Throwing woad from the whisk",
+   "Throwing weld from the whisk",
+   "Throwing olive from the whisk",
+   "Pulling a comb of 5 mm tines across the bath",
+   "Pulling a comb of 5 mm tines down the bath",
+   "Drawing the comb across in snaking waves"
+  ]
+ },
+ {
+  "id": "schrottel",
+  "name": "Schrottel",
+  "trad": "europe",
+  "date": "early 18th century",
+  "origin": "Germany",
+  "passes": 5,
+  "ops": 835,
+  "steps": [
+   "Throwing weld from the whisk",
+   "Throwing woad from the whisk",
+   "Throwing olive from the whisk",
+   "Throwing madder from the whisk",
+   "Sprinkling small spots of oiled black"
+  ]
+ },
+ {
+  "id": "antique",
+  "name": "Antique Spot",
+  "trad": "europe",
+  "date": "17th century",
+  "origin": "Europe",
+  "passes": 8,
+  "ops": 1922,
+  "steps": [
+   "Throwing ivory black from the whisk",
+   "Throwing oxblood from the whisk",
+   "Throwing slate blue from the whisk",
+   "Throwing burnt umber from the whisk",
+   "Throwing sage from the whisk",
+   "Drawing the stylus up and down the bath",
+   "Pulling a comb of 7 mm tines across the bath",
+   "Sprinkling fine white"
+  ]
+ }
+]

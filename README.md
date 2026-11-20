@@ -31,6 +31,7 @@ The process is a skill: `.claude/skills/possible-story/SKILL.md`. In Claude Code
 | Number | Name | Kind | Status |
 |---|---|---|---|
 | #261117 | Inspiration prospector | Concept | First cut made. Script review round 1 is open: https://claude.ai/artifact/VaoCDusTU8z3TnQG2bzfn8 |
+| #261106 | The Marbling Atelier | Concept | Review and interview done. Five stories drafted in the dossier; waiting for Antony to choose. Experiment: https://claude.ai/artifact/HEHmnKshs9KtKKsZUGnfGK |
 
 ## Render a film
 
