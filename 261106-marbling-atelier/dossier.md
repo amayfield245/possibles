@@ -123,3 +123,17 @@ Each has a hook, one claim, the proof on screen and a reason to care.
 - The Bouquet from the pattern book takes about 345 refreshes: throws 165, stylus 126, each comb 27.
 - The history slider moves a pass at a time (10 positions for the Bouquet: pass 9 down to the clean bath). The film uses those positions only; it does not show stroke-by-stroke unmaking, which the app's interface does not offer.
 - On laying down a sheet the app says: "Pulled. A bath gives one good print; skim it before the next plate."
+
+## Where each number on screen comes from
+
+- "26 patterns": the pattern book (`data/recipes.json`, 26 entries; `captures/page.png`).
+- "nine centuries": the masthead lineage, Echizen 1112 to London 1853 (`captures/page.png`). Antony's line.
+- "six colours from the whisk": the Bouquet's first six passes, each captioned by the app (`captures/studio`, rects.json studio.passes).
+- "1,481 strokes": the specimen label, "9 passes and 1481 strokes on the bath" (`captures/specimen.png`), and `data/recipes.json`.
+- "A bath gives one good print": the app's caption after laying down a sheet (`captures/proof.jpg`).
+- History: the history bar reads "pass 9 of 9" down to "pass 0 of 9", "Looking back at the clean bath." (`captures/history`).
+
+## Kit changes made for this film
+
+- `kit/engine.js`: `frames.start`, so a shot can play part of a frame sequence.
+- `kit/engine.js`: real-time preview playback no longer runs while rendering. With heavy footage it seeked between the renderer's frames, so the wrong moment was filmed. Films rendered before this fix (#261117) may have the odd wrong frame; worth a look.
