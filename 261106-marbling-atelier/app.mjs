@@ -19,7 +19,7 @@ const HOLD_RAF = () => {
   try { localStorage.setItem('marbling-atelier:invited', 'true'); } catch (e) {}
 };
 
-export async function openApp(browser, { width = 1600, height = 1000, dpr = 2 } = {}) {
+export async function openApp(browser, { width = 1600, height = +(process.env.VIEW_H || 1000), dpr = 2 } = {}) {
   const page = await browser.newPage({ viewport: { width, height }, deviceScaleFactor: dpr });
   page.setDefaultTimeout(600000);
   page.on('pageerror', e => console.error('page error:', e.message));

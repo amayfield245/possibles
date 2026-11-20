@@ -1,5 +1,6 @@
 // Captures footage of The Marbling Atelier for the film, from the published version in experiment/index.html.
-// Run from this repo's root: node 261106-marbling-atelier/capture.mjs [page] [history] [sheet] [studio]// With no arguments it captures all four. Output goes to 261106-marbling-atelier/captures/ (not committed).
+// Run from this repo's root: node 261106-marbling-atelier/capture.mjs [page] [book] [history] [sheet] [studio]
+// The film uses: VIEW_H=1400 node 261106-marbling-atelier/capture.mjs book history, then node 261106-marbling-atelier/capture.mjs page sheet studio// With no arguments it captures all four. Output goes to 261106-marbling-atelier/captures/ (not committed).
 //
 // Everything filmed is the app doing what it does for any visitor. It opens on its Bouquet (the app's own seed,
 // 271828). The history stills use its Undo history, one pass at a time. The animation is the app working the
