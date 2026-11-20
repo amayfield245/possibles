@@ -1,11 +1,12 @@
 # Possible #261106: The Marbling Atelier
 
-Working file for the story. Started 20 Nov 2026. Status: stories drafted, waiting for Antony to choose one.
+Working file for the story. Started 20 Nov 2026. Status: story A and treatment 1 chosen; capture and first cut in progress.
 
 ## Facts
 
 - Kind: Concept.
-- Made: 6 Nov 2026 (Antony, 20 Nov 2026), as a single-file Claude artifact. Built from one prompt with little steering (Antony).
+- Made: 6 Nov 2026 (Antony, 20 Nov 2026), as a single-file Claude artifact. Built by Fable, an Anthropic model, from one prompt with little steering (Antony).
+- Antony's line for the film (20 Nov 2026): "From one prompt, Fable researched and built an app that explores nine centuries of the craft of paper marbling." "Researched" is his account; the app lists the sources it consulted in its colophon.
 - Published at https://claude.ai/artifact/HEHmnKshs9KtKKsZUGnfGK. Last published 6 Nov 2026 (version 1793989979-fb9d). A copy of that version is in `experiment/index.html`.
 - Related artifacts made on 8 Nov 2026, both Motion films: The Marbling Atelier tour (https://claude.ai/artifact/KNJ2EuQg5MTFY2ZZ8mhnei) and The Marbling Atelier portrait (https://claude.ai/artifact/MisZDShxSQ6RdqdUNtRkG2).
 - No AI model runs inside it. Claude wrote it; the page itself is maths, history and WebGL. Nothing on screen is model output at run time.
@@ -99,6 +100,15 @@ Each has a hook, one claim, the proof on screen and a reason to care.
 - Proof: the Bouquet, pass by pass, laid down, bound as a book.
 - Why care: quiet and beautiful; the least argued, the most watchable.
 
+## Decision
+
+20 Nov 2026: Antony chose story A, and gave the opening line above. Treatment 1 (forwards, then back) taken as the default, since he answered with the line rather than a treatment.
+
 ## Footage notes
 
 - The bath renders in WebGL. Headless Chromium here uses a software renderer: the opening plate took about 100 seconds to load and draw. Capture will need long timeouts and stepped frames, not live recording.
+- `app.mjs` holds the app's screen refreshes in a queue and releases them one at a time, so each refresh is filmed as one frame. The app itself is not changed.
+- While it animates, the app draws the bath at 0.6 of full resolution, as it does for every visitor. Studio mode makes the bath fill the screen, so the animation is filmed there.
+- The Bouquet from the pattern book takes about 345 refreshes: throws 165, stylus 126, each comb 27.
+- The history slider moves a pass at a time (10 positions for the Bouquet: pass 9 down to the clean bath). The film uses those positions only; it does not show stroke-by-stroke unmaking, which the app's interface does not offer.
+- On laying down a sheet the app says: "Pulled. A bath gives one good print; skim it before the next plate."
