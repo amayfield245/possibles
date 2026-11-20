@@ -99,7 +99,7 @@ if (doing('sheet')) {
   rects.specimen = await rectOf(page, ['.modal-card', '.specimen-sheet', '#specImg', '.bound', '.volume', '#specTitle', '#specMeta']);
   await page.screenshot({ path: join(out, 'specimen.png') });
   log('specimen:', await page.evaluate(() => [specTitle.textContent, specMeta.textContent]));
-  await page.click('#specClose');
+  await page.evaluate(() => document.getElementById('specClose').click());
 }
 
 if (doing('studio')) {
