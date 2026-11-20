@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Roma__register_agent",
+      "mcp__Roma__get_context",
+      "mcp__Roma__get_guide",
+      "mcp__Roma__search",
+      "mcp__Roma__grep_items",
+      "mcp__Roma__get_item",
+      "mcp__Roma__list_items",
+      "mcp__Roma__query_items",
+      "mcp__Roma__list_lists",
+      "mcp__Roma__read_log",
+      "mcp__Roma__read_chat_messages",
+      "mcp__Roma__create_items",
+      "mcp__Roma__update_items",
+      "mcp__Roma__post_chat_message"
+    ]
+  }
+}
