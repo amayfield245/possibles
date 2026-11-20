@@ -45,7 +45,7 @@ window.FILM = {
     },
     {
       type: 'shot', part: 'What', in: 'fade', dur: 6, dpr: 2, src: 'captures/proof.jpg',
-      cam: [{ at: 0, c: [455, 366], w: 900 }, { at: 6, c: [455, 380], w: 820 }],
+      cam: [{ at: 0, c: [491, 366], w: 900 }, { at: 6, c: [491, 366], w: 820 }],
       captions: [{ at: 0.3, dur: 5.5, text: 'Lay down a sheet, and it takes up the whole pattern in one print.' }],
     },
     {
@@ -63,7 +63,7 @@ window.FILM = {
     {
       type: 'shot', part: 'So what', dur: 10, dpr: 2,
       frames: { dir: 'captures/history', count: 10, fps: 1.6 },
-      cam: [{ at: 0, c: [491, 366], w: 900 }, { at: 6.6, c: [491, 366], w: 900 }, { at: 8, c: [455, 940], w: 900 }],
+      cam: [{ at: 0, c: [491, 366], w: 900 }, { at: 6.6, c: [491, 366], w: 900 }, { at: 8, c: [455, 807], w: 900 }],
       captions: [
         { at: 0.3, dur: 4.2, text: 'In a real bath, nothing can be undone.' },
         { at: 4.8, dur: 5, text: 'Here, all 1,481 strokes can. Pass 9, back to a clean bath.' },
@@ -76,7 +76,7 @@ window.FILM = {
     { type: 'card', part: 'What next', variant: 'section', in: 'fade', dur: 5, kicker: 'What next', title: 'I keep going back, to learn the craft and its history.' },
     {
       type: 'shot', part: 'What next', in: 'fade', dur: 5.6, dpr: 2, src: 'captures/page.png',
-      cam: [{ at: 0, c: [1050, 1720], w: 1100 }, { at: 5.6, c: [1250, 1720], w: 700 }],
+      cam: [{ at: 0, c: [1050, 1767], w: 900 }, { at: 5.6, c: [1250, 1800], w: 700 }],
       captions: [{ at: 0.3, dur: 5.1, text: 'No marbler has checked a word of it yet.' }],
     },
     { type: 'card', part: 'What next', variant: 'end', in: 'fade', dur: 4.6, bar: false, title: 'Is it right? We would like a marbler to tell us.', logo: '../kit/assets/logos/antonym-wordmark.png' },
