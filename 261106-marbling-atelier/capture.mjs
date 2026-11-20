@@ -38,6 +38,25 @@ if (doing('page')) {
   log('page still');
 }
 
+if (doing('book')) {
+  // The pattern book scrolls inside its own panel. Film the panel at the start of each tradition.
+  await page.waitForFunction(() => [...document.querySelectorAll('.recipe .sw')].every(s => s.style.backgroundImage), null, { timeout: 1800000, polling: 2000 });
+  const dir = join(out, 'book');
+  mkdirSync(dir, { recursive: true });
+  const panel = await page.evaluate(() => { const r = document.querySelector('.panel.book').getBoundingClientRect(); return { x: r.x + scrollX, y: r.y + scrollY, width: r.width, height: r.height }; });
+  rects.book = { clip: panel, views: [] };
+  const labels = await page.evaluate(() => [...document.querySelectorAll('.trad-label')].map(e => e.textContent));
+  for (let i = 0; i < labels.length; i++) {
+    await page.evaluate(i => { const box = document.querySelector('.recipes'); box.scrollTop = document.querySelectorAll('.trad-label')[i].offsetTop - box.offsetTop - 6; }, i);
+    await page.waitForTimeout(300);
+    const inside = await rectOf(page, ['.recipe', '.trad-label']);
+    rects.book.views.push({ label: labels[i], inside });
+    await page.screenshot({ path: join(dir, i + '.png'), clip: panel });
+    log('book:', labels[i]);
+  }
+  await page.evaluate(() => { document.querySelector('.recipes').scrollTop = 0; });
+}
+
 if (doing('history')) {
   const clip = await workRegion();
   rects.history = { clip, inside: await rectOf(page, ['.plate-head', '.trough', '.bath', '.historybar', '#histLabel', '#histO', '#histR']) };
