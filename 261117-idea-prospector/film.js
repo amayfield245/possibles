@@ -17,8 +17,8 @@ window.FILM = {
       cam: [{ at: 0, c: [330, 330], w: 640 }, { at: 3.0, c: [330, 330], w: 640 }, { at: 4.8, c: [950, 765], w: 820 }, { at: 6.6, c: [950, 765], w: 820 }, { at: 7.6, c: [950, 868], w: 820 }],
       marks: [{ at: 5.0, dur: 1.8, rect: [596, 636, 222, 24] }, { at: 7.5, dur: 1.8, rect: [596, 941, 254, 24] }],
       captions: [
-        { at: 0.3, dur: 3.9, text: 'Pick dimensions: opposite forces to create a possibility space.' },
-        { at: 4.6, dur: 4.7, text: 'The tensions create ideas.' },
+        { at: 0.3, dur: 3.9, text: 'Every problem has an idea space.' },
+        { at: 4.6, dur: 4.7, text: 'Its tensions are the longitude and latitude.' },
       ],
     },
     {
@@ -34,7 +34,7 @@ window.FILM = {
       frames: { dir: 'captures/orbit', count: 300, fps: 30 },
       cam: [{ at: 0, c: [464, 300], w: 928 }, { at: 9.8, c: [484, 310], w: 760 }],
       captions: [
-        { at: 0.4, dur: 4.7, text: 'The ideas are scored against the dimensions and plotted in the map.' },
+        { at: 0.4, dur: 4.7, text: 'Every idea gets a place on the map.' },
         { at: 5.4, dur: 4.2, text: 'You can argue with the scores. (It creates more ideas.)' },
       ],
     },
@@ -73,11 +73,11 @@ window.FILM = {
       captions: [{ at: 0.3, dur: 3.0, text: 'Stretched towards order, the idea breaks.' }],
     },
     {
-      type: 'shot', part: 'So what', in: 'fade', dur: 7.2, dpr: 3, src: 'captures/stretch-4.png',
+      type: 'shot', part: 'So what', in: 'fade', dur: 7.8, dpr: 3, src: 'captures/stretch-4.png',
       cam: [{ at: 0, c: [500, 505], w: 940 }, { at: 3, c: [500, 505], w: 940 }, { at: 4.4, c: [500, 560], w: 900 }],
       captions: [
         { at: 0.4, dur: 2.6, text: 'Towards chaos, it breaks again.' },
-        { at: 3.5, dur: 3.5, text: 'It needs free drafting but a bounded sign-off.' },
+        { at: 3.5, dur: 4.1, text: 'It works only in the middle: free writing, limited guarantees.' },
       ],
     },
 

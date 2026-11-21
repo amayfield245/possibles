@@ -167,6 +167,18 @@ Applied on 20 Nov 2026:
 - Fixed while applying: the engine's preview loop had attached itself to the wrong condition when the caption-free mode was added, so renders kept rewinding to the first scene. The round 1 cut was rendered before that change and was not affected.
 - The round 1 cut stays at `out/possible-261117-inspiration-prospector.mp4` for comparison. The round 2 cut is `out/possible-261117-idea-prospector.mp4`.
 
+## Idea spaces, 21 Nov 2026
+
+Antony asked for the film to name the concept: every problem has an idea space, and its tensions are the longitude and latitude of the map. Captions only, by his choice, written straight into the film:
+
+- Scene 4, caption 1: “Every problem has an idea space.” (was “Pick dimensions: opposite forces to create a possibility space.”)
+- Scene 4, caption 2: “Its tensions are the longitude and latitude.” (was “The tensions create ideas.”) It sits over the dimensions, with the gold marks on two of the tensions.
+- Scene 6, caption 1: “Every idea gets a place on the map.” (was “The ideas are scored against the dimensions and plotted in the map.”)
+
+Timings are unchanged: the new lines are shorter, so each has more time than it needs. The film stays at 93 seconds.
+
+Also on 21 Nov 2026, Antony found scene 11's last line unclear: “It needs free drafting but a bounded sign-off.” It was Claude's summary from the stretch test. Now “It works only in the middle: free writing, limited guarantees.”, his pick from three plainer versions. The scene is 0.6 seconds longer so the line can be read; the film runs 93.8 seconds. The app's own summary in the footage still uses the old words.
+
 ## Footage notes
 
 - `capture.mjs` films a session at rest: the live one when given `live/session.json`, or else the example. A stand-in for Claude is installed so the buttons look live. Nothing it writes can reach the screen, because nothing that generates is pressed.

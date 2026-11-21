@@ -1,16 +1,20 @@
 {
  "number": "261117",
  "name": "Idea prospector",
- "round": 2,
- "builtAt": "2026-11-20T17:39:56.372Z",
+ "round": 3,
+ "builtAt": "2026-11-21T11:48:43.478Z",
  "captionStyle": "paper",
- "duration": 93.2,
+ "duration": 93.8,
  "video": "film.mp4",
  "poster": "poster.jpg",
  "history": [
   {
    "round": 1,
    "builtAt": "2026-11-19T17:34:28.276Z"
+  },
+  {
+   "round": 2,
+   "builtAt": "2026-11-20T17:39:56.372Z"
   }
  ],
  "scenes": [
@@ -98,7 +102,7 @@
     {
      "id": "s04-c1",
      "role": "caption",
-     "text": "Pick dimensions: opposite forces to create a possibility space.",
+     "text": "Every problem has an idea space.",
      "at": 0.3,
      "dur": 3.9,
      "start": 12.9
@@ -106,7 +110,7 @@
     {
      "id": "s04-c2",
      "role": "caption",
-     "text": "The tensions create ideas.",
+     "text": "Its tensions are the longitude and latitude.",
      "at": 4.6,
      "dur": 4.7,
      "start": 17.2
@@ -180,7 +184,7 @@
     {
      "id": "s06-c1",
      "role": "caption",
-     "text": "The ideas are scored against the dimensions and plotted in the map.",
+     "text": "Every idea gets a place on the map.",
      "at": 0.4,
      "dur": 4.7,
      "start": 29.6
@@ -379,7 +383,7 @@
    "variant": "",
    "in": "fade",
    "start": 77.2,
-   "dur": 7.2,
+   "dur": 7.8,
    "footage": "captures/stretch-4.png",
    "texts": [
     {
@@ -393,9 +397,9 @@
     {
      "id": "s11-c2",
      "role": "caption",
-     "text": "It needs free drafting but a bounded sign-off.",
+     "text": "It works only in the middle: free writing, limited guarantees.",
      "at": 3.5,
-     "dur": 3.5,
+     "dur": 4.1,
      "start": 80.7
     }
    ],
@@ -407,7 +411,7 @@
     },
     {
      "line": "s11-c2",
-     "t": 82.98,
+     "t": 83.37,
      "frame": "frames/s11-2.jpg"
     }
    ]
@@ -419,7 +423,7 @@
    "part": "What next",
    "variant": "section",
    "in": "cut",
-   "start": 84.4,
+   "start": 85,
    "dur": 4.2,
    "footage": "",
    "texts": [
@@ -444,7 +448,7 @@
    "part": "What next",
    "variant": "end",
    "in": "fade",
-   "start": 88.6,
+   "start": 89.2,
    "dur": 4.6,
    "footage": "",
    "texts": [
