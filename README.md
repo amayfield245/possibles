@@ -30,7 +30,7 @@ The process is a skill: `.claude/skills/possible-story/SKILL.md`. In Claude Code
 
 | Number | Name | Kind | Status |
 |---|---|---|---|
-| #261117 | Idea prospector (made as Inspiration prospector) | Concept | Round 2 cut made from the script review. Round 2 is open: https://claude.ai/artifact/VaoCDusTU8z3TnQG2bzfn8 |
+| #261117 | Idea prospector (made as Inspiration prospector) | Concept | Round 3 cut made: round 2 applied, and idea spaces named in the captions. Round 3 is open: https://claude.ai/artifact/VaoCDusTU8z3TnQG2bzfn8 |
 
 ## Render a film
 
