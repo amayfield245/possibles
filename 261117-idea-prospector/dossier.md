@@ -177,6 +177,8 @@ Antony asked for the film to name the concept: every problem has an idea space, 
 
 Timings are unchanged: the new lines are shorter, so each has more time than it needs. The film stays at 93 seconds.
 
+Also on 21 Nov 2026, Antony found scene 11's last line unclear: “It needs free drafting but a bounded sign-off.” It was Claude's summary from the stretch test. Now “It works only in the middle: free writing, limited guarantees.”, his pick from three plainer versions. The scene is 0.6 seconds longer so the line can be read; the film runs 93.8 seconds. The app's own summary in the footage still uses the old words.
+
 ## Footage notes
 
 - `capture.mjs` films a session at rest: the live one when given `live/session.json`, or else the example. A stand-in for Claude is installed so the buttons look live. Nothing it writes can reach the screen, because nothing that generates is pressed.

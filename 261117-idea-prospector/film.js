@@ -73,11 +73,11 @@ window.FILM = {
       captions: [{ at: 0.3, dur: 3.0, text: 'Stretched towards order, the idea breaks.' }],
     },
     {
-      type: 'shot', part: 'So what', in: 'fade', dur: 7.2, dpr: 3, src: 'captures/stretch-4.png',
+      type: 'shot', part: 'So what', in: 'fade', dur: 7.8, dpr: 3, src: 'captures/stretch-4.png',
       cam: [{ at: 0, c: [500, 505], w: 940 }, { at: 3, c: [500, 505], w: 940 }, { at: 4.4, c: [500, 560], w: 900 }],
       captions: [
         { at: 0.4, dur: 2.6, text: 'Towards chaos, it breaks again.' },
-        { at: 3.5, dur: 3.5, text: 'It needs free drafting but a bounded sign-off.' },
+        { at: 3.5, dur: 4.1, text: 'It works only in the middle: free writing, limited guarantees.' },
       ],
     },
 
